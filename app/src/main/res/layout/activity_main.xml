@@ -22,7 +22,7 @@
       android:layout_height="89dp"
       android:layout_alignParentBottom="true"
       android:background="#FFFFFF"
-      app:itemBackground="#E80C0B"
+
       app:itemIconTint="#5E6177"
       app:itemTextColor="@color/black"
       app:labelVisibilityMode="unlabeled"
