@@ -17,13 +17,13 @@
   </FrameLayout>
 
   <com.google.android.material.bottomnavigation.BottomNavigationView
+
       android:id="@+id/bottom_nav"
       android:layout_width="match_parent"
       android:layout_height="89dp"
       android:layout_alignParentBottom="true"
       android:background="#FFFFFF"
-
-      app:itemIconTint="#5E6177"
+      app:itemIconTint="@drawable/selector"
       app:itemTextColor="@color/black"
       app:labelVisibilityMode="unlabeled"
       app:menu="@menu/bottom_navbar" />
