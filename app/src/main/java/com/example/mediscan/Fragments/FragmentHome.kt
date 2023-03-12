@@ -21,9 +21,6 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        iv_home.setOnClickListener {
-            Toast.makeText(context, "You clicked on the home image", Toast.LENGTH_SHORT).show()
-        }
     }
 
 }

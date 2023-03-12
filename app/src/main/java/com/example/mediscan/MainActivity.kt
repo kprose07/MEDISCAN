@@ -1,6 +1,5 @@
 package com.example.mediscan
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
@@ -19,19 +18,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //Diffrent Screens
         val homeFragment = HomeFragment()
         val pillsdFragment = PillsFragment()
         val savedFragment = SavedFragment()
         val profileFragment = ProfileFragment()
 
-        // Handler().postDelayed({
-        Handler(Looper.getMainLooper()).postDelayed({
+        //Sets Home Screen
+        setCurrentFragment(homeFragment)
 
-            setCurrentFragment(homeFragment)
-
-        }, 3000)
-
-
+        //Bottom Navigation
         bottom_nav.setOnNavigationItemSelectedListener {
             when(it.itemId){
                 R.id.home ->{
