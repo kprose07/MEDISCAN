@@ -2,15 +2,36 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#C6061339">
+    android:background="#FFFFFF">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-            <ImageView
-                android:id="@+id/iv_home"
-                android:src="@drawable/ic_home"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:layout_centerInParent="true"/>
+
+        <!-- OR... -->
+
+        <View
+            android:id="@+id/rectangle_1"
+            android:layout_width="wrap_content"
+            android:layout_height="323dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/ic_rectangle_1" />
+
+        <TextView
+            android:id="@+id/or_"
+            android:layout_width="360dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/rectangle_1"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="86dp"
+            android:layout_marginEnd="26dp"
+            android:fontFamily="@font/poppins"
+            android:gravity="center_horizontal|top"
+            android:lineSpacingExtra="-8sp"
+            android:text="@string/or_"
+            android:textAppearance="@style/or_" />
     </RelativeLayout>
 </FrameLayout>
