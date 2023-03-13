@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF">
@@ -7,7 +8,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <!-- OR... -->
+        <!-- Let’s find your Medical Sheet Inquiry -->
+
 
         <View
             android:id="@+id/rectangle_1"
@@ -28,10 +30,93 @@
             android:layout_marginStart="25dp"
             android:layout_marginTop="86dp"
             android:layout_marginEnd="26dp"
-            android:fontFamily="@font/poppins"
-            android:gravity="center_horizontal|top"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="center|center_horizontal|top"
             android:lineSpacingExtra="-8sp"
             android:text="@string/or_"
             android:textAppearance="@style/or_" />
+
+        <!-- Hi, Amy -->
+
+        <TextView
+            android:id="@+id/hi_amy"
+            android:layout_width="63dp"
+            android:layout_height="16dp"
+            android:layout_above="@+id/let_s_find_"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="81.5dp"
+            android:layout_marginEnd="229dp"
+            android:layout_marginBottom="-100dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="top"
+            android:lineSpacingExtra="-8sp"
+            android:text="@string/hi_amy"
+            android:textAppearance="@style/hi_amy" />
+
+        <TextView
+            android:id="@+id/let_s_find_"
+            android:layout_width="249.6dp"
+            android:layout_height="120dp"
+            android:layout_alignBottom="@+id/rectangle_1"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="115dp"
+            android:layout_marginEnd="102dp"
+            android:layout_marginBottom="96dp"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="top"
+            android:lineSpacingExtra="-8sp"
+            android:text="@string/let_s_find_"
+            android:textAppearance="@style/let_s_find_"
+            android:textColorLink="#FFFFFF" />
+
+        <View
+            android:id="@+id/searchrect"
+            android:layout_width="314dp"
+            android:layout_height="56dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="243dp"
+            android:background="@drawable/ic_rectangle_3" />
+
+        <View
+            android:id="@+id/searchic"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="42dp"
+            android:layout_marginTop="259dp"
+            android:background="@drawable/ic_search" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="154dp"
+            android:layout_height="21dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="82.24dp"
+            android:layout_marginTop="260.5dp"
+            android:gravity="top"
+            android:outlineProvider="none"
+            app:boxBackgroundColor="#00FFFFFF"
+            app:boxStrokeColor="#00FFFFFF"
+            app:boxStrokeErrorColor="#00FFFFFF"
+            app:hintTextColor="#A6080C2F">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Medicine Name"
+                android:shadowColor="#00FFFFFF"
+                android:textColorHighlight="#00FFFFFF"
+                android:textColorHint="#A6080C2F" />
+        </com.google.android.material.textfield.TextInputLayout>
+
     </RelativeLayout>
 </FrameLayout>

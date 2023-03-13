@@ -16,6 +16,41 @@
         </item>
 
     </style>
+    <!--
+    Font family: Poppins
+    Line height: 40sp
+    -->
+    <!-- styles.xml -->
+    <style name="let_s_find_">
+
+        <item name="android:textSize">
+            32sp
+        </item>
+
+        <item name="android:letterSpacing">
+            -0.01
+        </item>
+
+        <item name="android:textColor">
+            #FFFFFF
+        </item>
+
+    </style>
+    <style name="hi_amy">
+
+        <item name="android:textSize">
+            16sp
+        </item>
+
+        <item name="android:letterSpacing">
+            0.02
+        </item>
+
+        <item name="android:textColor">
+            #BFFFFFFF
+        </item>
+
+    </style>
 
 
 
