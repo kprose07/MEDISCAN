@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF">
@@ -94,14 +95,14 @@
             android:layout_marginStart="42dp"
             android:layout_marginTop="259dp"
             android:background="@drawable/ic_search" />
-
+        <!-- Let’s find your Medical Sheet Inquiry
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="154dp"
-            android:layout_height="21dp"
+            android:layout_height="56dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_marginLeft="82.24dp"
-            android:layout_marginTop="260.5dp"
+            android:layout_marginTop="243dp"
             android:gravity="top"
             android:outlineProvider="none"
             app:boxBackgroundColor="#00FFFFFF"
@@ -113,9 +114,32 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Enter Medicine Name"
-                android:shadowColor="#00FFFFFF"
-                android:textColorHighlight="#00FFFFFF"
                 android:textColorHint="#A6080C2F" />
+        </com.google.android.material.textfield.TextInputLayout>-->
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="232dp"
+            android:layout_height="56dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="82dp"
+            android:layout_marginTop="243dp"
+            android:gravity="top"
+            android:hint="Enter Medicine Name"
+            android:textColorHint="#A6080C2F"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
+            app:endIconMode="clear_text"
+            app:endIconTint="#A6080C2F"
+            app:shapeAppearance="@style/Rounded">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_mediumbb"
+                android:textSize="14sp" />
+
         </com.google.android.material.textfield.TextInputLayout>
 
     </RelativeLayout>
