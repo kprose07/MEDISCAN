@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -55,7 +56,8 @@
             android:gravity="top"
             android:lineSpacingExtra="-8sp"
             android:text="@string/hi_amy"
-            android:textAppearance="@style/hi_amy" />
+            android:textAppearance="@style/hi_amy"
+            tools:ignore="TextContrastCheck" />
 
         <TextView
             android:id="@+id/let_s_find_"
@@ -86,61 +88,28 @@
             android:layout_marginTop="243dp"
             android:background="@drawable/ic_rectangle_3" />
 
-        <View
-            android:id="@+id/searchic"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+        <SearchView
+            android:id="@+id/idSV"
+            android:layout_width="313dp"
+            android:layout_height="56dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="42dp"
-            android:layout_marginTop="259dp"
-            android:background="@drawable/ic_search" />
-        <!-- Let’s find your Medical Sheet Inquiry
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="154dp"
-            android:layout_height="56dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="82.24dp"
-            android:layout_marginTop="243dp"
-            android:gravity="top"
-            android:outlineProvider="none"
-            app:boxBackgroundColor="#00FFFFFF"
-            app:boxStrokeColor="#00FFFFFF"
-            app:boxStrokeErrorColor="#00FFFFFF"
-            app:hintTextColor="#A6080C2F">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Enter Medicine Name"
-                android:textColorHint="#A6080C2F" />
-        </com.google.android.material.textfield.TextInputLayout>-->
-
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-            android:layout_width="232dp"
-            android:layout_height="56dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="82dp"
-            android:layout_marginTop="243dp"
-            android:gravity="top"
-            android:hint="Enter Medicine Name"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="243sp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/poppins_mediumbb"
+            android:iconifiedByDefault="false"
+            android:padding="4dp"
+            android:queryBackground="@null"
+            android:queryHint="Enter Medicine Name"
+            android:searchIcon="@drawable/ic_search"
             android:textColorHint="#A6080C2F"
-            app:boxStrokeWidth="0dp"
-            app:boxStrokeWidthFocused="0dp"
-            app:endIconMode="clear_text"
-            app:endIconTint="#A6080C2F"
-            app:shapeAppearance="@style/Rounded">
+            android:textSize="14sp"
+            app:queryBackground="@null" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_mediumbb"
-                android:textSize="14sp" />
-
-        </com.google.android.material.textfield.TextInputLayout>
+        <!--List View from which data is to be searched
+             for different programming languages-->
 
     </RelativeLayout>
 </FrameLayout>
