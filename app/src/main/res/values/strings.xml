@@ -3,5 +3,7 @@
     <string name="or_" translatable="false">OR...</string>
     <string name="hi_amy">Hi, Amy</string>
     <string name="let_s_find_" translatable="false" >Let\'s find\nyour Medical Sheet Inquiry</string>
-
+    <string name="medicine">MOUNJARO</string>
+    <string name="lilly_s_med">Lilly\'s Medication\'s</string>
+    <string name="adcirca">Adcirca</string>
 </resources>
