@@ -8,7 +8,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <!-- Let’s find your Medical Sheet Inquiry -->
 
@@ -109,12 +109,14 @@
             app:queryBackground="@null" />
 
         <GridLayout
-            android:layout_width="340dp"
+            android:layout_width="wrap_content"
             android:layout_height="523dp"
+            android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="14dp"
-            android:layout_marginTop="396dp"
-            android:layout_marginBottom="10sp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="378dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
             android:columnCount="3"
             android:padding="5dp"
             android:rowCount="4">
@@ -122,6 +124,7 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="103dp"
                 android:layout_height="119dp"
+                android:layout_margin="7dp"
                 android:outlineProvider="none"
                 app:cardBackgroundColor="@null">
 
@@ -136,8 +139,10 @@
                         android:layout_height="89dp"
                         android:adjustViewBounds="true"
                         android:background="@drawable/cardborderhomeimg"
+                        android:contentDescription="@string/lily_medication"
                         android:scaleType="centerInside"
-                        android:src="@drawable/adcirca" />
+                        android:src="@drawable/adcirca"
+                        tools:ignore="ImageContrastCheck" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -157,6 +162,87 @@
 
             </androidx.cardview.widget.CardView>
 
+            <androidx.cardview.widget.CardView
+                android:layout_width="103dp"
+                android:layout_height="119dp"
+                android:layout_margin="7dp"
+                android:outlineProvider="none"
+                app:cardBackgroundColor="@null">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="103dp"
+                        android:layout_height="89dp"
+                        android:adjustViewBounds="true"
+                        android:background="@drawable/cardborderhomeimg"
+                        android:contentDescription="@string/lily_medication"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/alimta"
+                        tools:ignore="ImageContrastCheck" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:background="@drawable/cardborderhome"
+                        android:fontFamily="@font/poppins_mediumbb"
+                        android:gravity="center"
+                        android:text="@string/alimta"
+                        android:textAlignment="gravity"
+                        android:textColor="#3D3D3D"
+                        android:textColorLink="#F11212"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="103dp"
+                android:layout_height="119dp"
+                android:layout_margin="7dp"
+                android:outlineProvider="none"
+                app:cardBackgroundColor="@null">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="103dp"
+                        android:layout_height="89dp"
+                        android:adjustViewBounds="true"
+                        android:background="@drawable/cardborderhomeimg"
+                        android:contentDescription="@string/lily_medication"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/avyvid"
+                        tools:ignore="ImageContrastCheck" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:background="@drawable/cardborderhome"
+                        android:fontFamily="@font/poppins_mediumbb"
+                        android:gravity="center"
+                        android:text="@string/avyvid"
+                        android:textAlignment="gravity"
+                        android:textColor="#3D3D3D"
+                        android:textColorLink="#F11212"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
         </GridLayout>
 
         <!--List View from which data is to be searched
