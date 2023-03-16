@@ -2,6 +2,11 @@
     <string name="app_name" translatable="false">MediScan</string>
     <string name="or_" translatable="false">OR...</string>
     <string name="hi_amy">Hi, Amy</string>
-    <string name="let_s_find_" translatable="false" >Let\'s find\nyour Medical Sheet Inquiry</string>
-
+    <string name="let_s_find_" translatable="false" >Let\'s find\nyour Medical \nSheet Inquiry</string>
+    <string name="medicine">MOUNJARO</string>
+    <string name="lilly_s_med">Lilly\'s Medication\'s</string>
+    <string name="adcirca">Adcirca</string>
+    <string name="alimta">Alimta</string>
+    <string name="avyvid">Avyvid</string>
+    <string name="lily_medication">Lily Medication</string>
 </resources>
