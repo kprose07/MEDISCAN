@@ -15,7 +15,7 @@
     <string name="baqsimi">Baqsimi</string>
     <string name="baricitinib">Baricitinib</string>
     <string name="basaglar">Basaglar</string>
-    <string name="bebtelovimab">Bebtelovimab</string>
+    <string name="bebtelovimab">Bebtelovim...</string>
     <string name="cyramza">Cyramza</string>
     <string name="emgality">Emgality</string>
     <string name="erbitux">Erbitux</string>
@@ -56,4 +56,6 @@
     <string name="zyprexa">Zyprexa Relprevv</string>
     <string name="lily_medication">Lily Medication</string>
 
+    <!--Results -->
+    <string name="names_for_t">Names for this medication:</string>
 </resources>

@@ -98,5 +98,20 @@
     </item>
 
 </style>
+    <style name="names_for_t">
+
+        <item name="android:textSize">
+            20sp
+        </item>
+
+        <item name="android:letterSpacing">
+            -0.01
+        </item>
+
+        <item name="android:textColor">
+            #E80C0B
+        </item>
+
+    </style>
 
 </resources>
