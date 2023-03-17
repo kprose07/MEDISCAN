@@ -39,6 +39,47 @@
             android:lineSpacingExtra="0sp"
             android:text="@string/brand_names"
             android:textAppearance="@style/brand_names" />
+        <TextView
+            android:id="@+id/tirzepatide"
+            android:layout_width="159dp"
+            android:layout_height="21dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="141dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="96dp"
+            android:text="@string/tirzepatide"
+            android:textAppearance="@style/tirzepatide"
+            android:lineSpacingExtra="0sp"
+            android:gravity="top"
+            android:paddingLeft="5dp"
+            />
+
+        <TextView
+            android:id="@+id/generic_nam"
+            android:layout_width="119dp"
+            android:layout_height="23dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="29dp"
+            android:layout_marginTop="125dp"
+            android:fontFamily="@font/poppins_extrabold"
+            android:gravity="top"
+            android:lineSpacingExtra="0sp"
+            android:text="@string/generic_nam"
+            android:textAppearance="@style/generic_nam" />
+        <TextView
+            android:id="@+id/mounjaro"
+            android:layout_width="171dp"
+            android:layout_height="23dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="148dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="125dp"
+            android:text="@string/mounjaros"
+            android:textAppearance="@style/mounjaros"
+            android:lineSpacingExtra="0sp"
+            android:gravity="top"
+            />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"

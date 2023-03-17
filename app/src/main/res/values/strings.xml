@@ -62,6 +62,8 @@
     <string name="omeprazole_">Omeprazole is used to treat certain stomach and esophagus problems (such as acid reflux, ulcers). It works by decreasing the amount of acid your stomach makes. It relieves symptoms such as heartburn, difficulty swallowing, and cough. This medicati ...</string>
     <string name="describe">Describe....</string>
     <string name="brand_names">Brand Names:</string>
-
+    <string name="tirzepatide">Tirzepatide injection</string>
+    <string name="generic_nam">Generic Name:</string>
+    <string name="mounjaros">MOUNJARO</string>
 
 </resources>
