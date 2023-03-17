@@ -4,7 +4,7 @@
     <string name="app_name" translatable="false">MediScan</string>
     <string name="or_" translatable="false">OR...</string>
     <string name="hi_amy">Hi, Amy</string>
-    <string name="let_s_find_" translatable="false" >Let\'s find\nyour Medical \nSheet Inquiry</string>
+    <string name="let_s_find_" translatable="false">Let\'s find\nyour Medical \nSheet Inquiry</string>
     <string name="medicine">MOUNJARO</string>
     <string name="lilly_s_med">Lilly\'s Medication\'s</string>
 
@@ -58,4 +58,10 @@
 
     <!--Results -->
     <string name="names_for_t">Names for this medication:</string>
+    <string name="summary">Summary</string>
+    <string name="omeprazole_">Omeprazole is used to treat certain stomach and esophagus problems (such as acid reflux, ulcers). It works by decreasing the amount of acid your stomach makes. It relieves symptoms such as heartburn, difficulty swallowing, and cough. This medicati ...</string>
+    <string name="describe">Describe....</string>
+    <string name="brand_names">Brand Names:</string>
+
+
 </resources>
