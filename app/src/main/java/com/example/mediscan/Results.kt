@@ -35,5 +35,13 @@ class Results : AppCompatActivity() {
             "Topic",
             "Test loefhporihfpn"
         ))
+        descriptionList.add(Accordresults(
+            "Hi",
+            "Test loefhporihfpn"
+        ))
+        descriptionList.add(Accordresults(
+            "Rose",
+            "Test loefhporihfpn"
+        ))
     }
 }
