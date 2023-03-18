@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.mediscan.Accordresults
-import com.example.mediscan.DescriptionAdapter
+import com.example.mediscan.Adapter.DescriptionAdapter
 import com.example.mediscan.R
 import kotlinx.android.synthetic.main.fragment_results.*
 
