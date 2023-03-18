@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import com.example.mediscan.Accordresults
 import com.example.mediscan.DescriptionAdapter
 import com.example.mediscan.R
-import kotlinx.android.synthetic.main.activity_results.*
+import kotlinx.android.synthetic.main.fragment_results.*
 
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_results.*
@@ -37,7 +37,9 @@ class ResultsFragment : Fragment() {
     private fun initData() {
         descriptionList.add(Accordresults(
             "Summary",
-            "Test loefhporihfpn"
+            "Omeprazole is used to treat certain stomach and esophagus problems (such as acid reflux, ulcers). It works by decreasing the amount of acid your stomach makes. It relieves symptoms such as heartburn, difficulty swallowing, and cough. This medicati ...Omeprazole is used to treat certain stomach and esophagus problems (such as acid reflux, ulcers). It works by decreasing the amount of acid your stomach makes. It relieves symptoms such as heartburn, difficulty swallowing, and cough. This medicati ...",
+            true
+
         ))
         descriptionList.add(Accordresults(
             "Medic",
