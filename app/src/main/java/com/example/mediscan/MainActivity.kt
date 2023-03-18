@@ -1,19 +1,16 @@
 package com.example.mediscan
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.util.Log
 import androidx.fragment.app.Fragment
-import com.example.mediscan.Fragments.HomeFragment
-import com.example.mediscan.Fragments.PillsFragment
-import com.example.mediscan.Fragments.ProfileFragment
-import com.example.mediscan.Fragments.SavedFragment
+import com.example.mediscan.Fragments.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-    val TAG = "MainActivity"
+    val tag = "MainActivity"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -23,6 +20,7 @@ class MainActivity : AppCompatActivity() {
         val pillsdFragment = PillsFragment()
         val savedFragment = SavedFragment()
         val profileFragment = ProfileFragment()
+        val resultsFragment = ResultsFragment()
 
         //Sets Home Screen
         setCurrentFragment(homeFragment)
@@ -32,29 +30,36 @@ class MainActivity : AppCompatActivity() {
             when(it.itemId){
                 R.id.home ->{
                     setCurrentFragment(homeFragment)
-                    Log.i(TAG,"Home Selected")
+                    Log.i(tag,"Home Selected")
                 }
                 R.id.pills ->{
-                    setCurrentFragment(pillsdFragment)
-                    Log.i(TAG,"Pills Selected")
+                    setCurrentFragment(resultsFragment)
+                   /* val intent = Intent(this, Results::class.java)
+                    startActivity(intent)
+                    finish()*/
+                    Log.i(tag,"Pills Selected")
                 }
                 R.id.saved ->{
                     setCurrentFragment(savedFragment)
-                    Log.i(TAG,"Saved Selected")
+                    Log.i(tag,"Saved Selected")
                 }
                 R.id.profile ->{
                     setCurrentFragment(profileFragment)
-                    Log.i(TAG,"Profile Selected")
+                    Log.i(tag,"Profile Selected")
                 }
             }
             true
         }
 
+
     }
+
+
     private fun setCurrentFragment(fragment: Fragment) =
         supportFragmentManager.beginTransaction().apply{
             replace(R.id.fl_wrapper,fragment)
             commit()
         }
+
 
 }

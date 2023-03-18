@@ -1,12 +1,69 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!--HomePage -->
     <string name="app_name" translatable="false">MediScan</string>
     <string name="or_" translatable="false">OR...</string>
     <string name="hi_amy">Hi, Amy</string>
-    <string name="let_s_find_" translatable="false" >Let\'s find\nyour Medical \nSheet Inquiry</string>
+    <string name="let_s_find_" translatable="false">Let\'s find\nyour Medical \nSheet Inquiry</string>
     <string name="medicine">MOUNJARO</string>
     <string name="lilly_s_med">Lilly\'s Medication\'s</string>
+
+    <!--HomePage Grid Cards -->
     <string name="adcirca">Adcirca</string>
     <string name="alimta">Alimta</string>
     <string name="avyvid">Avyvid</string>
+    <string name="baqsimi">Baqsimi</string>
+    <string name="baricitinib">Baricitinib</string>
+    <string name="basaglar">Basaglar</string>
+    <string name="bebtelovimab">Bebtelovim...</string>
+    <string name="cyramza">Cyramza</string>
+    <string name="emgality">Emgality</string>
+    <string name="erbitux">Erbitux</string>
+    <string name="forteo">Forteo</string>
+    <string name="glucagon">Glucagon</string>
+    <string name="glyxambi">Glyxambi</string>
+    <string name="humalogj">Humalog Junior</string>
+    <string name="humalogfifty">Humalog 50/50</string>
+    <string name="humalogsev">Humalog 75/25</string>
+    <string name="humalog">Humalog</string>
+    <string name="humalogtwo">Humalog 200</string>
+    <string name="humatrope">Humatrope</string>
+    <string name="humulinsev">Humulin 70/30</string>
+    <string name="humulinN">Humulin N</string>
+    <string name="humulinR">Humulin R</string>
+    <string name="humulinRu">Humulin R U-500</string>
+    <string name="insulinLI">Insulin Lispro</string>
+    <string name="insulinLIJ">Insulin Lispro Junior Kiwi</string>
+    <string name="insulinLIK">Insulin Lispro Kiwi</string>
+    <string name="jardiance">Jardiance</string>
+    <string name="jaypirca">Jaypirca</string>
+    <string name="jentadueto">Jentadueto</string>
+    <string name="jentaduetoXR">Jentadueto XR</string>
+    <string name="lyumje">Lyumje</string>
+    <string name="mounjaro">Mounjaro</string>
+    <string name="olumiantI">Olumiant Immunology</string>
+    <string name="olumiantC">Olumiant Covid</string>
+    <string name="retevmo">Retevmo</string>
+    <string name="reyvow">Reyvow</string>
+    <string name="synjardy">Synjardy</string>
+    <string name="synjardyXR">Synjardy XR</string>
+    <string name="taltz">Taltz</string>
+    <string name="tauvid">Tauvid</string>
+    <string name="tradjenta">Tradjenta</string>
+    <string name="trijardyXR">TrijardyXR</string>
+    <string name="trulicity">Trulicity</string>
+    <string name="verzenio">Verzenio</string>
+    <string name="zyprexa">Zyprexa Relprevv</string>
     <string name="lily_medication">Lily Medication</string>
+
+    <!--Results -->
+    <string name="names_for_t">Names for this medication:</string>
+    <string name="accordtitle">TBA</string>
+    <string name="omeprazole_">Omeprazole is used to treat certain stomach and esophagus problems (such as acid reflux, ulcers). It works by decreasing the amount of acid your stomach makes. It relieves symptoms such as heartburn, difficulty swallowing, and cough. This medicati ...</string>
+    <string name="describe">Please Select a medication....</string>
+    <string name="brand_names">Brand Names:</string>
+    <string name="tirzepatide">Tirzepatide injection</string>
+    <string name="generic_nam">Generic Name:</string>
+    <string name="mounjaros">MOUNJARO</string>
+    <string name="medicationtitle">Medication:</string>
 </resources>
