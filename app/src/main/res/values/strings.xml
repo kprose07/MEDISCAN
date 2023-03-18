@@ -67,4 +67,7 @@
     <string name="mounjaros">MOUNJARO</string>
     <string name="medicationtitle">Medication:</string>
     <string name="medtitr">MOUNJARO</string>
+    <string name="collapse_al"><u>Collapse All</u></string>
+    <string name="expand_al"><u>Expand All</u></string>
+
 </resources>

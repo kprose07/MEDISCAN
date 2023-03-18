@@ -274,4 +274,19 @@
         </item>
 
     </style>
+    <style name="collapse_al">
+
+        <item name="android:textSize">
+            15sp
+        </item>
+
+        <item name="android:letterSpacing">
+            -0.01
+        </item>
+
+        <item name="android:textColor">
+            #9D9DA1
+        </item>
+
+    </style>
 </resources>
