@@ -19,7 +19,7 @@ import android.widget.SimpleCursorAdapter
 import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.mediscan.Adapter.RecyclerAdapter
-import com.example.mediscan.hideKeyboard
+//import com.example.mediscan.hideKeyboard
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.fragment_home.*
 
@@ -87,7 +87,7 @@ class HomeFragment : androidx.fragment.app.Fragment() {
         searchView.setOnSuggestionListener(object : SearchView.OnSuggestionListener {
             @SuppressLint("Range")
             override fun onSuggestionClick(position: Int): Boolean {
-                hideKeyboard()
+                //hideKeyboard()
 
                 val cursor = searchView.suggestionsAdapter.getItem(position) as Cursor
                 val selection =

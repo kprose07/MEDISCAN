@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mediscan.Accordresults
 import com.example.mediscan.R
+import kotlinx.android.synthetic.main.fragment_results.*
 
 class DescriptionAdapter(val descriptionList: List<Accordresults>) :
     RecyclerView.Adapter<DescriptionAdapter.AccordianVH>(){
@@ -42,6 +43,7 @@ class DescriptionAdapter(val descriptionList: List<Accordresults>) :
             accordresults.expandable = !accordresults.expandable
             notifyItemChanged(position)
         }
+
 
     }
 

@@ -1,9 +1,9 @@
 package com.example.mediscan.Fragments
-
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.mediscan.Accordresults
@@ -73,10 +73,19 @@ class ResultsFragment : Fragment() {
     }
 
     private fun filter() {
-        /*val textView: TextView = findViewById(R.id.expand_al) as TextView
-        textView.setOnClickListener {
-            textView.text = getString(R.string.collapse_al)
+
+        var switch = true
+
+        expand_al.setOnClickListener {
+            if(switch) {
+                expand_al.setText(getString(R.string.collapse_al))
+                switch = false
+            }else{
+                expand_al.setText(R.string.expand_al)
+                switch = true
+            }
         }
-    }*/
+
+
     }
 }
