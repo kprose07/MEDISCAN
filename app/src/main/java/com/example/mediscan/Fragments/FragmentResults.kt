@@ -1,20 +1,32 @@
-package com.example.mediscan
+package com.example.mediscan.Fragments
 
-import androidx.appcompat.app.AppCompatActivity
-//import android.os.Bundle
-//import kotlinx.android.synthetic.main.activity_results.*
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import com.example.mediscan.Accordresults
+import com.example.mediscan.DescriptionAdapter
+import com.example.mediscan.R
+import kotlinx.android.synthetic.main.activity_results.*
 
-class Results : AppCompatActivity() {
-    /*Accordian data
+import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.fragment_results.*
+
+class ResultsFragment : Fragment() {
     val descriptionList = ArrayList<Accordresults>()
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_results)
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? = inflater.inflate(R.layout.fragment_results, container,false)
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         //Accordian Data
         initData()
         setRecyclerView()
     }
-
     private fun setRecyclerView() {
         val descriptionAdapter = DescriptionAdapter(descriptionList)
         recyclerView.adapter = descriptionAdapter
@@ -44,5 +56,4 @@ class Results : AppCompatActivity() {
             "Test loefhporihfpn"
         ))
     }
-}*/
 }
