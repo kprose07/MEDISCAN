@@ -6,11 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.mediscan.Accordresults
-import com.example.mediscan.DescriptionAdapter
+import com.example.mediscan.Adapter.DescriptionAdapter
 import com.example.mediscan.R
-import kotlinx.android.synthetic.main.activity_results.*
-
-import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_results.*
 
 class ResultsFragment : Fragment() {

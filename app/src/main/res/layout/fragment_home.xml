@@ -100,6 +100,7 @@
             android:searchIcon="@drawable/ic_search"
             android:textColorHint="#A6080C2F"
             android:textSize="14sp"
+            android:inputType="textNoSuggestions"
             app:queryBackground="@null" />
 
         <androidx.constraintlayout.widget.ConstraintLayout

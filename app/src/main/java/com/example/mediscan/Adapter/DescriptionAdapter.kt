@@ -1,4 +1,4 @@
-package com.example.mediscan
+package com.example.mediscan.Adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +7,8 @@ import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.mediscan.Accordresults
+import com.example.mediscan.R
 
 class DescriptionAdapter(val descriptionList: List<Accordresults>) :
     RecyclerView.Adapter<DescriptionAdapter.AccordianVH>(){
@@ -27,7 +29,7 @@ class DescriptionAdapter(val descriptionList: List<Accordresults>) :
         return descriptionList.size
     }
 
-    override fun onBindViewHolder(holder: AccordianVH , position: Int) {
+    override fun onBindViewHolder(holder: AccordianVH, position: Int) {
       val accordresults : Accordresults = descriptionList[position]
       holder.titletxt.text = accordresults.accordtitle
       holder.descriptxt.text = accordresults.description
