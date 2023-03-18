@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "152510833833",
+    "firebase_url": "https://lilly-hack-default-rtdb.firebaseio.com",
+    "project_id": "lilly-hack",
+    "storage_bucket": "lilly-hack.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:152510833833:android:837c135c27bf231558f5b8",
+        "android_client_info": {
+          "package_name": "com.example.mediscan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "152510833833-7irqgc7be5jes8pkc7n62entsr1khv2i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKi6wMCznPL8IYtzXYAwjm3_uzNV--MB4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "152510833833-7irqgc7be5jes8pkc7n62entsr1khv2i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
