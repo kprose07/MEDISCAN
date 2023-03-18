@@ -145,9 +145,10 @@
                         tools:ignore="ImageContrastCheck" />
 
                     <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/cardborderhome"
+                        android:layout_width="103dp"
+                        android:layout_height="30dp"
+                        android:singleLine="true"
+                        android:ellipsize="end"
                         android:fontFamily="@font/poppins_mediumbb"
                         android:gravity="center"
                         android:text="@string/adcirca"
@@ -186,8 +187,10 @@
                         tools:ignore="ImageContrastCheck" />
 
                     <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="103dp"
+                        android:layout_height="30dp"
+                        android:singleLine="true"
+                        android:ellipsize="end"
                         android:background="@drawable/cardborderhome"
                         android:fontFamily="@font/poppins_mediumbb"
                         android:gravity="center"
@@ -227,8 +230,10 @@
                         tools:ignore="ImageContrastCheck" />
 
                     <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="103dp"
+                        android:layout_height="30dp"
+                        android:singleLine="true"
+                        android:ellipsize="end"
                         android:background="@drawable/cardborderhome"
                         android:fontFamily="@font/poppins_mediumbb"
                         android:gravity="center"
@@ -268,8 +273,10 @@
                         tools:ignore="ImageContrastCheck" />
 
                     <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="103dp"
+                        android:layout_height="30dp"
+                        android:singleLine="true"
+                        android:ellipsize="end"
                         android:background="@drawable/cardborderhome"
                         android:fontFamily="@font/poppins_mediumbb"
                         android:gravity="center"
@@ -309,8 +316,10 @@
                         tools:ignore="ImageContrastCheck" />
 
                     <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="103dp"
+                        android:layout_height="30dp"
+                        android:singleLine="true"
+                        android:ellipsize="end"
                         android:background="@drawable/cardborderhome"
                         android:fontFamily="@font/poppins_mediumbb"
                         android:gravity="center"
@@ -349,9 +358,11 @@
                         android:src="@drawable/basaglar"
                         tools:ignore="ImageContrastCheck" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                                       <TextView
+                        android:layout_width="103dp"
+                        android:layout_height="30dp"
+                        android:singleLine="true"
+                        android:ellipsize="end"
                         android:background="@drawable/cardborderhome"
                         android:fontFamily="@font/poppins_mediumbb"
                         android:gravity="center"
@@ -390,9 +401,11 @@
                         android:src="@drawable/bebtelovimab"
                         tools:ignore="ImageContrastCheck" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                                       <TextView
+                        android:layout_width="103dp"
+                        android:layout_height="30dp"
+                        android:singleLine="true"
+                        android:ellipsize="end"
                         android:background="@drawable/cardborderhome"
                         android:fontFamily="@font/poppins_mediumbb"
                         android:gravity="center"
@@ -431,9 +444,11 @@
                         android:src="@drawable/cyramza"
                         tools:ignore="ImageContrastCheck" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                                       <TextView
+                        android:layout_width="103dp"
+                        android:layout_height="30dp"
+                        android:singleLine="true"
+                        android:ellipsize="end"
                         android:background="@drawable/cardborderhome"
                         android:fontFamily="@font/poppins_mediumbb"
                         android:gravity="center"
@@ -472,9 +487,11 @@
                         android:src="@drawable/emgality"
                         tools:ignore="ImageContrastCheck" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                                       <TextView
+                        android:layout_width="103dp"
+                        android:layout_height="30dp"
+                        android:singleLine="true"
+                        android:ellipsize="end"
                         android:background="@drawable/cardborderhome"
                         android:fontFamily="@font/poppins_mediumbb"
                         android:gravity="center"
@@ -513,9 +530,11 @@
                         android:src="@drawable/erbitux"
                         tools:ignore="ImageContrastCheck" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                                       <TextView
+                        android:layout_width="103dp"
+                        android:layout_height="30dp"
+                        android:singleLine="true"
+                        android:ellipsize="end"
                         android:background="@drawable/cardborderhome"
                         android:fontFamily="@font/poppins_mediumbb"
                         android:gravity="center"
@@ -554,9 +573,11 @@
                         android:src="@drawable/forteo"
                         tools:ignore="ImageContrastCheck" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                                       <TextView
+                        android:layout_width="103dp"
+                        android:layout_height="30dp"
+                        android:singleLine="true"
+                        android:ellipsize="end"
                         android:background="@drawable/cardborderhome"
                         android:fontFamily="@font/poppins_mediumbb"
                         android:gravity="center"
@@ -595,9 +616,11 @@
                         android:src="@drawable/glucagon"
                         tools:ignore="ImageContrastCheck" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                                       <TextView
+                        android:layout_width="103dp"
+                        android:layout_height="30dp"
+                        android:singleLine="true"
+                        android:ellipsize="end"
                         android:background="@drawable/cardborderhome"
                         android:fontFamily="@font/poppins_mediumbb"
                         android:gravity="center"
@@ -636,9 +659,11 @@
                         android:src="@drawable/glyxambi"
                         tools:ignore="ImageContrastCheck" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                                       <TextView
+                        android:layout_width="103dp"
+                        android:layout_height="30dp"
+                        android:singleLine="true"
+                        android:ellipsize="end"
                         android:background="@drawable/cardborderhome"
                         android:fontFamily="@font/poppins_mediumbb"
                         android:gravity="center"
@@ -677,9 +702,11 @@
                         android:src="@drawable/humalog"
                         tools:ignore="ImageContrastCheck" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                                       <TextView
+                        android:layout_width="103dp"
+                        android:layout_height="30dp"
+                        android:singleLine="true"
+                        android:ellipsize="end"
                         android:background="@drawable/cardborderhome"
                         android:fontFamily="@font/poppins_mediumbb"
                         android:gravity="center"
@@ -716,11 +743,14 @@
                         android:contentDescription="@string/lily_medication"
                         android:scaleType="centerInside"
                         android:src="@drawable/humalogjunior"
-                        tools:ignore="ImageContrastCheck" />
+                        tools:ignore="ImageContrastCheck"
+                        />
 
                     <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="103dp"
+                        android:layout_height="30dp"
+                        android:singleLine="true"
+                        android:ellipsize="end"
                         android:background="@drawable/cardborderhome"
                         android:fontFamily="@font/poppins_mediumbb"
                         android:gravity="center"
@@ -759,9 +789,11 @@
                         android:src="@drawable/humalogfifty"
                         tools:ignore="ImageContrastCheck" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                                       <TextView
+                        android:layout_width="103dp"
+                        android:layout_height="30dp"
+                        android:singleLine="true"
+                        android:ellipsize="end"
                         android:background="@drawable/cardborderhome"
                         android:fontFamily="@font/poppins_mediumbb"
                         android:gravity="center"
@@ -800,9 +832,11 @@
                         android:src="@drawable/humalogsev"
                         tools:ignore="ImageContrastCheck" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                                       <TextView
+                        android:layout_width="103dp"
+                        android:layout_height="30dp"
+                        android:singleLine="true"
+                        android:ellipsize="end"
                         android:background="@drawable/cardborderhome"
                         android:fontFamily="@font/poppins_mediumbb"
                         android:gravity="center"
@@ -841,9 +875,11 @@
                         android:src="@drawable/humalogtwo"
                         tools:ignore="ImageContrastCheck" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                                       <TextView
+                        android:layout_width="103dp"
+                        android:layout_height="30dp"
+                        android:singleLine="true"
+                        android:ellipsize="end"
                         android:background="@drawable/cardborderhome"
                         android:fontFamily="@font/poppins_mediumbb"
                         android:gravity="center"
@@ -882,9 +918,11 @@
                         android:src="@drawable/humatrope"
                         tools:ignore="ImageContrastCheck" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                                       <TextView
+                        android:layout_width="103dp"
+                        android:layout_height="30dp"
+                        android:singleLine="true"
+                        android:ellipsize="end"
                         android:background="@drawable/cardborderhome"
                         android:fontFamily="@font/poppins_mediumbb"
                         android:gravity="center"
@@ -923,9 +961,11 @@
                         android:src="@drawable/humulinn"
                         tools:ignore="ImageContrastCheck" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                                       <TextView
+                        android:layout_width="103dp"
+                        android:layout_height="30dp"
+                        android:singleLine="true"
+                        android:ellipsize="end"
                         android:background="@drawable/cardborderhome"
                         android:fontFamily="@font/poppins_mediumbb"
                         android:gravity="center"
@@ -964,9 +1004,11 @@
                         android:src="@drawable/humulinr"
                         tools:ignore="ImageContrastCheck" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                                       <TextView
+                        android:layout_width="103dp"
+                        android:layout_height="30dp"
+                        android:singleLine="true"
+                        android:ellipsize="end"
                         android:background="@drawable/cardborderhome"
                         android:fontFamily="@font/poppins_mediumbb"
                         android:gravity="center"
@@ -1005,9 +1047,11 @@
                         android:src="@drawable/humulinru"
                         tools:ignore="ImageContrastCheck" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                                       <TextView
+                        android:layout_width="103dp"
+                        android:layout_height="30dp"
+                        android:singleLine="true"
+                        android:ellipsize="end"
                         android:background="@drawable/cardborderhome"
                         android:fontFamily="@font/poppins_mediumbb"
                         android:gravity="center"
@@ -1046,9 +1090,11 @@
                         android:src="@drawable/humulinsev"
                         tools:ignore="ImageContrastCheck" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                                       <TextView
+                        android:layout_width="103dp"
+                        android:layout_height="30dp"
+                        android:singleLine="true"
+                        android:ellipsize="end"
                         android:background="@drawable/cardborderhome"
                         android:fontFamily="@font/poppins_mediumbb"
                         android:gravity="center"
@@ -1087,9 +1133,11 @@
                         android:src="@drawable/insulinlli"
                         tools:ignore="ImageContrastCheck" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                                       <TextView
+                        android:layout_width="103dp"
+                        android:layout_height="30dp"
+                        android:singleLine="true"
+                        android:ellipsize="end"
                         android:background="@drawable/cardborderhome"
                         android:fontFamily="@font/poppins_mediumbb"
                         android:gravity="center"
@@ -1128,9 +1176,11 @@
                         android:src="@drawable/insulinli"
                         tools:ignore="ImageContrastCheck" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                                       <TextView
+                        android:layout_width="103dp"
+                        android:layout_height="30dp"
+                        android:singleLine="true"
+                        android:ellipsize="end"
                         android:background="@drawable/cardborderhome"
                         android:fontFamily="@font/poppins_mediumbb"
                         android:gravity="center"
@@ -1169,9 +1219,11 @@
                         android:src="@drawable/insulinlik"
                         tools:ignore="ImageContrastCheck" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                                       <TextView
+                        android:layout_width="103dp"
+                        android:layout_height="30dp"
+                        android:singleLine="true"
+                        android:ellipsize="end"
                         android:background="@drawable/cardborderhome"
                         android:fontFamily="@font/poppins_mediumbb"
                         android:gravity="center"
@@ -1210,9 +1262,11 @@
                         android:src="@drawable/jardiance"
                         tools:ignore="ImageContrastCheck" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                                       <TextView
+                        android:layout_width="103dp"
+                        android:layout_height="30dp"
+                        android:singleLine="true"
+                        android:ellipsize="end"
                         android:background="@drawable/cardborderhome"
                         android:fontFamily="@font/poppins_mediumbb"
                         android:gravity="center"
@@ -1251,9 +1305,11 @@
                         android:src="@drawable/jaypirca"
                         tools:ignore="ImageContrastCheck" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                                       <TextView
+                        android:layout_width="103dp"
+                        android:layout_height="30dp"
+                        android:singleLine="true"
+                        android:ellipsize="end"
                         android:background="@drawable/cardborderhome"
                         android:fontFamily="@font/poppins_mediumbb"
                         android:gravity="center"
@@ -1292,9 +1348,11 @@
                         android:src="@drawable/jentadueto"
                         tools:ignore="ImageContrastCheck" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                                       <TextView
+                        android:layout_width="103dp"
+                        android:layout_height="30dp"
+                        android:singleLine="true"
+                        android:ellipsize="end"
                         android:background="@drawable/cardborderhome"
                         android:fontFamily="@font/poppins_mediumbb"
                         android:gravity="center"
@@ -1333,9 +1391,11 @@
                         android:src="@drawable/jentaduetoxr"
                         tools:ignore="ImageContrastCheck" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                                       <TextView
+                        android:layout_width="103dp"
+                        android:layout_height="30dp"
+                        android:singleLine="true"
+                        android:ellipsize="end"
                         android:background="@drawable/cardborderhome"
                         android:fontFamily="@font/poppins_mediumbb"
                         android:gravity="center"
@@ -1374,9 +1434,11 @@
                         android:src="@drawable/lyumje"
                         tools:ignore="ImageContrastCheck" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                                       <TextView
+                        android:layout_width="103dp"
+                        android:layout_height="30dp"
+                        android:singleLine="true"
+                        android:ellipsize="end"
                         android:background="@drawable/cardborderhome"
                         android:fontFamily="@font/poppins_mediumbb"
                         android:gravity="center"
@@ -1415,9 +1477,11 @@
                         android:src="@drawable/mounjaro"
                         tools:ignore="ImageContrastCheck" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                                       <TextView
+                        android:layout_width="103dp"
+                        android:layout_height="30dp"
+                        android:singleLine="true"
+                        android:ellipsize="end"
                         android:background="@drawable/cardborderhome"
                         android:fontFamily="@font/poppins_mediumbb"
                         android:gravity="center"
@@ -1456,9 +1520,11 @@
                         android:src="@drawable/olumiantc"
                         tools:ignore="ImageContrastCheck" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                                       <TextView
+                        android:layout_width="103dp"
+                        android:layout_height="30dp"
+                        android:singleLine="true"
+                        android:ellipsize="end"
                         android:background="@drawable/cardborderhome"
                         android:fontFamily="@font/poppins_mediumbb"
                         android:gravity="center"
@@ -1497,9 +1563,11 @@
                         android:src="@drawable/olumianti"
                         tools:ignore="ImageContrastCheck" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                                       <TextView
+                        android:layout_width="103dp"
+                        android:layout_height="30dp"
+                        android:singleLine="true"
+                        android:ellipsize="end"
                         android:background="@drawable/cardborderhome"
                         android:fontFamily="@font/poppins_mediumbb"
                         android:gravity="center"
@@ -1538,9 +1606,11 @@
                         android:src="@drawable/retevmo"
                         tools:ignore="ImageContrastCheck" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                                       <TextView
+                        android:layout_width="103dp"
+                        android:layout_height="30dp"
+                        android:singleLine="true"
+                        android:ellipsize="end"
                         android:background="@drawable/cardborderhome"
                         android:fontFamily="@font/poppins_mediumbb"
                         android:gravity="center"
@@ -1579,9 +1649,11 @@
                         android:src="@drawable/reyvow"
                         tools:ignore="ImageContrastCheck" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                                       <TextView
+                        android:layout_width="103dp"
+                        android:layout_height="30dp"
+                        android:singleLine="true"
+                        android:ellipsize="end"
                         android:background="@drawable/cardborderhome"
                         android:fontFamily="@font/poppins_mediumbb"
                         android:gravity="center"
@@ -1620,9 +1692,11 @@
                         android:src="@drawable/synjardy"
                         tools:ignore="ImageContrastCheck" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                                       <TextView
+                        android:layout_width="103dp"
+                        android:layout_height="30dp"
+                        android:singleLine="true"
+                        android:ellipsize="end"
                         android:background="@drawable/cardborderhome"
                         android:fontFamily="@font/poppins_mediumbb"
                         android:gravity="center"
@@ -1661,9 +1735,11 @@
                         android:src="@drawable/synjardyxr"
                         tools:ignore="ImageContrastCheck" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                                       <TextView
+                        android:layout_width="103dp"
+                        android:layout_height="30dp"
+                        android:singleLine="true"
+                        android:ellipsize="end"
                         android:background="@drawable/cardborderhome"
                         android:fontFamily="@font/poppins_mediumbb"
                         android:gravity="center"
@@ -1702,9 +1778,11 @@
                         android:src="@drawable/taltz"
                         tools:ignore="ImageContrastCheck" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                                       <TextView
+                        android:layout_width="103dp"
+                        android:layout_height="30dp"
+                        android:singleLine="true"
+                        android:ellipsize="end"
                         android:background="@drawable/cardborderhome"
                         android:fontFamily="@font/poppins_mediumbb"
                         android:gravity="center"
@@ -1743,9 +1821,11 @@
                         android:src="@drawable/tradjenta"
                         tools:ignore="ImageContrastCheck" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                                       <TextView
+                        android:layout_width="103dp"
+                        android:layout_height="30dp"
+                        android:singleLine="true"
+                        android:ellipsize="end"
                         android:background="@drawable/cardborderhome"
                         android:fontFamily="@font/poppins_mediumbb"
                         android:gravity="center"
@@ -1784,9 +1864,11 @@
                         android:src="@drawable/trijardyxr"
                         tools:ignore="ImageContrastCheck" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                                       <TextView
+                        android:layout_width="103dp"
+                        android:layout_height="30dp"
+                        android:singleLine="true"
+                        android:ellipsize="end"
                         android:background="@drawable/cardborderhome"
                         android:fontFamily="@font/poppins_mediumbb"
                         android:gravity="center"
@@ -1825,9 +1907,11 @@
                         android:src="@drawable/trulicity"
                         tools:ignore="ImageContrastCheck" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                                       <TextView
+                        android:layout_width="103dp"
+                        android:layout_height="30dp"
+                        android:singleLine="true"
+                        android:ellipsize="end"
                         android:background="@drawable/cardborderhome"
                         android:fontFamily="@font/poppins_mediumbb"
                         android:gravity="center"
@@ -1866,9 +1950,11 @@
                         android:src="@drawable/verzenio"
                         tools:ignore="ImageContrastCheck" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                                       <TextView
+                        android:layout_width="103dp"
+                        android:layout_height="30dp"
+                        android:singleLine="true"
+                        android:ellipsize="end"
                         android:background="@drawable/cardborderhome"
                         android:fontFamily="@font/poppins_mediumbb"
                         android:gravity="center"
@@ -1907,9 +1993,11 @@
                         android:src="@drawable/zyprexa"
                         tools:ignore="ImageContrastCheck" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                                       <TextView
+                        android:layout_width="103dp"
+                        android:layout_height="30dp"
+                        android:singleLine="true"
+                        android:ellipsize="end"
                         android:background="@drawable/cardborderhome"
                         android:fontFamily="@font/poppins_mediumbb"
                         android:gravity="center"

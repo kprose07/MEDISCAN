@@ -230,4 +230,33 @@
     </item>
 
 </style>
+    <style name="medication_">
+
+        <item name="android:textSize">
+            20sp
+        </item>
+
+        <item name="android:letterSpacing">
+            -0.01
+        </item>
+
+        <item name="android:textColor">
+            #E80C0B
+        </item>
+
+    </style><style name="medicationtitle">
+
+    <item name="android:textSize">
+        20sp
+    </item>
+
+    <item name="android:letterSpacing">
+        -0.01
+    </item>
+
+    <item name="android:textColor">
+        #E80C0B
+    </item>
+
+</style>
 </resources>

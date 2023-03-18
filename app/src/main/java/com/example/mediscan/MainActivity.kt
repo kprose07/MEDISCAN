@@ -1,5 +1,6 @@
 package com.example.mediscan
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -19,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         val pillsdFragment = PillsFragment()
         val savedFragment = SavedFragment()
         val profileFragment = ProfileFragment()
-
+        val resultsFragment = ResultsFragment()
 
         //Sets Home Screen
         setCurrentFragment(homeFragment)
@@ -32,7 +33,10 @@ class MainActivity : AppCompatActivity() {
                     Log.i(tag,"Home Selected")
                 }
                 R.id.pills ->{
-                    setCurrentFragment(pillsdFragment)
+                    setCurrentFragment(resultsFragment)
+                   /* val intent = Intent(this, Results::class.java)
+                    startActivity(intent)
+                    finish()*/
                     Log.i(tag,"Pills Selected")
                 }
                 R.id.saved ->{

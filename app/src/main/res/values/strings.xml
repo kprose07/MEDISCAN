@@ -58,12 +58,12 @@
 
     <!--Results -->
     <string name="names_for_t">Names for this medication:</string>
-    <string name="summary">Summary</string>
+    <string name="accordtitle">TBA</string>
     <string name="omeprazole_">Omeprazole is used to treat certain stomach and esophagus problems (such as acid reflux, ulcers). It works by decreasing the amount of acid your stomach makes. It relieves symptoms such as heartburn, difficulty swallowing, and cough. This medicati ...</string>
-    <string name="describe">Describe....</string>
+    <string name="describe">Please Select a medication....</string>
     <string name="brand_names">Brand Names:</string>
     <string name="tirzepatide">Tirzepatide injection</string>
     <string name="generic_nam">Generic Name:</string>
     <string name="mounjaros">MOUNJARO</string>
-
+    <string name="medicationtitle">Medication:</string>
 </resources>
