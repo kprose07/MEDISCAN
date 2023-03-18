@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
-    tools:context=".Results">
+    android:background="#FFFFFF">
 
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
+
         <TextView
             android:id="@+id/names_for_t"
             android:layout_width="302dp"
@@ -18,7 +18,7 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_marginStart="26dp"
-            android:layout_marginTop="54dp"
+            android:layout_marginTop="57dp"
             android:fontFamily="@font/poppins"
             android:gravity="top"
             android:lineSpacingExtra="10sp"
@@ -30,71 +30,98 @@
             android:id="@+id/brand_names"
             android:layout_width="112dp"
             android:layout_height="21dp"
-            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="29dp"
-            android:layout_marginTop="96dp"
+            android:layout_marginStart="29dp"
+            android:layout_marginTop="100dp"
             android:fontFamily="@font/poppins_extrabold"
             android:gravity="top"
             android:lineSpacingExtra="0sp"
             android:text="@string/brand_names"
             android:textAppearance="@style/brand_names" />
+
         <TextView
             android:id="@+id/tirzepatide"
             android:layout_width="159dp"
             android:layout_height="21dp"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="141dp"
+            android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="96dp"
-            android:text="@string/tirzepatide"
-            android:textAppearance="@style/tirzepatide"
-            android:lineSpacingExtra="0sp"
+            android:layout_marginStart="141dp"
+            android:layout_marginTop="100dp"
             android:gravity="top"
-            android:paddingLeft="5dp"
-            />
+            android:lineSpacingExtra="0sp"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:text="@string/tirzepatide"
+            android:textAppearance="@style/tirzepatide" />
 
         <TextView
             android:id="@+id/generic_nam"
             android:layout_width="119dp"
             android:layout_height="23dp"
-            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="29dp"
-            android:layout_marginTop="125dp"
+            android:layout_marginStart="29dp"
+            android:layout_marginTop="129dp"
             android:fontFamily="@font/poppins_extrabold"
             android:gravity="top"
             android:lineSpacingExtra="0sp"
             android:text="@string/generic_nam"
             android:textAppearance="@style/generic_nam" />
+
         <TextView
             android:id="@+id/mounjaro"
             android:layout_width="171dp"
             android:layout_height="23dp"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="148dp"
+            android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="125dp"
-            android:text="@string/mounjaros"
-            android:textAppearance="@style/mounjaros"
-            android:lineSpacingExtra="0sp"
+            android:layout_marginStart="148dp"
+            android:layout_marginTop="129dp"
             android:gravity="top"
-            />
+            android:lineSpacingExtra="0sp"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:text="@string/mounjaros"
+            android:textAppearance="@style/mounjaros" />
 
         <TextView
             android:id="@+id/medication_"
             android:layout_width="122dp"
             android:layout_height="35dp"
-            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="26dp"
-            android:layout_marginTop="156dp"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="160dp"
             android:fontFamily="@font/poppins_mediumbb"
             android:gravity="top"
             android:lineSpacingExtra="10sp"
             android:text="@string/medicationtitle"
             android:textAppearance="@style/medicationtitle"
             android:translationY="-5sp" />
+
+        <View
+            android:id="@+id/pillrs"
+            android:layout_width="59dp"
+            android:layout_height="59dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="203dp"
+            android:background="@drawable/pillr" />
+
+        <TextView
+            android:id="@+id/medtitr"
+            android:layout_width="139dp"
+            android:layout_height="37dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="97dp"
+            android:layout_marginTop="210dp"
+            android:gravity="center_vertical"
+            android:lineSpacingExtra="18sp"
+            android:text="@string/medtitr"
+            android:textAppearance="@style/medtitr" />
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
@@ -104,8 +131,24 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="0dp"
-            android:layout_marginTop="299dp"
+            android:layout_marginTop="279dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        <TextView
+            android:id="@+id/expand_al"
+            android:layout_width="91dp"
+            android:layout_height="19dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="254dp"
+            android:layout_marginEnd="15dp"
+            android:fontFamily="@font/poppins"
+            android:lineSpacingExtra="18sp"
+            android:singleLine="true"
+
+
+            android:text="@string/expand_al"
+            android:textAppearance="@style/collapse_al" />
     </RelativeLayout>
 
 </LinearLayout>
