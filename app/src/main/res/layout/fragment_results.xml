@@ -123,6 +123,26 @@
             android:textAppearance="@style/medtitr" />
 
 
+
+        <TextView
+            android:id="@+id/expand_al"
+            android:layout_width="91dp"
+            android:layout_height="19dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="254dp"
+            android:layout_marginEnd="15dp"
+            android:clickable="true"
+
+            android:fontFamily="@font/poppins"
+            android:lineSpacingExtra="18sp"
+
+
+            android:singleLine="true"
+            android:text="@string/expand_al"
+            android:textAppearance="@style/collapse_al"
+            tools:ignore="TouchTargetSizeCheck" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="wrap_content"
@@ -134,21 +154,16 @@
             android:layout_marginTop="279dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
-        <TextView
-            android:id="@+id/expand_al"
-            android:layout_width="91dp"
-            android:layout_height="19dp"
+        <Button
+            android:id="@+id/exb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="254dp"
-            android:layout_marginEnd="15dp"
-            android:fontFamily="@font/poppins"
-            android:lineSpacingExtra="18sp"
-            android:singleLine="true"
+            android:layout_marginStart="215dp"
+            android:layout_marginTop="203dp"
+            android:text="Button" />
 
-
-            android:text="@string/expand_al"
-            android:textAppearance="@style/collapse_al" />
     </RelativeLayout>
 
 </LinearLayout>
