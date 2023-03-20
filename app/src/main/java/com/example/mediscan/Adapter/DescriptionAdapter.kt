@@ -1,15 +1,15 @@
 package com.example.mediscan.Adapter
 
-import android.content.res.Resources
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
+import android.widget.Button
 import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mediscan.Accordresults
 import com.example.mediscan.R
+import kotlinx.android.synthetic.main.fragment_results.*
 
 class DescriptionAdapter(val descriptionList: List<Accordresults>) :
 RecyclerView.Adapter<DescriptionAdapter.AccordianVH>(){
@@ -19,8 +19,6 @@ RecyclerView.Adapter<DescriptionAdapter.AccordianVH>(){
        // var linearlayout : LinearLayout = itemView.findViewById(R.id.linear)
         var expandablelayout : RelativeLayout = itemView.findViewById(R.id.expandrect)
         var dropdown : View = itemView.findViewById(R.id.expand)
-        //val all: TextView =  itemView.findViewById(R.id.expand_al)
-
     }
 
 
@@ -57,11 +55,6 @@ RecyclerView.Adapter<DescriptionAdapter.AccordianVH>(){
             accordresults.expandable = !accordresults.expandable
             notifyItemChanged(position)
         }
-        /*
-        holder.all.setOnClickListener{
-           exa.expall = !exa.expall
-        }*/
-
 
     }
 

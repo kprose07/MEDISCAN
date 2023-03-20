@@ -20,8 +20,9 @@ import kotlinx.android.synthetic.main.row.view.*
 
 class ResultsFragment : Fragment() {
     val descriptionList = ArrayList<Accordresults>()
-    var filt = false;
-    var filticon = false;
+    var filt: Boolean = false
+    var filticon: Boolean = false
+    var switch  = true
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -31,6 +32,13 @@ class ResultsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+       /* val btb = view.findViewById<Button>(R.id.exb)
+
+        btb.setOnClickListener { view ->
+            filt = !filt
+            filticon = !filticon
+        }
+*/
         //Accordian Data
         initData()
         setRecyclerView()
@@ -41,31 +49,13 @@ class ResultsFragment : Fragment() {
     private fun setRecyclerView() {
         val descriptionAdapter = DescriptionAdapter(descriptionList)
         recyclerView.adapter = descriptionAdapter
+
+
         recyclerView.setHasFixedSize(true)
 
     }
-  fun filter() {
-      filt = true
-      filticon = true
-      var switch = true
-            exb.setOnClickListener {
-                if (switch) {
-                    expand_al.setText(getString(R.string.collapse_al))
-                    filt = true
-                    filticon = true
-                    switch = false
 
-                    // recyclerView.expandrect.visibility = View.VISIBLE
-                } else {
-                    expand_al.setText(R.string.expand_al)
-                    filt = false
-                    filticon = false
-                    switch = true
-                    // recyclerView.expandrect.visibility = View.GONE
-                }
-            }
 
-    }
     private fun initData() {
         filter()
         descriptionList.add(
@@ -112,5 +102,29 @@ class ResultsFragment : Fragment() {
         )
     }
 
+    fun toggleAll(){
 
+        if (switch) {
+            expand_al.setText(getString(R.string.collapse_al))
+            switch = false
+
+        } else {
+            expand_al.setText(R.string.expand_al)
+            switch = true
+
+        }
+
+        for(describe in descriptionList){
+            describe.expandable = !switch
+        }
+        setRecyclerView()
+
+    }
+
+    fun filter() {
+       expand_al.setOnClickListener {
+                toggleAll()
+        }
+
+    }
 }
