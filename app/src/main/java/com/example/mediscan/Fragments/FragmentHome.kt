@@ -109,11 +109,13 @@ class HomeFragment : androidx.fragment.app.Fragment() {
     private fun loadDataFromDatabase() {
         var database = FirebaseDatabase.getInstance()
         val myRef = database.getReference("medicines")
+        //Toast.makeText(context,"Data from firebase: $myRef",Toast.LENGTH_LONG).show()
 
         myRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
 
                 for (snapshot in dataSnapshot.children) {
+                   // Toast.makeText(context,"${snapshot.child("name").value.toString()}",Toast.LENGTH_SHORT).show()
                     medicineList.add(
                         Medicine(
                             snapshot.child("name").value.toString(),

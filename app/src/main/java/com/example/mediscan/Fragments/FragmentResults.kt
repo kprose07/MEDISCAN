@@ -20,8 +20,8 @@ import kotlinx.android.synthetic.main.row.view.*
 
 class ResultsFragment : Fragment() {
     val descriptionList = ArrayList<Accordresults>()
-    var filt: Boolean = false
-    var filticon: Boolean = false
+    //var filt: Boolean = true
+    //var filticon: Boolean = true
     var switch  = true
 
     override fun onCreateView(
@@ -32,13 +32,13 @@ class ResultsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-       /* val btb = view.findViewById<Button>(R.id.exb)
+        /* val btb = view.findViewById<Button>(R.id.exb)
 
-        btb.setOnClickListener { view ->
-            filt = !filt
-            filticon = !filticon
-        }
-*/
+         btb.setOnClickListener { view ->
+             filt = !filt
+             filticon = !filticon
+         }
+ */
         //Accordian Data
         initData()
         setRecyclerView()
@@ -60,44 +60,34 @@ class ResultsFragment : Fragment() {
         filter()
         descriptionList.add(
             Accordresults(
-               "Summary",
+                "Summary",
                 "Omeprazole is used to treat certain stomach and esophagus problems (such as acid reflux, ulcers). It works by decreasing the amount of acid your stomach makes. It relieves symptoms such as heartburn, difficulty swallowing, and cough. This medicati ...Omeprazole is used to treat certain stomach and esophagus problems (such as acid reflux, ulcers). It works by decreasing the amount of acid your stomach makes. It relieves symptoms such as heartburn, difficulty swallowing, and cough. This medicati ...",
-                 filt,
-                filticon
-
+                true
             )
 
         )
         descriptionList.add(
             Accordresults(
                 "Medic",
-                "Test loefhporihfpn",
-                filt,
-                filticon
+                "Test loefhporihfpn"
             )
         )
         descriptionList.add(
             Accordresults(
                 "Topic",
-                "Test loefhporihfpn",
-                filt,
-                filticon
+                "Test loefhporihfpn"
             )
         )
         descriptionList.add(
             Accordresults(
                 "Hi",
-                "Test loefhporihfpn",
-                filt,
-                filticon
+                "Test loefhporihfpn"
             )
         )
         descriptionList.add(
             Accordresults(
                 "Rose",
-                "Test loefhporihfpn",
-                filt,
-                filticon
+                "Test loefhporihfpn"
             )
         )
     }
@@ -116,14 +106,15 @@ class ResultsFragment : Fragment() {
 
         for(describe in descriptionList){
             describe.expandable = !switch
+            describe.switcharr = !switch
         }
         setRecyclerView()
 
     }
 
     fun filter() {
-       expand_al.setOnClickListener {
-                toggleAll()
+        expand_al.setOnClickListener {
+            toggleAll()
         }
 
     }
