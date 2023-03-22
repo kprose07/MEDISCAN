@@ -19,7 +19,7 @@ import android.widget.SimpleCursorAdapter
 import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.mediscan.Adapter.RecyclerAdapter
-import com.example.mediscan.hideKeyboard
+//import com.example.mediscan.hideKeyboard
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.fragment_home.*
 
@@ -87,7 +87,7 @@ class HomeFragment : androidx.fragment.app.Fragment() {
         searchView.setOnSuggestionListener(object : SearchView.OnSuggestionListener {
             @SuppressLint("Range")
             override fun onSuggestionClick(position: Int): Boolean {
-                hideKeyboard()
+                //hideKeyboard()
 
                 val cursor = searchView.suggestionsAdapter.getItem(position) as Cursor
                 val selection =
@@ -109,11 +109,13 @@ class HomeFragment : androidx.fragment.app.Fragment() {
     private fun loadDataFromDatabase() {
         var database = FirebaseDatabase.getInstance()
         val myRef = database.getReference("medicines")
+        //Toast.makeText(context,"Data from firebase: $myRef",Toast.LENGTH_LONG).show()
 
         myRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
 
                 for (snapshot in dataSnapshot.children) {
+                   // Toast.makeText(context,"${snapshot.child("name").value.toString()}",Toast.LENGTH_SHORT).show()
                     medicineList.add(
                         Medicine(
                             snapshot.child("name").value.toString(),

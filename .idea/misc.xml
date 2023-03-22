@@ -4,15 +4,22 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/khayl/AndroidStudioProjects/MediScan/app/src/main/res/drawable-v24/cardborderhomeimg.xml" value="0.1595" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/MediScan/app/src/main/res/drawable-v24/selector.xml" value="0.1765" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/MediScan/app/src/main/res/drawable-v24/selectorarrow.xml" value="0.1765" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/MediScan/app/src/main/res/drawable/accordianheader.xml" value="0.173" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/MediScan/app/src/main/res/drawable/cardborderhome.xml" value="0.1995" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/MediScan/app/src/main/res/drawable/drope.xml" value="0.205" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/MediScan/app/src/main/res/drawable/ic_downarrow.xml" value="0.1765" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/MediScan/app/src/main/res/drawable/ic_home.xml" value="0.2555" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/MediScan/app/src/main/res/drawable/ic_homebig.xml" value="0.1765" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/MediScan/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/MediScan/app/src/main/res/drawable/ic_logomd.xml" value="0.194" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/MediScan/app/src/main/res/drawable/ic_pills.xml" value="0.1765" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/MediScan/app/src/main/res/drawable/ic_rectangle_1.xml" value="0.1" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/MediScan/app/src/main/res/drawable/ic_rectangle_3.xml" value="0.194" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/MediScan/app/src/main/res/drawable/ic_search.xml" value="0.121" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/MediScan/app/src/main/res/drawable/ic_uparrow.xml" value="0.1765" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/MediScan/app/src/main/res/drawable/pillr.xml" value="0.1765" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/MediScan/app/src/main/res/drawable/pl.xml" value="0.194" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/MediScan/app/src/main/res/drawable/rectangle_1.xml" value="0.1" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/MediScan/app/src/main/res/drawable/rectanglebottom.xml" value="0.2555" />
@@ -31,14 +38,15 @@
         <entry key="..\:/Users/khayl/AndroidStudioProjects/MediScan/app/src/main/res/layout/activity_main.xml" value="0.536" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/MediScan/app/src/main/res/layout/activity_results.xml" value="0.536" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/MediScan/app/src/main/res/layout/activity_splash_screen.xml" value="0.4" />
-        <entry key="..\:/Users/khayl/AndroidStudioProjects/MediScan/app/src/main/res/layout/fragment_home.xml" value="0.136" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/MediScan/app/src/main/res/layout/fragment_home.xml" value="0.2" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/MediScan/app/src/main/res/layout/fragment_homegrid.xml" value="0.152" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/MediScan/app/src/main/res/layout/fragment_pillsd.xml" value="0.2" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/MediScan/app/src/main/res/layout/fragment_profile.xml" value="0.1716485507246377" />
-        <entry key="..\:/Users/khayl/AndroidStudioProjects/MediScan/app/src/main/res/layout/fragment_results.xml" value="0.8955223880597015" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/MediScan/app/src/main/res/layout/fragment_results.xml" value="0.6" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/MediScan/app/src/main/res/layout/fragment_saved.xml" value="0.1716485507246377" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/MediScan/app/src/main/res/layout/medicine_layout.xml" value="0.4593253968253968" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/MediScan/app/src/main/res/layout/result.xml" value="0.27875" />
-        <entry key="..\:/Users/khayl/AndroidStudioProjects/MediScan/app/src/main/res/layout/row.xml" value="0.536" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/MediScan/app/src/main/res/layout/row.xml" value="0.72" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/MediScan/app/src/main/res/layout/splash_screen.xml" value="0.10400000000000001" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/MediScan/app/src/main/res/menu/bottom_navbar.xml" value="0.25" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/MediScan/app/src/main/res/mipmap-anydpi-v26/mlogo.xml" value="0.1195" />
