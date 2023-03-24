@@ -12,7 +12,7 @@
         <View
             android:id="@+id/rectangle_narrow"
             android:layout_width="wrap_content"
-            android:layout_height="56dp"
+            android:layout_height="50dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_marginStart="0dp"
