@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
                     Log.i(tag,"Home Selected")
                 }
                 R.id.pills ->{
-                    setCurrentFragment(resultsFragment)
+                    setCurrentFragment(pillsdFragment)
                    /* val intent = Intent(this, Results::class.java)
                     startActivity(intent)
                     finish()*/

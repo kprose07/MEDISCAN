@@ -56,6 +56,11 @@
     <string name="zyprexa">Zyprexa Relprevv</string>
     <string name="lily_medication">Lily Medication</string>
 
+    <!-- Narrow Down Search -->
+    <string name="summary">Summary</string>
+    <string name="medical_she">Medical Sheet Categories</string>
+
+
     <!--Results -->
     <string name="names_for_t">Names for this medication:</string>
     <string name="accordtitle">TBA</string>
