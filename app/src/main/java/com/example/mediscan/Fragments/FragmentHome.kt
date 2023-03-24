@@ -22,6 +22,7 @@ import com.example.mediscan.Adapter.RecyclerAdapter
 //import com.example.mediscan.hideKeyboard
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.fragment_pillsd.*
 
 class HomeFragment : androidx.fragment.app.Fragment() {
 

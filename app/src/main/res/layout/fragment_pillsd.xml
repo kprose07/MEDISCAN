@@ -1,28 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="#FFFFFF">
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <ImageView
-            android:id="@+id/iv_pillsd"
-            android:src="@drawable/ic_pills"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_centerInParent="true"/>
+        android:layout_height="wrap_content">
 
+        <View
+            android:id="@+id/rectangle_narrow"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/narrowrect" />
         <SearchView
             android:id="@+id/pillsearch"
             android:layout_width="313dp"
             android:layout_height="56dp"
-            android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="15dp"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="81dp"
-            android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
+            android:background="@drawable/searchroundbox"
             android:fontFamily="@font/poppins_mediumbb"
             android:iconifiedByDefault="false"
             android:padding="4dp"
@@ -34,16 +38,44 @@
 
         <TextView
             android:id="@+id/medicine"
-            android:layout_width="322.52dp"
-            android:layout_height="24.68dp"
-            android:layout_alignParentLeft="true"
+            android:layout_width="117dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="false"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="137dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="84dp"
+            android:layout_marginTop="161dp"
             android:fontFamily="@font/poppins_bold"
-            android:gravity="center_horizontal|top"
             android:lineSpacingExtra="-2sp"
             android:text="@string/medicine"
             android:textAppearance="@style/medicine" />
+
+        <TextView
+            android:id="@+id/medical_she"
+            android:layout_width="wrap_content"
+            android:layout_height="16dp"
+            android:layout_alignParentLeft="false"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="11dp"
+            android:layout_marginTop="187dp"
+            android:fontFamily="@font/poppins_light_italic"
+            android:gravity="center_horizontal"
+            android:lineSpacingExtra="-1sp"
+            android:text="@string/medical_she"
+            android:textAppearance="@style/medical_she" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/narrow_down_recycler"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="false"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="219dp"
+            tools:itemCount="17"
+            tools:listitem="@layout/narrow_card_layout" />
     </RelativeLayout>
-</FrameLayout>
+</ScrollView>

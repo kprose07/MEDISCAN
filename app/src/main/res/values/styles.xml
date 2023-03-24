@@ -289,4 +289,8 @@
         </item>
 
     </style>
+    <style name="medical_she">
+        <item name="android:textSize">11sp</item>
+        <item name="android:textColor">#E80C0B</item>
+    </style>
 </resources>
