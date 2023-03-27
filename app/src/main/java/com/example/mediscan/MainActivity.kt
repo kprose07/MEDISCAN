@@ -34,9 +34,6 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.pills ->{
                     setCurrentFragment(pillsdFragment)
-                   /* val intent = Intent(this, Results::class.java)
-                    startActivity(intent)
-                    finish()*/
                     Log.i(tag,"Pills Selected")
                 }
                 R.id.saved ->{
