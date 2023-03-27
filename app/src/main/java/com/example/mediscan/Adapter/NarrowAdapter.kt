@@ -38,13 +38,23 @@ class NarrowAdapter(private var narrow: List<NarrowDownSearch>) :
 
         val itemTitle: TextView = itemView.findViewById(R.id.nsc_title)
         val itemImage: ImageView = itemView.findViewById(R.id.nsc_image)
-
+        init {
+            itemView.setOnClickListener { v: View ->
+                // TODO: Launch next screen for the medicines
+                val position: Int = adapterPosition
+                Toast.makeText(
+                    itemView.context,
+                    "You clicked on item # ${position + 1}",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        }
 
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.narrow_card_layout, parent, false)
-        return ViewHolder(v)
+        val vn = LayoutInflater.from(parent.context).inflate(R.layout.narrow_card_layout, parent, false)
+        return ViewHolder(vn)
 
 
     }
@@ -53,10 +63,17 @@ class NarrowAdapter(private var narrow: List<NarrowDownSearch>) :
         holder.itemTitle.text = narrow[position].title
         // TODO: what to look at for hash map
         NarrowImageMap[narrow[position].title]?.let { holder.itemImage.setImageResource(it) }
+
     }
 
     override fun getItemCount(): Int {
         return narrow.size
     }
+    override fun getItemId(position: Int): Long {
+        return position.toLong()
+    }
 
+    override fun getItemViewType(position: Int): Int {
+        return position
+    }
 }

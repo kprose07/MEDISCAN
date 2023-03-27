@@ -5,10 +5,10 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import com.google.firebase.database.DatabaseReference
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.mediscan.Adapter.NarrowAdapter
+import com.example.mediscan.Adapter.RecyclerAdapter
 import com.example.mediscan.Data.NarrowDownSearch
 import com.example.mediscan.R
 import com.google.firebase.database.*
@@ -30,13 +30,14 @@ class PillsFragment : androidx.fragment.app.Fragment()  {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        if(narrowList.isEmpty()) {dataBase() }
+        if (narrowList.isEmpty()) {
+            loadDataBase()
+        }
         narrow_down_recycler.layoutManager = GridLayoutManager(activity, 3)
         narrow_down_recycler.adapter = NarrowAdapter(narrowList)
     }
 
-    private fun dataBase() {
+    private fun loadDataBase() {
         var database = FirebaseDatabase.getInstance()
         val myRef = database.getReference("narrow_search")
 
