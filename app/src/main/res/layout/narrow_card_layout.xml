@@ -26,7 +26,7 @@
             tools:ignore="ImageContrastCheck" />
 
         <TextView
-            android:id="@+id/nsc_title"
+            android:id="@+id/nsce_title"
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:background="@drawable/narrow_text"

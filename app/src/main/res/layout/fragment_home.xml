@@ -94,13 +94,13 @@
             android:layout_marginBottom="8dp"
             android:fontFamily="@font/poppins_mediumbb"
             android:iconifiedByDefault="false"
+            android:inputType="textNoSuggestions"
             android:padding="4dp"
             android:queryBackground="@null"
             android:queryHint="Enter Medicine Name"
             android:searchIcon="@drawable/ic_search"
             android:textColorHint="#A6080C2F"
             android:textSize="14sp"
-            android:inputType="textNoSuggestions"
             app:queryBackground="@null" />
 
         <androidx.constraintlayout.widget.ConstraintLayout

@@ -75,4 +75,14 @@
     <string name="collapse_al"><u>Collapse All</u></string>
     <string name="expand_al"><u>Expand All</u></string>
 
+    <!-- Saved Page -->
+    <string name="recent"><i>Recents</i></string>
+    <string name="recmedname">MOUNJARO</string>
+    <string name="rec_medi">Search\nMedication</string>
+    <string name="saved">Saved Medicines</string>
+    <string name="savedmore">Save More</string>
+    <string name="savedcardtext">MOUNJARO</string>
+    <string name="spnote">MOUNJARO</string>
+    <string name="special">Special Notes</string>
+    <string name="specialnote">Add Note</string>
 </resources>

@@ -66,14 +66,33 @@
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/drawable/narrow_image.xml" value="0.1815" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/drawable/narrow_text.xml" value="0.1815" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/drawable/narrowrect.xml" value="0.2" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/drawable/reccentcard.xml" value="0.1835" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/drawable/reccentcardbot.xml" value="0.1835" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/drawable/reccentcardnull.xml" value="0.1" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/drawable/reccentcardtop.xml" value="0.2" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/drawable/reccentemptycardtop.xml" value="0.2" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/drawable/savedbg.xml" value="0.211" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/drawable/savedcardbgfill.xml" value="0.211" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/drawable/savedemptycardtop.xml" value="0.211" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/drawable/searchroundbox.xml" value="0.1815" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/font/poppins_mediumbb.xml" value="0.24427083333333333" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/activity_main.xml" value="0.2140625" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/fragment_home.xml" value="0.176" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/fragment_homegrid.xml" value="0.2210144927536232" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/fragment_pillsd.xml" value="0.264" />
-        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/fragment_saved.xml" value="0.25" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/fragment_profile.xml" value="0.25" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/fragment_results.xml" value="0.175" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/fragment_saved.xml" value="0.264" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/medicine_layout.xml" value="0.2210144927536232" />
-        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/narrow_card_layout.xml" value="0.6" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/narrow_card_layout.xml" value="0.536" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/notes_card.xml" value="0.6" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/reccentEmpty_card.xml" value="0.25" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/reccent_card.xml" value="0.8800000000000001" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/reccent_empty_card.xml" value="0.72" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/row.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/saved_card.xml" value="0.536" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/suggestion_item_layout.xml" value="0.25" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/menu/bottom_navbar.xml" value="0.2140625" />
       </map>
     </option>
   </component>
