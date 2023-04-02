@@ -7,7 +7,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
 
         <View
@@ -27,7 +27,7 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_marginStart="17dp"
-            android:layout_marginTop="77dp"
+            android:layout_marginTop="67dp"
             android:fontFamily="@font/poppins_mediumbb"
             android:gravity="top"
             android:lineSpacingExtra="10sp"
@@ -37,11 +37,13 @@
 
         <HorizontalScrollView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="115dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="135dp">
+            android:layout_marginTop="115dp"
+            android:layout_marginEnd="16dp">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recent_medication"
@@ -50,6 +52,118 @@
                 android:orientation="horizontal"
                 tools:itemCount="17"
                 tools:listitem="@layout/reccent_card" />
+        </HorizontalScrollView>
+
+        <View
+            android:id="@+id/savedrect"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="250dp"
+            android:background="@drawable/narrowrect" />
+
+        <TextView
+            android:id="@+id/savedtext"
+            android:layout_width="311dp"
+            android:layout_height="35dp"
+            android:layout_alignTop="@+id/savedrect"
+            android:layout_alignBottom="@+id/savedrect"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="0dp"
+            android:fontFamily="@font/poppins_mediumbb"
+            android:gravity="center_vertical"
+            android:lineSpacingExtra="10sp"
+            android:text="@string/saved"
+            android:textAppearance="@style/saved"
+            android:translationY="-5sp" />
+
+        <View
+            android:id="@+id/savedbg"
+            android:layout_width="wrap_content"
+            android:layout_height="197.22dp"
+            android:layout_below="@+id/savedrect"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/savedbg" />
+
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="120dp"
+            android:layout_below="@+id/savedrect"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="46dp"
+            android:layout_marginEnd="16dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/saved_medication"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                tools:itemCount="17"
+                tools:listitem="@layout/saved_card" />
+        </HorizontalScrollView>
+
+        <View
+            android:id="@+id/specialrect"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_below="@+id/savedbg"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/narrowrect" />
+
+        <TextView
+            android:id="@+id/specialt"
+            android:layout_width="311dp"
+            android:layout_height="35dp"
+            android:layout_below="@+id/savedbg"
+            android:layout_alignBottom="@+id/specialrect"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="0dp"
+            android:fontFamily="@font/poppins_mediumbb"
+            android:gravity="center_vertical"
+            android:lineSpacingExtra="10sp"
+            android:text="@string/special"
+            android:textAppearance="@style/special"
+            android:translationY="-5sp" />
+
+        <View
+            android:id="@+id/special"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_below="@+id/specialrect"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/savedbg" />
+
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="120dp"
+            android:layout_below="@+id/specialrect"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="16dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/notes_medication"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                tools:itemCount="17"
+                tools:listitem="@layout/notes_card" />
         </HorizontalScrollView>
 
     </RelativeLayout>

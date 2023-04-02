@@ -36,7 +36,7 @@ class NarrowAdapter(private var narrow: List<NarrowDownSearch>) :
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        val itemTitle: TextView = itemView.findViewById(R.id.nsc_title)
+        val itemTitle: TextView = itemView.findViewById(R.id.nsce_title)
         val itemImage: ImageView = itemView.findViewById(R.id.nsc_image)
         init {
             itemView.setOnClickListener { v: View ->

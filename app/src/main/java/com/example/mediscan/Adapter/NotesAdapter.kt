@@ -5,43 +5,46 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.mediscan.Data.Notes
 import com.example.mediscan.Data.Recents
+import com.example.mediscan.Data.Saved
 import com.example.mediscan.R
 
-class RecentsAdapter(private var recentList: List<Recents>) :
-    RecyclerView.Adapter<RecentsAdapter.ViewHolder>() {
+class NotesAdapter(private var notesList: ArrayList<Notes>) :
+    RecyclerView.Adapter<NotesAdapter.ViewHolder>() {
 
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        var recmedtext : TextView = itemView.findViewById(R.id.nsc_title)
-        var filledcard : LinearLayout = itemView.findViewById(R.id.rlin)
-        var emptycard :  LinearLayout = itemView.findViewById(R.id.emptylin)
+        var notesmedtext : TextView = itemView.findViewById(R.id.noteid)
+        var notesfilledcard : RelativeLayout = itemView.findViewById(R.id.notesfill)
+        var notesmptycard :  LinearLayout = itemView.findViewById(R.id.emptynotes)
 
 
 
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.reccent_card, parent, false)
+        val v = LayoutInflater.from(parent.context).inflate(R.layout.notes_card, parent, false)
         return ViewHolder(v)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-        var isEmptyCard: Boolean = recentList[position].isrEmpty
+        var isEmptyCard: Boolean = notesList[position].isnEmpty
 
         fun changeToEmptyCard(){
-            holder.emptycard.visibility = View.VISIBLE
-            holder.filledcard.visibility = View.GONE
+            holder.notesmptycard.visibility = View.VISIBLE
+            holder.notesfilledcard.visibility = View.GONE
         }
         fun changeToFilled(){
-            holder.recmedtext.text = recentList[position].reccentMedicine
-            holder.filledcard.visibility = View.VISIBLE
-            holder.emptycard.visibility = View.GONE
+            holder.notesmedtext.text = notesList[position].notestitle
+            holder.notesfilledcard.visibility = View.VISIBLE
+            holder.notesmptycard.visibility = View.GONE
         }
         fun checktog(){
            if (isEmptyCard) {
@@ -50,13 +53,13 @@ class RecentsAdapter(private var recentList: List<Recents>) :
                changeToFilled()
            }
         }
-        for(rec in recentList) {
+        for(rec in notesList) {
             checktog()
         }
     }
 
     override fun getItemCount(): Int {
-        return recentList.size
+        return notesList.size
     }
 
 }

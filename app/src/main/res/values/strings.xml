@@ -79,4 +79,10 @@
     <string name="recent"><i>Recents</i></string>
     <string name="recmedname">MOUNJARO</string>
     <string name="rec_medi">Search\nMedication</string>
+    <string name="saved">Saved Medicines</string>
+    <string name="savedmore">Save More</string>
+    <string name="savedcardtext">MOUNJARO</string>
+    <string name="spnote">MOUNJARO</string>
+    <string name="special">Special Notes</string>
+    <string name="specialnote">Add Note</string>
 </resources>
