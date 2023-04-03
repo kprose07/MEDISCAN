@@ -9,6 +9,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/narrow_down_recycler"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="false"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="219dp"
+            tools:itemCount="17"
+            tools:listitem="@layout/narrow_card_layout" />
+
         <View
             android:id="@+id/rectangle_narrow"
             android:layout_width="wrap_content"
@@ -66,17 +79,5 @@
             android:text="@string/medical_she"
             android:textAppearance="@style/medical_she" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/narrow_down_recycler"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="false"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-
-            android:layout_marginStart="3dp"
-            android:layout_marginTop="219dp"
-            tools:itemCount="17"
-            tools:listitem="@layout/narrow_card_layout" />
     </RelativeLayout>
 </ScrollView>

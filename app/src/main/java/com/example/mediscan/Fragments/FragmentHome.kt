@@ -18,6 +18,7 @@ import android.widget.SimpleCursorAdapter
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.mediscan.Adapter.NarrowAdapter
 import com.example.mediscan.Adapter.RecyclerAdapter
 import com.example.mediscan.Data.Communicator
 import com.example.mediscan.Data.Medicine
@@ -26,11 +27,12 @@ import com.example.mediscan.hideKeyboard
 import com.google.firebase.database.*
 import com.google.firebase.firestore.auth.User
 import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.fragment_pillsd.*
 import kotlinx.android.synthetic.main.fragment_results.*
 
 
 class HomeFragment : androidx.fragment.app.Fragment() {
-
+    private lateinit var database: DatabaseReference
     private val TAG = "Home Fragment"
     private val medicineSuggestions = mutableListOf<String>()
 
@@ -45,8 +47,7 @@ class HomeFragment : androidx.fragment.app.Fragment() {
     ): View {
         val rootView = inflater.inflate(R.layout.fragment_home, container, false)
         comm = requireActivity() as Communicator
-
-        loadDataFromDatabase()
+        if (medicineList.isEmpty()) loadDataFromDatabase()
         return rootView
     }
 
@@ -54,7 +55,6 @@ class HomeFragment : androidx.fragment.app.Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         hideKeyboard()
         super.onViewCreated(view, savedInstanceState)
-        loadDataFromDatabase()
         val medicineListAdapter = RecyclerAdapter(medicineList, comm)
         recycler_view.layoutManager = GridLayoutManager(activity, 3)
         recycler_view.adapter = medicineListAdapter
@@ -121,23 +121,24 @@ class HomeFragment : androidx.fragment.app.Fragment() {
 
 
     private fun loadDataFromDatabase()  {
-        val database = FirebaseDatabase.getInstance()
-        val myRef = database.getReference("medicines")
+        database = FirebaseDatabase.getInstance().getReference("medicines")
+
         //Toast.makeText(context,"Data from firebase: $myRef",Toast.LENGTH_LONG).show()
 
-        myRef.addValueEventListener(object : ValueEventListener {
+        database.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
 
-                for (snapshot in dataSnapshot.children) {
+                for (medsnapshot in dataSnapshot.children) {
                     // Toast.makeText(context,"${snapshot.child("name").value.toString()}",Toast.LENGTH_SHORT).show()
                     medicineList.add(
                         Medicine(
-                            snapshot.child("name").value.toString(),
-                            snapshot.child("img_url").value.toString(),
-                            snapshot.child("common_presc").value.toString()
+                            medsnapshot.child("name").value.toString(),
+                            medsnapshot.child("img_url").value.toString(),
+                            medsnapshot.child("common_presc").value.toString()
                         )
                     )
                 }
+                recycler_view.adapter = RecyclerAdapter(medicineList,comm)
                 for (medicine in medicineList)
                     medicineSuggestions.add(medicine.name)
             }

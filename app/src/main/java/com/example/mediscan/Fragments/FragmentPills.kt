@@ -45,6 +45,7 @@ class PillsFragment : Fragment()  {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        //if (narrowList.isEmpty()) loadDataBase()
        // if (narrowList.isEmpty()) loadDataBase()
         val mdName:TextView = view.findViewById(R.id.medicine)
         mdName.text = medicineName
@@ -113,16 +114,17 @@ class PillsFragment : Fragment()  {
     }
 
     private fun loadDataBase() {
-        val database = FirebaseDatabase.getInstance()
-        val myRef = database.getReference("narrow_search")
+         database = FirebaseDatabase.getInstance().getReference("narrow_search")
+        //val myRef = database.getReference("narrow_search")
         //Toast.makeText(context,"Data from firebase: $myRef",Toast.LENGTH_LONG).show()
 
-        myRef.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
+        database.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
 
-                for (snapshot in dataSnapshot.children) {
+                for (medsnapshot in snapshot.children) {
                     // Toast.makeText(context,"${snapshot.child("name").value.toString()}",Toast.LENGTH_SHORT).show()
                     narrowList.add(
+
                         NarrowDownSearch(
                             snapshot.child("title").value.toString(),
                             snapshot.child("img_url").value.toString(),
@@ -130,6 +132,7 @@ class PillsFragment : Fragment()  {
                         )
                     )
                 }
+                narrow_down_recycler.adapter = NarrowAdapter(narrowList)
                 for (narrowsearch in narrowList)
                     narrowSuggestions.add(narrowsearch.title)
             }
