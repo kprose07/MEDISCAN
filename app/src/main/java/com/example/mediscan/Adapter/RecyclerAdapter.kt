@@ -5,15 +5,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.example.mediscan.Data.Communicator
 import com.example.mediscan.Data.Medicine
 import com.example.mediscan.R
-import java.util.HashMap
 
 
-class RecyclerAdapter(private var medicines: List<Medicine>) :
+class RecyclerAdapter(private var medicines: List<Medicine>, communicator: Communicator) :
     RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
+
+    private val comm:Communicator = communicator
 
     // TODO: add the rest of the medicines
     // TODO: what to look at for hash map
@@ -62,7 +63,6 @@ class RecyclerAdapter(private var medicines: List<Medicine>) :
         "Verzenio" to R.drawable.verzenio,
         "Zyprexa" to R.drawable.zyprexa
     )
-
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         val itemTitle: TextView = itemView.findViewById(R.id.md_title)
@@ -72,11 +72,7 @@ class RecyclerAdapter(private var medicines: List<Medicine>) :
             itemView.setOnClickListener { v: View ->
                 // TODO: Launch next screen for the medicines
                 val position: Int = adapterPosition
-                Toast.makeText(
-                    itemView.context,
-                    "You clicked on item # ${position + 1}",
-                    Toast.LENGTH_SHORT
-                ).show()
+                comm.passDataCom(itemTitle.text.toString())
             }
         }
 
