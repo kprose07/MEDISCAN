@@ -41,7 +41,7 @@ class SavedFragment : Fragment() {
     private fun recentdata(){
         recentList.add(
             Recents(
-                "Monjoro",
+                "Rose",
                 1,
                 false
 
@@ -51,7 +51,7 @@ class SavedFragment : Fragment() {
             Recents(
                 "Humilin",
                 1,
-                false
+                true
 
             )
         )
