@@ -40,7 +40,7 @@
 
         <TextView
             android:id="@+id/medicine"
-            android:layout_width="117dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="false"
             android:layout_alignParentTop="true"
@@ -48,6 +48,7 @@
             android:layout_marginStart="84dp"
             android:layout_marginTop="161dp"
             android:fontFamily="@font/poppins_bold"
+            android:justificationMode="inter_word"
             android:lineSpacingExtra="-2sp"
             android:text="@string/medicine"
             android:textAppearance="@style/medicine" />

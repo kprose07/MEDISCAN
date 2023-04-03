@@ -5,10 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
+import com.example.mediscan.Data.Communicator
 import com.example.mediscan.Fragments.*
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), Communicator {
     val tag = "MainActivity"
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -57,6 +59,19 @@ class MainActivity : AppCompatActivity() {
             replace(R.id.fl_wrapper,fragment)
             commit()
         }
+
+    override fun passDataCom(medicineSelected: String) {
+        val bundle = Bundle()
+        bundle.putString("mdSelected", medicineSelected)
+        val transaction = this.supportFragmentManager.beginTransaction()
+        val frag2 = PillsFragment()
+        frag2.arguments = bundle
+
+        transaction.replace(R.id.fl_wrapper, frag2)
+        transaction.addToBackStack(null)
+        transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+        transaction.commit()
+    }
 
 
 }
