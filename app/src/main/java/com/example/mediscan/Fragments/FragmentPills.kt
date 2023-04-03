@@ -10,10 +10,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.CursorAdapter
-import android.widget.SearchView
-import android.widget.SimpleCursorAdapter
-import android.widget.Toast
+import android.widget.*
 import androidx.fragment.app.Fragment
 import com.google.firebase.database.DatabaseReference
 import androidx.recyclerview.widget.GridLayoutManager
@@ -31,6 +28,7 @@ class PillsFragment : Fragment()  {
     private val TAG = "Home Fragment"
     private var narrowList = mutableListOf<NarrowDownSearch>()
     private val narrowSuggestions = mutableListOf<String>()
+    private var medicineName: String? = ""
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -38,7 +36,9 @@ class PillsFragment : Fragment()  {
         savedInstanceState: Bundle?
     ): View?{
         val view = inflater.inflate(R.layout.fragment_pillsd, container,false)
-       if (narrowList.isEmpty()) loadDataBase()
+        Log.i("Data", "${arguments?.getString("mdSelected")}")
+        medicineName = arguments?.getString("mdSelected")
+        if (narrowList.isEmpty()) loadDataBase()
         return view
     }
 
@@ -46,6 +46,10 @@ class PillsFragment : Fragment()  {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         //if (narrowList.isEmpty()) loadDataBase()
+       // if (narrowList.isEmpty()) loadDataBase()
+        val mdName:TextView = view.findViewById(R.id.medicine)
+        mdName.text = medicineName
+
         narrow_down_recycler.layoutManager = GridLayoutManager(activity, 3)
         narrow_down_recycler.adapter = NarrowAdapter(narrowList)
 
@@ -122,9 +126,9 @@ class PillsFragment : Fragment()  {
                     narrowList.add(
 
                         NarrowDownSearch(
-                            medsnapshot.child("title").value.toString(),
-                            medsnapshot.child("img_url").value.toString(),
-                            medsnapshot.child("common_perscribe").value.toString()
+                            snapshot.child("title").value.toString(),
+                            snapshot.child("img_url").value.toString(),
+                            snapshot.child("common_perscribe").value.toString()
                         )
                     )
                 }
