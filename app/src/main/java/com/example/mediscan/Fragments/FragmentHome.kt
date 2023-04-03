@@ -109,7 +109,8 @@ class HomeFragment : androidx.fragment.app.Fragment() {
                 searchView.setQuery(selection, false)
 
                 Toast.makeText(context, "You have selected $selection", Toast.LENGTH_LONG).show()
-                comm.passDataCom(selection)
+                //TODO: fix pass data for search query suggestion
+                comm.passDataCom(selection, "dummy")
                 return true
             }
 
@@ -133,8 +134,8 @@ class HomeFragment : androidx.fragment.app.Fragment() {
                     medicineList.add(
                         Medicine(
                             medsnapshot.child("name").value.toString(),
-                            medsnapshot.child("img_url").value.toString(),
-                            medsnapshot.child("common_presc").value.toString()
+                            medsnapshot.child("common_presc").value.toString(),
+                            medsnapshot.child("id").value.toString()
                         )
                     )
                 }
