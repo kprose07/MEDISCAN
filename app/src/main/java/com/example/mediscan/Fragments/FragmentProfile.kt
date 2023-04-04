@@ -6,11 +6,18 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.mediscan.Adapter.ProfileRemindAdapter
+import com.example.mediscan.Adapter.RecentsAdapter
+import com.example.mediscan.Data.ProfileRemind
+import com.example.mediscan.Data.Recents
 import com.example.mediscan.R
 
 import kotlinx.android.synthetic.main.fragment_profile.*
+import kotlinx.android.synthetic.main.fragment_saved.*
 
 class ProfileFragment : Fragment() {
+    val remindList = ArrayList<ProfileRemind>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -20,10 +27,34 @@ class ProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        iv_profile.setOnClickListener {
-            Toast.makeText(context, "You clicked on the profile image", Toast.LENGTH_SHORT).show()
-        }
+        profile_reminder.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        profile_reminder.adapter = ProfileRemindAdapter(remindList)
+        reminddata()
     }
+    private fun reminddata(){
+        remindList.add(
+            ProfileRemind(
+                "Rose",
+                1,
+                false
 
+            )
+        )
+        remindList.add(
+            ProfileRemind(
+                "Humilin",
+                1,
+                true
+
+            )
+        )
+        remindList.add(
+            ProfileRemind(
+                "Humilin",
+                1,
+                true
+
+            )
+        )
+    }
 }

@@ -40,7 +40,7 @@ class ResultsFragment : Fragment() {
          }
  */
         //Accordian Data
-        initData()
+        if (descriptionList.isEmpty()) initData()
         setRecyclerView()
 
 
