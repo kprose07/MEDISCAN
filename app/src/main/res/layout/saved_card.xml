@@ -6,8 +6,8 @@
     android:layout_width="113dp"
     android:layout_height="107dp"
     android:layout_margin="7dp"
-    android:background="@null"
-    app:cardBackgroundColor="@null"
+    android:background="#F4F0F0"
+    app:cardBackgroundColor="#F4F0F0"
     android:outlineProvider="none">
 
     <RelativeLayout

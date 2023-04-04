@@ -1,16 +1,316 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#C6061339">
+    android:background="#FFFFFF"
+    android:contentDescription="@string/scroll">
+
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       >
+
+        <View
+            android:id="@+id/profilerect"
+            android:layout_width="wrap_content"
+            android:layout_height="184dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="-1dp"
+            android:layout_marginTop="-24dp"
+            android:background="@drawable/profile_top_rect" />
+
+        <TextView
+            android:id="@+id/profiletext"
+            android:layout_width="77dp"
+            android:layout_height="36dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="36dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:gravity="center_horizontal"
+            android:scaleType="centerInside"
+            android:text="@string/profiletext"
+            android:textAppearance="@style/profiletext" />
+
         <ImageView
-            android:id="@+id/iv_profile"
-            android:src="@drawable/ic_profile"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_centerInParent="true"/>
+            android:id="@+id/profile_img"
+            android:layout_width="142dp"
+            android:layout_height="142dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="96dp"
+            android:background="@drawable/profilecircle"
+            android:contentDescription="@string/todo"
+            android:padding="5dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/bri" />
+
+        <Button
+            android:id="@+id/edit_p"
+            android:layout_width="105dp"
+            android:layout_height="30dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="69dp"
+            android:layout_marginTop="247dp"
+            android:background="@drawable/profile_editbutton"
+            android:padding="2dp"
+            android:text="@string/edit"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/set_reminde"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="295dp"
+            android:gravity="center_horizontal|top"
+            android:lineSpacingExtra="10sp"
+            android:text="@string/profile_remind"
+            android:textAppearance="@style/set_remind"
+            android:translationY="-5sp" />
+
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="115dp"
+
+            android:layout_alignParentTop="true"
+
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="330dp"
+            android:layout_marginEnd="16dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/profile_reminder"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                tools:itemCount="17"
+                tools:listitem="@layout/remind_card" />
+        </HorizontalScrollView>
+
+        <View
+            android:id="@+id/icons"
+            android:layout_width="51dp"
+            android:layout_height="411.19dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="41dp"
+            android:layout_marginTop="465dp"
+            android:background="@drawable/profile_icons" />
+
+        <TextView
+            android:id="@+id/profile_name"
+            android:layout_width="59dp"
+            android:layout_height="18dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="117dp"
+            android:layout_marginTop="460dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="top"
+            android:text="@string/profile_name"
+            android:textAppearance="@style/profile_name" />
+
+        <TextView
+            android:id="@+id/profile_name_input"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="117dp"
+            android:layout_marginTop="474dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="top"
+            android:text="@string/profile_name_input"
+            android:textAppearance="@style/profile_name_input" />
+
+        <TextView
+            android:id="@+id/profile_phone"
+            android:layout_width="59dp"
+            android:layout_height="18dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="117dp"
+            android:layout_marginTop="530dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="top"
+            android:text="@string/profile_phone"
+            android:textAppearance="@style/profile_name" />
+
+        <TextView
+            android:id="@+id/profile_phone_input"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="117dp"
+            android:layout_marginTop="544dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="top"
+            android:text="@string/profile_phone_input"
+            android:textAppearance="@style/profile_name_input" />
+
+        <TextView
+            android:id="@+id/profile_email"
+            android:layout_width="59dp"
+            android:layout_height="18dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="117dp"
+            android:layout_marginTop="609dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="top"
+            android:text="@string/profile_email"
+            android:textAppearance="@style/profile_name" />
+
+        <TextView
+            android:id="@+id/profile_email_input"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="117dp"
+            android:layout_marginTop="623dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="top"
+            android:text="@string/profile_email_input"
+            android:textAppearance="@style/profile_name_input" />
+
+        <TextView
+            android:id="@+id/profile_dob"
+            android:layout_width="59dp"
+            android:layout_height="18dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="117dp"
+            android:layout_marginTop="677dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="top"
+            android:text="@string/profile_dob"
+            android:textAppearance="@style/profile_name" />
+
+        <TextView
+            android:id="@+id/profile_dob_input"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="117dp"
+            android:layout_marginTop="691dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="top"
+            android:text="@string/profile_dob_input"
+            android:textAppearance="@style/profile_name_input" />
+
+        <TextView
+            android:id="@+id/profile_allergies"
+            android:layout_width="59dp"
+            android:layout_height="18dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="117dp"
+            android:layout_marginTop="756dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="top"
+            android:text="@string/profile_allergies"
+            android:textAppearance="@style/profile_name" />
+
+        <TextView
+            android:id="@+id/profile_allergies_input"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="117dp"
+            android:layout_marginTop="770dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="top"
+            android:text="@string/profile_allergies_input"
+            android:textAppearance="@style/profile_name_input" />
+
+        <TextView
+            android:id="@+id/profile_drugs"
+            android:layout_width="59dp"
+            android:layout_height="18dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="117dp"
+            android:layout_marginTop="835dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="top"
+            android:text="@string/profile_drugs"
+            android:textAppearance="@style/profile_name" />
+
+        <TextView
+            android:id="@+id/pprofile_drugs_input"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="117dp"
+            android:layout_marginTop="849dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="top"
+            android:text="@string/profile_drugs_input"
+            android:textAppearance="@style/profile_name_input" />
+
+        <TextView
+            android:id="@+id/medical_inq"
+            android:layout_width="wrap_content"
+            android:layout_height="21dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="39dp"
+            android:layout_marginTop="915dp"
+            android:fontFamily="@font/poppins_extrabold"
+            android:gravity="top"
+            android:text="@string/medical_inq"
+            android:textAppearance="@style/medical_inq" />
+
+        <TextView
+            android:id="@+id/profile_emailLink"
+            android:layout_width="wrap_content"
+            android:layout_height="21dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="161dp"
+            android:layout_marginTop="915dp"
+            android:fontFamily="@font/poppins_extrabold"
+            android:gravity="top"
+            android:text="@string/profile_emailLink"
+            android:textAppearance="@style/profile_emailLink" />
+
+        <TextView
+            android:id="@+id/profile_sign_out"
+            android:layout_width="wrap_content"
+            android:layout_height="21dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="262dp"
+            android:layout_marginTop="915dp"
+            android:fontFamily="@font/poppins_extrabold"
+            android:gravity="end|center_vertical"
+            android:lineSpacingExtra="19sp"
+            android:text="@string/profile_sign_out"
+            android:textAppearance="@style/profile_sign_out" />
+
+        <View
+            android:id="@+id/spacer"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginTop="940dp"
+            android:background="#FFFFFF" />
     </RelativeLayout>
-</FrameLayout>
+
+
+</ScrollView>

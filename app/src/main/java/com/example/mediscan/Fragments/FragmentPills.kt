@@ -45,8 +45,6 @@ class PillsFragment : Fragment()  {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        //if (narrowList.isEmpty()) loadDataBase()
-       // if (narrowList.isEmpty()) loadDataBase()
         val mdName:TextView = view.findViewById(R.id.medicine)
         mdName.text = medicineName
 
@@ -126,9 +124,9 @@ class PillsFragment : Fragment()  {
                     narrowList.add(
 
                         NarrowDownSearch(
-                            snapshot.child("title").value.toString(),
-                            snapshot.child("img_url").value.toString(),
-                            snapshot.child("common_perscribe").value.toString()
+                            medsnapshot.child("title").value.toString(),
+                            medsnapshot.child("img_url").value.toString(),
+                            medsnapshot.child("common_perscribe").value.toString()
                         )
                     )
                 }
