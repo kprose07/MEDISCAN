@@ -19,7 +19,7 @@ import com.example.mediscan.Data.NarrowDownSearch
 import com.example.mediscan.R
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.fragment_pillsd.*
-
+import kotlinx.coroutines.NonCancellable.children
 
 
 class PillsFragment : Fragment()  {
@@ -48,7 +48,7 @@ class PillsFragment : Fragment()  {
         super.onViewCreated(view, savedInstanceState)
 
         val mdName:TextView = view.findViewById(R.id.medicine)
-        mdName.text = medicineName + " " + medicineId
+        mdName.text = medicineName
 
         narrow_down_recycler.layoutManager = GridLayoutManager(activity, 3)
         narrow_down_recycler.adapter = NarrowAdapter(narrowList)
@@ -120,17 +120,12 @@ class PillsFragment : Fragment()  {
 
         database.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-
-                // TODO: change data to render children data
-                Log.i("Narrow Search", database.toString())
                 for (medsnapshot in snapshot.children) {
-                    // Toast.makeText(context,"${snapshot.child("name").value.toString()}",Toast.LENGTH_SHORT).show()
                     narrowList.add(
 
                         NarrowDownSearch(
-                            medsnapshot.child("title").value.toString(),
-                            medsnapshot.child("img_url").value.toString(),
-                            medsnapshot.child("common_perscribe").value.toString()
+                            medsnapshot.key.toString(),
+                            medsnapshot.value.toString()
                         )
                     )
                 }

@@ -21,7 +21,7 @@ class NarrowAdapter(private var narrow: List<NarrowDownSearch>) :
         "Summary" to R.drawable.ic_reports,
         "Instructions" to R.drawable.ic_task,
         "Pediatrics" to R.drawable.ic_pediatrics,
-        "Geatrics" to R.drawable.ic_geriatrics,
+        "Geriatrics" to R.drawable.ic_geriatrics,
         "Contradictions" to R.drawable.ic_doctortool,
         "Limitations of Use" to R.drawable.ic_limits,
         "Warnings and Precautions" to R.drawable.ic_warning,
