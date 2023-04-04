@@ -46,7 +46,6 @@ class PillsFragment : Fragment()  {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         val mdName:TextView = view.findViewById(R.id.medicine)
         mdName.text = medicineName
 

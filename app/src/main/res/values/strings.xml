@@ -85,4 +85,34 @@
     <string name="spnote">MOUNJARO</string>
     <string name="special">Special Notes</string>
     <string name="specialnote">Add Note</string>
+    <string name="scroll">scroll</string>
+
+    <!--    Profiles Page -->
+    <string name="profiletext">Profile</string>
+    <string name="todo">TODO</string>
+    <string name="edit">Edit Profile</string>
+    <string name="profile_remind"><i>Set Reminders</i></string>
+    <string name="profile_remindcard">Add \nReminder</string>
+
+    <string name="profile_name">Name</string>
+    <string name="profile_name_input">Briana</string>
+
+    <string name="profile_phone">Phone</string>
+    <string name="profile_phone_input">555-555-5555</string>
+
+    <string name="profile_email">Email</string>
+    <string name="profile_email_input">Briana115@gmail.com</string>
+
+    <string name="profile_dob">Date of Birth</string>
+    <string name="profile_dob_input">12/12/2005</string>
+
+    <string name="profile_allergies">Allergies</string>
+    <string name="profile_allergies_input">Soy</string>
+
+    <string name="profile_drugs">Drugs Taken</string>
+    <string name="profile_drugs_input">Monj</string>
+    <string name="medical_inq">Medical Inquiry?</string>
+    <string name="profile_emailLink">Email</string>
+    <string name="profile_sign_out">Sign Out</string>
+
 </resources>

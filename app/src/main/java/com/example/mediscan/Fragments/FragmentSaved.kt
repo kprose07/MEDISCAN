@@ -79,22 +79,7 @@ class SavedFragment : Fragment() {
 
             )
         )
-        recentList.add(
-            Recents(
-                "Monjoro",
-                1,
-                true
 
-            )
-        )
-        recentList.add(
-            Recents(
-                "Monjoro",
-                1,
-                true
-
-            )
-        )
     }
     private fun saveddata(){
         savedList.add(
