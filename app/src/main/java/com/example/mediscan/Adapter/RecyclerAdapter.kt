@@ -33,28 +33,28 @@ class RecyclerAdapter(private var medicines: List<Medicine>, communicator: Commu
         "Glucagon" to R.drawable.glucagon,
         "Glyxambi" to R.drawable.glyxambi,
         "Humalog" to R.drawable.humalog,
-        "Humalog Fifty" to R.drawable.humalogfifty,
+        "Humalog 50/50" to R.drawable.humalogfifty,
         "Humalog Junior" to R.drawable.humalogjunior,
         "Humalog 75/25" to R.drawable.humalogsev,
         "Humatrope" to R.drawable.humatrope,
-        "Humulinn" to R.drawable.humulinn,
+        "Humulin N" to R.drawable.humulinn,
         "Humulin R" to R.drawable.humulinr,
         "Humulin R U-500" to R.drawable.humulinr,
         "Humulin 70/30" to R.drawable.humulinsev,
         "Insulin Lispro" to R.drawable.insulinli,
         "Insulin Lispro Kiwi" to R.drawable.insulinlik,
-        "inslinlli" to R.drawable.insulinlli,
-        "jardiance" to R.drawable.jardiance,
+        "Insulinlli" to R.drawable.insulinlli,
+        "Jardiance" to R.drawable.jardiance,
         "Jaypirca" to R.drawable.jaypirca,
         "Jentadueto" to R.drawable.jentadueto,
         "Logom" to R.drawable.logom,
         "Lyumje" to R.drawable.lyumje,
         "Mounjaro" to R.drawable.mounjaro,
-        "Glumiantc" to R.drawable.olumiantc,
+        "Olumiantc" to R.drawable.olumiantc,
         "Retevmo" to R.drawable.retevmo,
         "Reyvow" to R.drawable.reyvow,
         "Synjardy" to R.drawable.synjardy,
-        "Synjardyxr" to R.drawable.synjardyxr,
+        "Synjardy XR" to R.drawable.synjardyxr,
         "Taltz" to R.drawable.taltz,
         "Tauvid" to R.drawable.tauvid,
         "Tradjenta" to R.drawable.tradjenta,
@@ -67,12 +67,13 @@ class RecyclerAdapter(private var medicines: List<Medicine>, communicator: Commu
 
         val itemTitle: TextView = itemView.findViewById(R.id.md_title)
         val itemImage: ImageView = itemView.findViewById(R.id.md_image)
+        var medicineId = String()
 
         init {
             itemView.setOnClickListener { v: View ->
                 // TODO: Launch next screen for the medicines
                 val position: Int = adapterPosition
-                comm.passDataCom(itemTitle.text.toString())
+                comm.passDataCom(itemTitle.text.toString(), medicineId)
             }
         }
 
@@ -87,6 +88,7 @@ class RecyclerAdapter(private var medicines: List<Medicine>, communicator: Commu
         holder.itemTitle.text = medicines[position].name
         // TODO: what to look at for hash map
         imageMap[medicines[position].name]?.let { holder.itemImage.setImageResource(it) }
+        holder.medicineId = medicines[position].id
     }
 
     override fun getItemCount(): Int {

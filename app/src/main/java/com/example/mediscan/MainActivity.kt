@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentTransaction
 import com.example.mediscan.Data.Communicator
 import com.example.mediscan.Fragments.*
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_pillsd.*
 
 class MainActivity : AppCompatActivity(), Communicator {
     val tag = "MainActivity"
@@ -60,9 +61,10 @@ class MainActivity : AppCompatActivity(), Communicator {
             commit()
         }
 
-    override fun passDataCom(medicineSelected: String) {
+    override fun passDataCom(medicineSelected: String, medicineId: String) {
         val bundle = Bundle()
         bundle.putString("mdSelected", medicineSelected)
+        bundle.putString("mdId", medicineId)
         val transaction = this.supportFragmentManager.beginTransaction()
         val frag2 = PillsFragment()
         frag2.arguments = bundle

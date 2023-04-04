@@ -1,5 +1,5 @@
 package com.example.mediscan.Data
 
 interface Communicator {
-    fun passDataCom(medicineSelected: String)
+    fun passDataCom(medicineSelected: String, medicineId: String)
 }

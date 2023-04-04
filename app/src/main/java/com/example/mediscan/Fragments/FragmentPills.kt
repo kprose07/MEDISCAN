@@ -19,7 +19,7 @@ import com.example.mediscan.Data.NarrowDownSearch
 import com.example.mediscan.R
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.fragment_pillsd.*
-
+import kotlinx.coroutines.NonCancellable.children
 
 
 class PillsFragment : Fragment()  {
@@ -29,6 +29,7 @@ class PillsFragment : Fragment()  {
     private var narrowList = mutableListOf<NarrowDownSearch>()
     private val narrowSuggestions = mutableListOf<String>()
     private var medicineName: String? = ""
+    private var medicineId: String? = ""
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -36,8 +37,8 @@ class PillsFragment : Fragment()  {
         savedInstanceState: Bundle?
     ): View?{
         val view = inflater.inflate(R.layout.fragment_pillsd, container,false)
-        Log.i("Data", "${arguments?.getString("mdSelected")}")
         medicineName = arguments?.getString("mdSelected")
+        medicineId = arguments?.getString("mdId")
         if (narrowList.isEmpty()) loadDataBase()
         return view
     }
@@ -112,21 +113,18 @@ class PillsFragment : Fragment()  {
     }
 
     private fun loadDataBase() {
-         database = FirebaseDatabase.getInstance().getReference("narrow_search")
+         database = FirebaseDatabase.getInstance().getReference("narrow_search").child("$medicineId")
         //val myRef = database.getReference("narrow_search")
         //Toast.makeText(context,"Data from firebase: $myRef",Toast.LENGTH_LONG).show()
 
         database.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-
                 for (medsnapshot in snapshot.children) {
-                    // Toast.makeText(context,"${snapshot.child("name").value.toString()}",Toast.LENGTH_SHORT).show()
                     narrowList.add(
 
                         NarrowDownSearch(
-                            medsnapshot.child("title").value.toString(),
-                            medsnapshot.child("img_url").value.toString(),
-                            medsnapshot.child("common_perscribe").value.toString()
+                            medsnapshot.key.toString(),
+                            medsnapshot.value.toString()
                         )
                     )
                 }
