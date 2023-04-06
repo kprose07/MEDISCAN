@@ -115,4 +115,37 @@
     <string name="profile_emailLink">Email</string>
     <string name="profile_sign_out">Sign Out</string>
 
+    <!--Login Page-->
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_pw">Password</string>
+    <string name="new_user_prompt">New User?</string>
+    <string name="join_prompt">Join Us</string>
+    <string name="old_user_prompt">Already Have Account?</string>
+    <string name="user_name_reg">Name</string>
+    <string name="user_email_reg">Email</string>
+    <string name="user_password_reg">Password</string>
+    <string name="user_dob_reg">Date Of Birth</string>
+    <string name="user_phone_reg">Phone</string>
+    <string name="user_allergies_reg">Allergies</string>
+    <string name="user_drugstaken_reg">Drugs Taaken</string>
+
+<!--    Register Page-->
+
+        <string name="app_names">SpinnerInKotlin</string>
+        <string name="selected_item">Selected item:</string>
+    <string-array name="defaultText">
+        <item>Allergies</item>
+    </string-array>
+        <string-array name="Languages">
+            <item>Java</item>
+            <item>Kotlin</item>
+            <item>Swift</item>
+            <item>Python</item>
+            <item>Scala</item>
+            <item>Perl</item>
+        </string-array>
+
+
 </resources>

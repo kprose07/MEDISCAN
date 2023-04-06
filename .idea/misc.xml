@@ -63,6 +63,7 @@
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/drawable/ic_save.xml" value="0.1815" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/drawable/ic_search.xml" value="0.1815" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/drawable/ic_uparrow.xml" value="0.1815" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/drawable/login_button.xml" value="0.204" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/drawable/narrow_image.xml" value="0.1815" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/drawable/narrow_text.xml" value="0.1815" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/drawable/narrowrect.xml" value="0.2" />
@@ -77,13 +78,20 @@
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/drawable/savedcardbgfill.xml" value="0.211" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/drawable/savedemptycardtop.xml" value="0.211" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/drawable/searchroundbox.xml" value="0.1815" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/drawable/user_input_line.xml" value="0.121" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/drawable/user_redrect.xml" value="0.215" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/drawable/user_roundrect.xml" value="0.215" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/font/poppins_bold.xml" value="0.26458333333333334" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/font/poppins_boldwd.xml" value="0.26458333333333334" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/font/poppins_extrabold.xml" value="0.26458333333333334" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/font/poppins_mediumbb.xml" value="0.24427083333333333" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/activity_login_screen.xml" value="0.264" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/activity_main.xml" value="0.2140625" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/activity_register_screen.xml" value="0.176" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/activity_splash_screen.xml" value="0.25" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/fragment_home.xml" value="0.176" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/fragment_homegrid.xml" value="0.2210144927536232" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/fragment_login.xml" value="0.264" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/fragment_pillsd.xml" value="0.152" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/fragment_profile.xml" value="0.264" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/fragment_results.xml" value="0.2" />
@@ -97,6 +105,7 @@
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/remind_card.xml" value="0.9513742071881607" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/row.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/saved_card.xml" value="0.536" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/spinnertext.xml" value="0.24895833333333334" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/suggestion_item_layout.xml" value="0.25" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/menu/bottom_navbar.xml" value="0.2140625" />
       </map>

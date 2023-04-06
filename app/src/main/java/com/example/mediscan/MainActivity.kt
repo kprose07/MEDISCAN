@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity(), Communicator {
         val savedFragment = SavedFragment()
         val profileFragment = ProfileFragment()
         val resultsFragment = ResultsFragment()
+       // val loginFragment = LoginFragment()
 
         //Sets Home Screen
         setCurrentFragment(homeFragment)
