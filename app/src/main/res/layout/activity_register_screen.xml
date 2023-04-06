@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:contentDescription="@string/scroll"
+    tools:context=".RegisterScreen"
+   >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusableInTouchMode="true"
+        android:focusable="true"
+        android:paddingBottom="59dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/checkt"
+            android:layout_width="282dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/user_allergies_reg"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="23dp"
+            android:orientation="vertical"
+            android:layout_centerHorizontal="true"
+            android:outlineProvider="none"
+            app:cardBackgroundColor="@null"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/user_input_line"
+               >
+
+                <TextView
+                    android:id="@+id/regs_allergies_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="23dp"
+                    android:fontFamily="@font/inter_semibold"
+                    android:hint="@string/user_allergies_reg"
+                    android:paddingBottom="8dp"
+                    android:singleLine="true"
+                    android:textAlignment="gravity"
+                    android:textColorHint="#000000"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/spinner_allergies"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="0dp"
+                    android:background="@drawable/user_input_line"
+                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+            </RelativeLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <View
+            android:id="@+id/loginrect"
+            android:layout_width="wrap_content"
+            android:layout_height="360dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/user_redrect" />
+
+        <View
+            android:id="@+id/login_white_rect"
+            android:layout_width="wrap_content"
+            android:layout_height="360dp"
+            android:layout_below="@+id/logintitle"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="41dp"
+            android:background="@drawable/user_roundrect" />
+
+        <TextView
+            android:id="@+id/logintitle"
+            android:layout_width="wrap_content"
+            android:layout_height="54dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="39dp"
+            android:fontFamily="@font/inter_semibold"
+            android:gravity="center_horizontal|top"
+            android:text="@string/register"
+            android:textAppearance="@style/login" />
+
+
+        <Button
+            android:id="@+id/login_button"
+            android:layout_width="239dp"
+            android:layout_height="51dp"
+            android:layout_below="@+id/user_drugstaken_reg"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="31dp"
+            android:background="@drawable/login_button"
+            android:fontFamily="@font/inter_semibold"
+            android:padding="2dp"
+            android:text="@string/register"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
+
+        <TextView
+            android:id="@+id/old_user_prompt"
+            android:layout_width="wrap_content"
+            android:layout_height="21dp"
+            android:layout_below="@+id/login_button"
+            android:layout_alignStart="@+id/login_button"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/inter_semibold"
+            android:gravity="top"
+            android:text="@string/old_user_prompt"
+            android:textAppearance="@style/medical_inq" />
+
+        <TextView
+            android:id="@+id/signup_up_prompt"
+            android:layout_width="wrap_content"
+            android:layout_height="21dp"
+            android:layout_below="@+id/login_button"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="20dp"
+            android:layout_toEndOf="@+id/old_user_prompt"
+            android:fontFamily="@font/inter_semibold"
+            android:gravity="top"
+            android:text="@string/login"
+            android:textAppearance="@style/profile_emailLink"
+            android:textColor="#BACF2727" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+
+            android:id="@+id/user_name_reg"
+            android:layout_width="282dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/login_white_rect"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="44dp"
+            android:background="@drawable/user_input_line"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:textAlignment="textStart"
+            android:textColorHint="#000000"
+            app:boxStrokeColor="#0B0B0B"
+            app:boxStrokeErrorColor="#00FFFFFF">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/login_name_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-15.5dp"
+                android:background="#00FFFFFF"
+                android:backgroundTint="#000000"
+                android:fontFamily="@font/inter_semibold"
+                android:gravity="start"
+                android:hint="@string/user_name_reg"
+                android:inputType="textPersonName"
+                android:paddingBottom="0dp"
+                android:singleLine="true"
+                android:textColor="#000000"
+                android:textSize="24sp"
+
+                android:textStyle="bold"
+                tools:ignore="TouchTargetSizeCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+
+        android:id="@+id/user_email_reg"
+        android:layout_width="282dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/user_name_reg"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="23dp"
+        android:background="@drawable/user_input_line"
+        android:paddingStart="0dp"
+        android:paddingEnd="0dp"
+        android:textAlignment="textStart"
+        android:textColorHint="#000000"
+        android:windowSoftInputMode="stateHidden"
+        app:boxStrokeColor="#00FFFFFF"
+        tools:ignore="NotSibling">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/login_email_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-15.5dp"
+            android:background="#00FFFFFF"
+            android:backgroundTint="#000000"
+            android:fontFamily="@font/inter_semibold"
+            android:gravity="start"
+            android:hint="@string/user_email_reg"
+            android:inputType="textEmailAddress"
+            android:paddingBottom="0dp"
+            android:singleLine="true"
+            android:textColor="#000000"
+            android:textSize="24sp"
+
+            android:textStyle="bold"
+            tools:ignore="TouchTargetSizeCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+
+        android:id="@+id/user_password_reg"
+        android:layout_width="282dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/user_email_reg"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="23dp"
+        android:background="@drawable/user_input_line"
+        android:paddingStart="0dp"
+        android:paddingEnd="0dp"
+        android:textAlignment="textStart"
+        android:textColorHint="#000000"
+        android:windowSoftInputMode="stateHidden"
+        app:boxStrokeColor="#00FFFFFF"
+        tools:ignore="NotSibling">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/pw_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-15.5dp"
+            android:background="#00FFFFFF"
+            android:backgroundTint="#000000"
+            android:fontFamily="@font/inter_semibold"
+            android:gravity="start"
+            android:hint="@string/user_password_reg"
+            android:inputType="textPassword"
+            android:paddingBottom="0dp"
+            android:singleLine="true"
+            android:textColor="#000000"
+            android:textSize="24sp"
+
+            android:textStyle="bold"
+            tools:ignore="TouchTargetSizeCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+
+        android:id="@+id/user_dob_reg"
+        android:layout_width="282dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/user_password_reg"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="23dp"
+        android:background="@drawable/user_input_line"
+        android:paddingStart="0dp"
+        android:paddingEnd="0dp"
+        android:textAlignment="textStart"
+        android:textColorHint="#000000"
+        android:windowSoftInputMode="stateHidden"
+        app:boxStrokeColor="#00FFFFFF"
+        tools:ignore="NotSibling">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/dob_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-15.5dp"
+            android:background="#00FFFFFF"
+            android:backgroundTint="#000000"
+            android:fontFamily="@font/inter_semibold"
+            android:gravity="start"
+            android:hint="@string/user_dob_reg"
+            android:inputType="date"
+            android:paddingBottom="0dp"
+            android:singleLine="true"
+            android:textColor="#000000"
+            android:textSize="24sp"
+
+            android:textStyle="bold"
+            tools:ignore="TouchTargetSizeCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+
+        android:id="@+id/user_phone_reg"
+        android:layout_width="282dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/user_dob_reg"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="23dp"
+        android:background="@drawable/user_input_line"
+        android:paddingStart="0dp"
+        android:paddingEnd="0dp"
+        android:textAlignment="textStart"
+        android:textColorHint="#000000"
+        android:windowSoftInputMode="stateHidden"
+
+        app:boxStrokeColor="#00FFFFFF"
+        tools:ignore="NotSibling">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/phone_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-15.5dp"
+            android:background="#00FFFFFF"
+            android:backgroundTint="#000000"
+            android:fontFamily="@font/inter_semibold"
+            android:gravity="start"
+            android:hint="@string/user_phone_reg"
+            android:inputType="phone"
+            android:paddingBottom="0dp"
+            android:singleLine="true"
+            android:textColor="#000000"
+            android:textSize="24sp"
+
+            android:textStyle="bold"
+            tools:ignore="TouchTargetSizeCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+
+            android:id="@+id/user_allergies_reg"
+            android:layout_width="282dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/user_phone_reg"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="23dp"
+            android:background="@drawable/user_input_line"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:textAlignment="textStart"
+            android:textColorHint="#000000"
+            android:windowSoftInputMode="stateHidden"
+            app:boxStrokeColor="#00FFFFFF"
+            tools:ignore="NotSibling">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/allergies_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-15.5dp"
+                android:background="#00FFFFFF"
+                android:backgroundTint="#000000"
+                android:fontFamily="@font/inter_semibold"
+                android:gravity="start"
+                android:hint="@string/user_allergies_reg"
+                android:inputType="text"
+                android:paddingBottom="0dp"
+                android:singleLine="true"
+                android:textColor="#000000"
+                android:textSize="24sp"
+
+                android:textStyle="bold"
+                tools:ignore="TouchTargetSizeCheck" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+
+            android:id="@+id/user_drugstaken_reg"
+            android:layout_width="282dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/checkt"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="23dp"
+            android:background="@drawable/user_input_line"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:textAlignment="textStart"
+            android:textColorHint="#000000"
+            android:windowSoftInputMode="stateHidden"
+            app:boxStrokeColor="#00FFFFFF"
+            tools:ignore="NotSibling">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/drug_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-15.5dp"
+                android:background="#00FFFFFF"
+                android:backgroundTint="#000000"
+                android:fontFamily="@font/inter_semibold"
+                android:gravity="start"
+                android:hint="@string/user_drugstaken_reg"
+                android:inputType="text"
+                android:paddingBottom="0dp"
+                android:singleLine="true"
+                android:textColor="#000000"
+                android:textSize="24sp"
+
+                android:textStyle="bold"
+                tools:ignore="TouchTargetSizeCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    </RelativeLayout>
+</ScrollView>

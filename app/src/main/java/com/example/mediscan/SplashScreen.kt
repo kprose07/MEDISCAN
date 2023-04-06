@@ -26,7 +26,7 @@ class SplashScreen : AppCompatActivity() {
 
         // Handler().postDelayed({
         Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, RegisterScreen::class.java)
             startActivity(intent)
             finish()
         }, 1000) // 3000 is the delayed time in milliseconds.
