@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF">
 
     <RelativeLayout
+        android:id="@+id/narrow_search_relative"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF">
+
+        <View
+            android:id="@+id/back"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/narrow_popup_background" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/narrow_down_recycler"
@@ -40,7 +51,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="81dp"
             android:layout_marginBottom="8dp"
-            android:background="@drawable/searchroundbox"
+            android:background="@drawable/narrow_popup_backgroundsearch"
             android:fontFamily="@font/poppins_mediumbb"
             android:iconifiedByDefault="false"
             android:inputType="textNoSuggestions"
@@ -79,5 +90,120 @@
             android:text="@string/medical_she"
             android:textAppearance="@style/medical_she" />
 
+        <androidx.cardview.widget.CardView
+            android:id="@+id/popup_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="228dp"
+            android:layout_marginEnd="7dp"
+            android:layout_marginBottom="7dp"
+            android:background="#00FFFFFF"
+            android:outlineProvider="none"
+            android:visibility="invisible"
+            app:cardBackgroundColor="#00FFFFFF">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/narrow_popup_bot"
+
+                >
+
+                <LinearLayout
+                    android:id="@+id/linpop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <View
+                        android:id="@+id/popup_top"
+                        android:layout_width="316dp"
+                        android:layout_height="45dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@drawable/narrow_popup_top" />
+
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/popup_close"
+                    android:layout_width="15dp"
+                    android:layout_height="16dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="false"
+                    android:layout_marginStart="142dp"
+                    android:layout_marginTop="17dp"
+                    android:layout_toEndOf="@+id/pop_up_title"
+                    android:background="@drawable/ic_close"
+                    android:clickable="true"
+                    android:focusable="true"
+                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+                <TextView
+                    android:id="@+id/pop_up_title"
+                    android:layout_width="106dp"
+                    android:layout_height="45dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="23dp"
+                    android:layout_marginTop="0dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/pop_up_title"
+                    android:textAppearance="@style/pop_up_title" />
+
+                <TextView
+                    android:id="@+id/pop_up_cat"
+                    android:layout_width="163dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/pop_up_title"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="23dp"
+                    android:layout_marginTop="25dp"
+                    android:fontFamily="@font/poppins_reg"
+                    android:gravity="center_vertical"
+                    android:padding="0dp"
+                    android:text="@string/pop_up_cat"
+                    android:textAppearance="@style/pop_up_cat"
+                    android:textColor="#D50000" />
+
+                <TextView
+                    android:id="@+id/pop_up_des"
+                    android:layout_width="270.29dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/pop_up_cat"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="23dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/poppins_reg"
+                    android:gravity="top"
+                    android:lineSpacingExtra="6sp"
+                    android:text="@string/pop_up_des"
+                    android:textAppearance="@style/pop_up_des"
+                    android:translationY="-2.75sp" />
+
+                <TextView
+                    android:id="@+id/see_more_"
+                    android:layout_width="74dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/pop_up_des"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="225dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="0dp"
+                    android:fontFamily="@font/poppins_light"
+                    android:gravity="center_vertical"
+                    android:lineSpacingExtra="1sp"
+                    android:paddingBottom="17dp"
+                    android:text="@string/see_more_"
+                    android:textAppearance="@style/see_more_" />
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
     </RelativeLayout>
+
 </ScrollView>

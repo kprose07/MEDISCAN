@@ -59,7 +59,10 @@
     <!-- Narrow Down Search -->
     <string name="summary">Summary</string>
     <string name="medical_she">Medical Sheet Categories</string>
-
+    <string name="pop_up_title">MOUNJARO</string>
+    <string name="pop_up_cat">Summary</string>
+    <string name="pop_up_des">Omeprazole is used to treat certain stomach and esophagus problems (such as acid reflux, ulcers). It works by decreasing the amount of acid your stomach makes. It relieves symptoms such as heartburn, difficulty swallowing, and cough. This medicati ...</string>
+    <string name="see_more_">See More?</string>
 
     <!--Results -->
     <string name="names_for_t">Names for this medication:</string>
@@ -139,8 +142,8 @@
         <item>Allergies</item>
     </string-array>
         <string-array name="Languages">
-            <item>Java</item>
-            <item>Kotlin</item>
+            <item>Soy</item>
+            <item>Jelly</item>
             <item>Swift</item>
             <item>Python</item>
             <item>Scala</item>
