@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 
 @Suppress("DEPRECATION")
 class SplashScreen : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
@@ -26,7 +27,7 @@ class SplashScreen : AppCompatActivity() {
 
         // Handler().postDelayed({
         Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(this, RegisterScreen::class.java)
+            val intent = Intent(this, LoginScreen::class.java)
             startActivity(intent)
             finish()
         }, 1000) // 3000 is the delayed time in milliseconds.

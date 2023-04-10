@@ -47,6 +47,7 @@ class NarrowAdapter(private var narrow: List<NarrowDownSearch>) :
                     "You clicked on item # ${position + 1}",
                     Toast.LENGTH_SHORT
                 ).show()
+
             }
         }
 

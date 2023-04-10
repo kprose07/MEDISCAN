@@ -125,8 +125,11 @@
     <string name="hint_pw">Password</string>
     <string name="new_user_prompt">New User?</string>
     <string name="join_prompt">Join Us</string>
+    <string name="forgotpwprompt">Forgot Password?</string>
+    <string name="forgotpwprompthint">Enter Email</string>
     <string name="old_user_prompt">Already Have Account?</string>
-    <string name="user_name_reg">Name</string>
+    <string name="user_first_name_reg">First Name</string>
+    <string name="user_last_name_reg">Last Name</string>
     <string name="user_email_reg">Email</string>
     <string name="user_password_reg">Password</string>
     <string name="user_dob_reg">Date Of Birth</string>
@@ -141,7 +144,8 @@
     <string-array name="defaultText">
         <item>Allergies</item>
     </string-array>
-        <string-array name="Languages">
+
+        <string-array name="allergies">
             <item>Soy</item>
             <item>Jelly</item>
             <item>Swift</item>
@@ -149,6 +153,9 @@
             <item>Scala</item>
             <item>Perl</item>
         </string-array>
+    <string-array name="allergies_list">
+
+    </string-array>
 
 
 </resources>
