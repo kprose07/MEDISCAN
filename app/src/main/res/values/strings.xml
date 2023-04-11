@@ -128,6 +128,13 @@
     <string name="forgotpwprompt">Forgot Password?</string>
     <string name="forgotpwprompthint">Enter Email</string>
     <string name="old_user_prompt">Already Have Account?</string>
+
+
+<!--    Register Page-->
+
+        <string name="app_names">SpinnerInKotlin</string>
+        <string name="selected_item">Selected item:</string>
+    <string name="user_username_reg">UserName</string>
     <string name="user_first_name_reg">First Name</string>
     <string name="user_last_name_reg">Last Name</string>
     <string name="user_email_reg">Email</string>
@@ -136,11 +143,6 @@
     <string name="user_phone_reg">Phone</string>
     <string name="user_allergies_reg">Allergies</string>
     <string name="user_drugstaken_reg">Drugs Taaken</string>
-
-<!--    Register Page-->
-
-        <string name="app_names">SpinnerInKotlin</string>
-        <string name="selected_item">Selected item:</string>
     <string-array name="defaultText">
         <item>Allergies</item>
     </string-array>
