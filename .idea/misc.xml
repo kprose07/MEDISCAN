@@ -98,7 +98,7 @@
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/activity_allergy_listview.xml" value="0.25" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/activity_login_screen.xml" value="0.176" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/activity_main.xml" value="0.2140625" />
-        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/activity_register_screen.xml" value="0.4" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/activity_register_screen.xml" value="0.264" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/activity_splash_screen.xml" value="0.25" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/allergy_style.xml" value="0.536" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/dialog_forgot_password.xml" value="0.264" />
@@ -106,7 +106,7 @@
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/fragment_homegrid.xml" value="0.2210144927536232" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/fragment_login.xml" value="0.264" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/fragment_pillsd.xml" value="0.2" />
-        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/fragment_profile.xml" value="0.264" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/fragment_profile.xml" value="0.176" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/fragment_results.xml" value="0.2" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/fragment_saved.xml" value="0.264" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/medicine_layout.xml" value="0.2210144927536232" />

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -12,6 +13,11 @@ import com.example.mediscan.Adapter.RecentsAdapter
 import com.example.mediscan.Data.ProfileRemind
 import com.example.mediscan.Data.Recents
 import com.example.mediscan.R
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.*
+import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.fragment_home.*
 
 import kotlinx.android.synthetic.main.fragment_profile.*
 import kotlinx.android.synthetic.main.fragment_saved.*
@@ -19,18 +25,80 @@ import kotlinx.android.synthetic.main.fragment_saved.*
 class ProfileFragment : Fragment() {
     val remindList = ArrayList<ProfileRemind>()
 
+    private lateinit var database : DatabaseReference
+    private lateinit var firebaseAuth: FirebaseAuth
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? = inflater.inflate(R.layout.fragment_profile, container,false)
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         profile_reminder.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         profile_reminder.adapter = ProfileRemindAdapter(remindList)
         reminddata()
+      //  val profTitle: String = profile_name_input.text.toString()
+            //val user = Firebase.auth.currentUser.toString()
+           // readData("kprose07")
+            firebaseAuth = FirebaseAuth.getInstance()
+            loaduserinfo()
+
+
+
+
+
+
+
+
+
+
+
+
     }
+
+    private fun loaduserinfo() {
+        val ref = FirebaseDatabase.getInstance().getReference("users")
+        ref.child(firebaseAuth.uid!!)
+            .addValueEventListener(object: ValueEventListener{
+                override fun onDataChange(snapshot: DataSnapshot){
+                    //user info
+                    val firstName =" ${snapshot.child("firstName").value}"
+                    val email =" ${snapshot.child("email").value}"
+                    val phone =" ${snapshot.child("phone").value}"
+                    val dob =" ${snapshot.child("dob").value}"
+
+                    //val formatDate = MyApplication.formatTimeStamp(timestamp.toLong())
+                    profile_name_input.text = firstName
+                    profile_email_input.text = email
+                    profile_dob_input.text = dob
+                    profile_phone_input.text = phone
+
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                    TODO("Not yet implemented")
+                }
+            })
+    }
+//
+//    private fun readData(userName: String) {
+////        database = FirebaseDatabase.getInstance().getReference("users")
+////        database.child(userName).get().addOnSuccessListener {
+////            if(it.exists()){
+////                val firstName = it.child("firstName").value
+////                val phone = it.child("phone").value
+////                val email = it.child("email" +
+////                        "").value
+////                profile_name_input.text = firstName.toString()
+////                profile_phone_input.text = phone.toString()
+////                profile_email_input.text = email.toString()
+////            }
+////        }
+//    }
+
     private fun reminddata(){
         remindList.add(
             ProfileRemind(
