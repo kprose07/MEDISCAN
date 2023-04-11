@@ -1,5 +1,6 @@
 package com.example.mediscan
 
+import android.app.ProgressDialog
 import android.content.ContentValues.TAG
 import android.content.DialogInterface
 import android.content.Intent
@@ -7,6 +8,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
+import android.util.Patterns
 import android.view.WindowManager
 import android.widget.EditText
 import android.widget.Toast
@@ -26,6 +28,7 @@ class LoginScreen : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginScreenBinding
     private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var progressDialog: ProgressDialog
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,33 +37,21 @@ class LoginScreen : AppCompatActivity() {
 
         firebaseAuth = FirebaseAuth.getInstance()
 
+        //init progress bar
+        progressDialog = ProgressDialog(this)
+        progressDialog.setTitle("Please Wiat")
+        progressDialog.setCanceledOnTouchOutside(false)
+
+
         binding.signupUpPrompt.setOnClickListener {
             val intent = Intent(this, RegisterScreen::class.java)
             startActivity(intent)
         }
 
         binding.loginButton.setOnClickListener{
-            val email = binding.loginEmailInput.text.toString()
-            val password = binding.loginPwInput.text.toString()
 
-            if(email.isNotEmpty() && password.isNotEmpty()){
-                firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener{
-                    if(it.isSuccessful){
-                        val intent = Intent(this, MainActivity::class.java)
-                        startActivity(intent)
-                    }else{
-                        Toast.makeText(
-                            this,
-                            it.exception.toString(),
-                            Toast.LENGTH_SHORT).show()
-                    }
-                }
-            }else{
-                Toast.makeText(
-                    this,
-                    "Please fill in ALL fields",
-                    Toast.LENGTH_SHORT).show()
-            }
+            validateData()
+
         }
 
         binding.forgotpw.setOnClickListener {
@@ -78,6 +69,55 @@ class LoginScreen : AppCompatActivity() {
         }
 
         }
+    private var email = ""
+    private var password = ""
+
+    private fun validateData() {
+        email = binding.loginEmailInput.text.toString().trim()
+        password = binding.loginPwInput.text.toString().trim()
+
+        if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+            Toast.makeText(
+                this,
+                "Invalid email",
+                Toast.LENGTH_SHORT).show()
+        }else if(password.isEmpty()){
+            Toast.makeText(
+                this,
+                "Please Enter Password",
+                Toast.LENGTH_SHORT).show()
+        }else{
+            loginUser()
+        }
+
+
+    }
+
+    private fun loginUser() {
+        progressDialog.setMessage("Loging In...")
+        progressDialog.show()
+
+
+        firebaseAuth.signInWithEmailAndPassword(email, password)
+            .addOnSuccessListener{
+            //login sucess
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+
+
+        }
+            .addOnFailureListener{ e->
+                //failed
+                progressDialog.dismiss()
+                Toast.makeText(
+                    this,
+                    "Login failed due to ${e.message}",
+                    Toast.LENGTH_SHORT).show()
+            }
+
+    }
+
+
 
     private fun forgotPassword(emailfpw: EditText){
         if(emailfpw.text.toString().isEmpty()){
