@@ -3,7 +3,7 @@
     android:shape="rectangle"
     >
     <solid
-        android:color="#F6F7F9"/>
+        android:color="@color/narrowCard"/>
 
     <corners android:bottomRightRadius="0dp" android:bottomLeftRadius="0dp"
             android:topLeftRadius="10dp" android:topRightRadius="10dp"/>

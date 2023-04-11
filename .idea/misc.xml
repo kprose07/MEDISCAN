@@ -59,6 +59,9 @@
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/drawable/ic_doctor.xml" value="0.121" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/drawable/ic_dosafe.xml" value="0.121" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/drawable/ic_downarrow.xml" value="0.121" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/drawable/ic_navprof.xml" value="0.201" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/drawable/ic_pills.xml" value="0.201" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/drawable/ic_profile.xml" value="0.201" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/drawable/ic_rectangle_1.xml" value="0.1815" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/drawable/ic_rectangle_3.xml" value="0.1815" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/drawable/ic_save.xml" value="0.1815" />
@@ -72,6 +75,7 @@
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/drawable/narrow_popup_top.xml" value="0.207" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/drawable/narrow_text.xml" value="0.1815" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/drawable/narrowrect.xml" value="0.2" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/drawable/profile_icons.xml" value="0.201" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/drawable/profile_top_rect.xml" value="0.2" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/drawable/profilecircle.xml" value="0.2" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/drawable/reccentcard.xml" value="0.1835" />
@@ -106,11 +110,11 @@
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/fragment_homegrid.xml" value="0.2210144927536232" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/fragment_login.xml" value="0.264" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/fragment_pillsd.xml" value="0.2" />
-        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/fragment_profile.xml" value="0.176" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/fragment_profile.xml" value="0.264" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/fragment_results.xml" value="0.2" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/fragment_saved.xml" value="0.264" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/medicine_layout.xml" value="0.2210144927536232" />
-        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/narrow_card_layout.xml" value="0.10400000000000001" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/narrow_card_layout.xml" value="0.176" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/narrow_popup_card.xml" value="0.4" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/notes_card.xml" value="0.6" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/reccentEmpty_card.xml" value="0.25" />
