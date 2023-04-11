@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/user_phone_reg"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="23dp"
+            android:layout_marginTop="150dp"
             android:orientation="vertical"
             android:outlineProvider="none"
             android:paddingStart="0dp"
@@ -70,7 +70,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="5dp"
             android:cacheColorHint="#000000"
-            android:visibility="gone" />
+            android:visibility="invisible" />
 
         <View
             android:id="@+id/loginrect"
@@ -414,13 +414,13 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/user_phone_reg"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="23dp"
+            android:layout_marginTop="200dp"
             android:background="@drawable/user_input_line"
             android:paddingStart="0dp"
             android:paddingEnd="0dp"
             android:textAlignment="textStart"
             android:textColorHint="#000000"
-            android:visibility="invisible"
+            android:visibility="gone"
             android:windowSoftInputMode="stateHidden"
             app:boxStrokeColor="#00FFFFFF"
             tools:ignore="NotSibling">

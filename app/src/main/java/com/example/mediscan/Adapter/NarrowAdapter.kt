@@ -3,16 +3,16 @@ package com.example.mediscan.Adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mediscan.Data.NarrowDownSearch
 import com.example.mediscan.R
 import java.util.HashMap
+import kotlinx.android.synthetic.main.fragment_pillsd.*
 
-
-class NarrowAdapter(private var narrow: List<NarrowDownSearch>) :
+class NarrowAdapter(private var narrow: List<NarrowDownSearch>, private var popupCard: CardView?, private var popupTitle: TextView,
+        private var popupDetail: TextView, private var close: View) :
     RecyclerView.Adapter<NarrowAdapter.ViewHolder>() {
 
     // TODO: add the rest of the medicines
@@ -38,20 +38,42 @@ class NarrowAdapter(private var narrow: List<NarrowDownSearch>) :
 
         val itemTitle: TextView = itemView.findViewById(R.id.nsce_title)
         val itemImage: ImageView = itemView.findViewById(R.id.nsc_image)
+        //var open = true
+
         init {
+            popupCard?.visibility = View.GONE
             itemView.setOnClickListener { v: View ->
                 // TODO: Launch next screen for the medicines
                 val position: Int = adapterPosition
-                Toast.makeText(
-                    itemView.context,
-                    "You clicked on item # ${position + 1}",
-                    Toast.LENGTH_SHORT
-                ).show()
+
+                if( popupCard?.visibility == View.GONE) {
+                    loadpopup()
+                }
+                close.setOnClickListener{
+//                    pillsbg.setBackgroundResource(R.drawable.white)
+//                    serachbg.setBackgroundResource(R.drawable.searchroundbox)
+                    popupCard?.visibility = View.GONE
+
+                }
 
             }
         }
+        private fun loadpopup() {
+                popupCard?.visibility = View.VISIBLE
+                popupTitle.setText(itemTitle.text)
+                popupDetail.setText(narrow[position].data)
+//                pillsbg.setBackgroundResource(R.drawable.narrow_popup_background)
+                //serachbg.setBackgroundResource(R.drawable.narrow_popup_backgroundsearch)
 
+            Toast.makeText(
+                itemView.context,
+                "You clicked on item # ${position + 1}",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
     }
+
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val vn = LayoutInflater.from(parent.context).inflate(R.layout.narrow_card_layout, parent, false)
@@ -66,6 +88,7 @@ class NarrowAdapter(private var narrow: List<NarrowDownSearch>) :
         NarrowImageMap[narrow[position].title]?.let { holder.itemImage.setImageResource(it) }
 
     }
+
 
     override fun getItemCount(): Int {
         return narrow.size

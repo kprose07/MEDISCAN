@@ -120,6 +120,8 @@ class LoginScreen : AppCompatActivity() {
 
 
     private fun forgotPassword(emailfpw: EditText){
+//        progressDialog.setMessage("Sending Email...")
+//        progressDialog.show()
         if(emailfpw.text.toString().isEmpty()){
             Toast.makeText(
                 this,
@@ -138,11 +140,11 @@ class LoginScreen : AppCompatActivity() {
                 }
             }
     }
-//    override fun onStart(){
-//        super.onStart()
-//        if(firebaseAuth.currentUser != null){
-//            val intent = Intent(this, MainActivity::class.java)
-//            startActivity(intent)
-//        }
-//    }
+    override fun onStart(){
+        super.onStart()
+        if(firebaseAuth.currentUser != null){
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+    }
     }

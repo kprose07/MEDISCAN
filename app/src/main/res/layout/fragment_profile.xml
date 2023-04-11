@@ -101,12 +101,12 @@
         <View
             android:id="@+id/icons"
             android:layout_width="51dp"
-            android:layout_height="411.19dp"
+            android:layout_height="251dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_marginStart="41dp"
-            android:layout_marginTop="465dp"
-            android:background="@drawable/profile_icons" />
+            android:layout_marginTop="462dp"
+            android:background="@drawable/profile" />
 
         <TextView
             android:id="@+id/profile_name"
@@ -132,7 +132,9 @@
             android:fontFamily="@font/poppins_medium"
             android:gravity="top"
             android:text="@string/profile_name_input"
-            android:textAppearance="@style/profile_name_input" />
+            android:textAppearance="@style/profile_name_input"
+            android:ellipsize="end"
+            android:maxLines="1"/>
 
         <TextView
             android:id="@+id/profile_phone"
@@ -158,7 +160,9 @@
             android:fontFamily="@font/poppins_medium"
             android:gravity="top"
             android:text="@string/profile_phone_input"
-            android:textAppearance="@style/profile_name_input" />
+            android:textAppearance="@style/profile_name_input"
+            android:ellipsize="end"
+            android:maxLines="1"/>
 
         <TextView
             android:id="@+id/profile_email"
@@ -175,7 +179,7 @@
 
         <TextView
             android:id="@+id/profile_email_input"
-            android:layout_width="wrap_content"
+            android:layout_width="228dp"
             android:layout_height="25dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
@@ -184,7 +188,9 @@
             android:fontFamily="@font/poppins_medium"
             android:gravity="top"
             android:text="@string/profile_email_input"
-            android:textAppearance="@style/profile_name_input" />
+            android:textAppearance="@style/profile_name_input"
+            android:ellipsize="end"
+            android:maxLines="1"/>
 
         <TextView
             android:id="@+id/profile_dob"
@@ -207,71 +213,21 @@
             android:layout_alignParentTop="true"
             android:layout_marginStart="117dp"
             android:layout_marginTop="691dp"
+            android:ellipsize="end"
             android:fontFamily="@font/poppins_medium"
             android:gravity="top"
+            android:maxLines="1"
             android:text="@string/profile_dob_input"
-            android:textAppearance="@style/profile_name_input" />
-
-        <TextView
-            android:id="@+id/profile_allergies"
-            android:layout_width="59dp"
-            android:layout_height="18dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="117dp"
-            android:layout_marginTop="756dp"
-            android:fontFamily="@font/poppins_medium"
-            android:gravity="top"
-            android:text="@string/profile_allergies"
-            android:textAppearance="@style/profile_name" />
-
-        <TextView
-            android:id="@+id/profile_allergies_input"
-            android:layout_width="wrap_content"
-            android:layout_height="25dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="117dp"
-            android:layout_marginTop="770dp"
-            android:fontFamily="@font/poppins_medium"
-            android:gravity="top"
-            android:text="@string/profile_allergies_input"
-            android:textAppearance="@style/profile_name_input" />
-
-        <TextView
-            android:id="@+id/profile_drugs"
-            android:layout_width="59dp"
-            android:layout_height="18dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="117dp"
-            android:layout_marginTop="835dp"
-            android:fontFamily="@font/poppins_medium"
-            android:gravity="top"
-            android:text="@string/profile_drugs"
-            android:textAppearance="@style/profile_name" />
-
-        <TextView
-            android:id="@+id/pprofile_drugs_input"
-            android:layout_width="wrap_content"
-            android:layout_height="25dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="117dp"
-            android:layout_marginTop="849dp"
-            android:fontFamily="@font/poppins_medium"
-            android:gravity="top"
-            android:text="@string/profile_drugs_input"
             android:textAppearance="@style/profile_name_input" />
 
         <TextView
             android:id="@+id/medical_inq"
             android:layout_width="wrap_content"
             android:layout_height="21dp"
+            android:layout_below="@+id/profile_dob_input"
             android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
             android:layout_marginStart="39dp"
-            android:layout_marginTop="915dp"
+            android:layout_marginTop="35dp"
             android:fontFamily="@font/poppins_extrabold"
             android:gravity="top"
             android:text="@string/medical_inq"
@@ -281,10 +237,10 @@
             android:id="@+id/profile_emailLink"
             android:layout_width="wrap_content"
             android:layout_height="21dp"
+            android:layout_below="@+id/profile_dob_input"
             android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
             android:layout_marginStart="161dp"
-            android:layout_marginTop="915dp"
+            android:layout_marginTop="35dp"
             android:fontFamily="@font/poppins_extrabold"
             android:gravity="top"
             android:text="@string/profile_emailLink"
@@ -294,10 +250,10 @@
             android:id="@+id/profile_sign_out"
             android:layout_width="wrap_content"
             android:layout_height="21dp"
+            android:layout_below="@+id/profile_dob_input"
             android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
             android:layout_marginStart="262dp"
-            android:layout_marginTop="915dp"
+            android:layout_marginTop="35dp"
             android:fontFamily="@font/poppins_extrabold"
             android:gravity="end|center_vertical"
             android:lineSpacingExtra="19sp"
@@ -308,7 +264,8 @@
             android:id="@+id/spacer"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:layout_marginTop="940dp"
+            android:layout_below="@+id/profile_emailLink"
+            android:layout_marginTop="18dp"
             android:background="#FFFFFF" />
     </RelativeLayout>
 

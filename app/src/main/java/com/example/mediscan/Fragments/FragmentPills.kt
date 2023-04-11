@@ -11,6 +11,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import com.google.firebase.database.DatabaseReference
 import androidx.recyclerview.widget.GridLayoutManager
@@ -19,7 +20,8 @@ import com.example.mediscan.Data.NarrowDownSearch
 import com.example.mediscan.R
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.fragment_pillsd.*
-import kotlinx.coroutines.NonCancellable.children
+import kotlinx.android.synthetic.main.fragment_pillsd.popup_title
+import kotlinx.android.synthetic.main.fragment_pillsd.popup_close
 
 
 class PillsFragment : Fragment()  {
@@ -30,6 +32,9 @@ class PillsFragment : Fragment()  {
     private val narrowSuggestions = mutableListOf<String>()
     private var medicineName: String? = ""
     private var medicineId: String? = ""
+    private var popupCard: CardView? = null
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -49,8 +54,14 @@ class PillsFragment : Fragment()  {
         val mdName:TextView = view.findViewById(R.id.medicine)
         mdName.text = medicineName
 
+        //popup card
+        popupCard = view.findViewById(R.id.popup_card)
+
+
         narrow_down_recycler.layoutManager = GridLayoutManager(activity, 3)
-        narrow_down_recycler.adapter = NarrowAdapter(narrowList)
+        narrow_down_recycler.adapter = NarrowAdapter(narrowList, popupCard,popup_title,popup_detail,popup_close)
+
+
 
         // TODO: Create function for search view code below
         val searchView: SearchView = view.findViewById(R.id.narrowsearch)
@@ -112,6 +123,8 @@ class PillsFragment : Fragment()  {
         })
     }
 
+
+
     private fun loadDataBase() {
          database = FirebaseDatabase.getInstance().getReference("narrow_search").child("$medicineId")
         //val myRef = database.getReference("narrow_search")
@@ -128,7 +141,7 @@ class PillsFragment : Fragment()  {
                         )
                     )
                 }
-                narrow_down_recycler.adapter = NarrowAdapter(narrowList)
+                narrow_down_recycler.adapter = NarrowAdapter(narrowList,popupCard,popup_title,popup_detail,popup_close)
                 for (narrowsearch in narrowList)
                     narrowSuggestions.add(narrowsearch.title)
             }
