@@ -16,6 +16,7 @@ import androidx.fragment.app.Fragment
 import com.google.firebase.database.DatabaseReference
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.mediscan.Adapter.NarrowAdapter
+import com.example.mediscan.Data.Communicator
 import com.example.mediscan.Data.NarrowDownSearch
 import com.example.mediscan.R
 import com.google.firebase.database.*
@@ -32,8 +33,9 @@ class PillsFragment : Fragment()  {
     private val narrowSuggestions = mutableListOf<String>()
     private var medicineName: String? = ""
     private var medicineId: String? = ""
+    private var brandName: String? = ""
     private var popupCard: CardView? = null
-
+    private lateinit var comm: Communicator
 
 
     override fun onCreateView(
@@ -44,7 +46,9 @@ class PillsFragment : Fragment()  {
         val view = inflater.inflate(R.layout.fragment_pillsd, container,false)
         medicineName = arguments?.getString("mdSelected")
         medicineId = arguments?.getString("mdId")
+        brandName = arguments?.getString("brandName")
         if (narrowList.isEmpty()) loadDataBase()
+        comm = requireActivity() as Communicator
         return view
     }
 
@@ -58,8 +62,11 @@ class PillsFragment : Fragment()  {
         popupCard = view.findViewById(R.id.popup_card)
 
 
+
         narrow_down_recycler.layoutManager = GridLayoutManager(activity, 3)
-        narrow_down_recycler.adapter = NarrowAdapter(narrowList, popupCard,popup_title,popup_detail,popup_close)
+        narrow_down_recycler.adapter = medicineName?.let {
+            NarrowAdapter(narrowList, popupCard,popup_title,popup_detail,popup_close, see_more, comm,medicineName.toString(), brandName.toString())
+        }
 
 
 
@@ -141,7 +148,7 @@ class PillsFragment : Fragment()  {
                         )
                     )
                 }
-                narrow_down_recycler.adapter = NarrowAdapter(narrowList,popupCard,popup_title,popup_detail,popup_close)
+                narrow_down_recycler.adapter = NarrowAdapter(narrowList,popupCard,popup_title,popup_detail,popup_close, see_more,comm, medicineName.toString(), brandName.toString())
                 for (narrowsearch in narrowList)
                     narrowSuggestions.add(narrowsearch.title)
             }
