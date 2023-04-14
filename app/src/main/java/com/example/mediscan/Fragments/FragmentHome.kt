@@ -16,16 +16,13 @@ import android.widget.CursorAdapter
 import android.widget.SearchView
 import android.widget.SimpleCursorAdapter
 import android.widget.Toast
-import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.mediscan.Adapter.NarrowAdapter
 import com.example.mediscan.Adapter.RecyclerAdapter
 import com.example.mediscan.Data.Communicator
 import com.example.mediscan.Data.Medicine
 import com.example.mediscan.R
 import com.example.mediscan.hideKeyboard
 import com.google.firebase.database.*
-import com.google.firebase.firestore.auth.User
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_pillsd.*
 import kotlinx.android.synthetic.main.fragment_results.*
@@ -110,7 +107,7 @@ class HomeFragment : androidx.fragment.app.Fragment() {
 
                 Toast.makeText(context, "You have selected $selection", Toast.LENGTH_LONG).show()
                 //TODO: fix pass data for search query suggestion
-                comm.passDataCom(selection, "dummy")
+                comm.passDataCom(selection, medicineList[position].id, medicineList[position].brand_name)
                 return true
             }
 
@@ -134,6 +131,7 @@ class HomeFragment : androidx.fragment.app.Fragment() {
                     medicineList.add(
                         Medicine(
                             medsnapshot.child("name").value.toString(),
+                            // Todo: Change common_presc to brand_name
                             medsnapshot.child("common_presc").value.toString(),
                             medsnapshot.child("id").value.toString()
                         )

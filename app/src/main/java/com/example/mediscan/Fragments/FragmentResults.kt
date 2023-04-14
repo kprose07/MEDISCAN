@@ -1,21 +1,17 @@
 package com.example.mediscan.Fragments
 
 
-import android.app.Activity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.mediscan.Accordresults
 import com.example.mediscan.Adapter.DescriptionAdapter
+import com.example.mediscan.Data.NarrowDownSearch
 import com.example.mediscan.R
 import kotlinx.android.synthetic.main.fragment_results.*
-import kotlinx.android.synthetic.main.row.*
-import kotlinx.android.synthetic.main.row.view.*
 
 
 class ResultsFragment : Fragment() {
@@ -23,12 +19,25 @@ class ResultsFragment : Fragment() {
     //var filt: Boolean = true
     //var filticon: Boolean = true
     var switch  = true
+    private var itemClicked: String? = null
+    private var narrowData = ArrayList<NarrowDownSearch>()
+    private var medicineName: String? = null
+    private var brandName: String?  = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? = inflater.inflate(R.layout.fragment_results, container, false)
+    ): View?{
+        val view = inflater.inflate(R.layout.fragment_results, container, false)
+
+        // Narrow Data from Pills Page
+        itemClicked = arguments?.getString("itemClicked").toString()
+        narrowData = arguments?.getParcelableArrayList("narrowData")!!
+        medicineName = arguments?.getString("medicineName")
+        brandName = arguments?.getString("brandName")
+        return view
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -39,10 +48,21 @@ class ResultsFragment : Fragment() {
              filticon = !filticon
          }
  */
+        setMedicineName(view, )
         //Accordian Data
-        if (descriptionList.isEmpty()) initData()
+        if (descriptionList.isEmpty()) initData(narrowData, itemClicked.toString())
         setRecyclerView()
 
+
+    }
+
+    private fun setMedicineName(view: View) {
+        val medicineName1: TextView = view.findViewById(R.id.medName1)
+        val medicineName2: TextView = view.findViewById(R.id.medName2)
+        val brandName: TextView = view.findViewById(R.id.brandName)
+        medicineName1.text = medicineName
+        medicineName2.text = medicineName
+        brandName.text = this.brandName
 
     }
 
@@ -56,40 +76,18 @@ class ResultsFragment : Fragment() {
     }
 
 
-    private fun initData() {
+    private fun initData( desc_data: ArrayList<NarrowDownSearch>, item_clicked: String) {
         filter()
-        descriptionList.add(
-            Accordresults(
-                "Summary",
-                "Omeprazole is used to treat certain stomach and esophagus problems (such as acid reflux, ulcers). It works by decreasing the amount of acid your stomach makes. It relieves symptoms such as heartburn, difficulty swallowing, and cough. This medicati ...Omeprazole is used to treat certain stomach and esophagus problems (such as acid reflux, ulcers). It works by decreasing the amount of acid your stomach makes. It relieves symptoms such as heartburn, difficulty swallowing, and cough. This medicati ...",
-                true
+        for (desc_item in desc_data) {
+            descriptionList.add(
+                Accordresults(
+                    desc_item.title,
+                    desc_item.data,
+                    desc_item.title.lowercase() == item_clicked.lowercase()
+                )
             )
+        }
 
-        )
-        descriptionList.add(
-            Accordresults(
-                "Medic",
-                "Test loefhporihfpn"
-            )
-        )
-        descriptionList.add(
-            Accordresults(
-                "Topic",
-                "Test loefhporihfpn"
-            )
-        )
-        descriptionList.add(
-            Accordresults(
-                "Hi",
-                "Test loefhporihfpn"
-            )
-        )
-        descriptionList.add(
-            Accordresults(
-                "Rose",
-                "Test loefhporihfpn"
-            )
-        )
     }
 
     fun toggleAll(){
