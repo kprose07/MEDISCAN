@@ -6,14 +6,24 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.mediscan.Data.Communicator
 import com.example.mediscan.Data.NarrowDownSearch
 import com.example.mediscan.R
 import java.util.HashMap
-import kotlinx.android.synthetic.main.fragment_pillsd.*
 
-class NarrowAdapter(private var narrow: List<NarrowDownSearch>, private var popupCard: CardView?, private var popupTitle: TextView,
-        private var popupDetail: TextView, private var close: View) :
+class NarrowAdapter(private var narrow: List<NarrowDownSearch>,
+                    private var popupCard: CardView?,
+                    private var popupTitle: TextView,
+                    private var popupDetail: TextView,
+                    private var close: View,
+                    private var seeMore: TextView,
+                    communicator: Communicator,
+                    private var medicineName: String,
+                    private var brandName: String
+) :
     RecyclerView.Adapter<NarrowAdapter.ViewHolder>() {
+
+    private val comm:Communicator = communicator
 
     // TODO: add the rest of the medicines
     // TODO: what to look at for hash map
@@ -54,6 +64,9 @@ class NarrowAdapter(private var narrow: List<NarrowDownSearch>, private var popu
 //                    serachbg.setBackgroundResource(R.drawable.searchroundbox)
                     popupCard?.visibility = View.GONE
 
+                }
+                seeMore.setOnClickListener {
+                    comm.openResultsPage(narrow, itemTitle.text.toString(), medicineName, brandName)
                 }
 
             }
