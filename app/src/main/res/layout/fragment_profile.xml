@@ -45,7 +45,7 @@
             android:contentDescription="@string/todo"
             android:padding="5dp"
             android:scaleType="centerInside"
-            android:src="@drawable/bri" />
+            android:src="@drawable/prof" />
 
         <Button
             android:id="@+id/edit_p"

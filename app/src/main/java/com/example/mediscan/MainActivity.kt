@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity(), Communicator {
         val pillsdFragment = PillsFragment()
         val savedFragment = SavedFragment()
         val profileFragment = ProfileFragment()
+        val editProfile = EditProfileFragment()
         val resultsFragment = ResultsFragment()
        // val loginFragment = LoginFragment()
 
@@ -36,10 +37,10 @@ class MainActivity : AppCompatActivity(), Communicator {
                     setCurrentFragment(homeFragment)
                     Log.i(tag,"Home Selected")
                 }
-                R.id.pills ->{
-                    setCurrentFragment(pillsdFragment)
-                    Log.i(tag,"Pills Selected")
-                }
+//                R.id.pills ->{
+//                    setCurrentFragment(pillsdFragment)
+//                    Log.i(tag,"Pills Selected")
+//                }
                 R.id.saved ->{
                     setCurrentFragment(savedFragment)
                     Log.i(tag,"Saved Selected")

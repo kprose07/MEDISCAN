@@ -46,17 +46,14 @@ class ProfileFragment : Fragment() {
             firebaseAuth = FirebaseAuth.getInstance()
             loaduserinfo()
 
-
-
-
-
-
-
-
-
-
-
-
+        edit_p.setOnClickListener{
+            val fragment = EditProfileFragment()
+            val fragmentManager = fragmentManager
+            val fragmentTransaction = fragmentManager!!.beginTransaction()
+            fragmentTransaction.replace(R.id.fl_wrapper, fragment)
+            fragmentTransaction.addToBackStack(null)
+            fragmentTransaction.commit()
+        }
     }
 
     private fun loaduserinfo() {
