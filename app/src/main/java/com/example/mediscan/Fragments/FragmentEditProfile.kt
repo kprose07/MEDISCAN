@@ -4,7 +4,9 @@ import android.app.Activity
 import android.content.ContentValues
 import android.content.Context
 import android.content.Intent
+import android.graphics.*
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Patterns
@@ -17,6 +19,7 @@ import android.widget.Toast
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.ActivityResultCallback
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.example.mediscan.R
@@ -28,9 +31,8 @@ import kotlinx.android.synthetic.main.fragment_edit_profile.*
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_profile.*
 import kotlinx.android.synthetic.main.fragment_saved.*
-import java.text.SimpleDateFormat
 import java.util.*
-
+import kotlin.math.min
 
 
 class EditProfileFragment : Fragment() {
@@ -39,7 +41,8 @@ class EditProfileFragment : Fragment() {
     private lateinit var database: DatabaseReference
     private lateinit var firebaseAuth: FirebaseAuth
     //private lateinit var firebaseStorage: FirebaseStorage
-
+    // Declaring the Bitmap
+    private lateinit var bitmap: Bitmap
     //Image uri
     private var imageUri: Uri? = null
 
@@ -57,14 +60,19 @@ class EditProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
+
         firebaseAuth = FirebaseAuth.getInstance()
         loaduserinfo()
+
+
         edit_button.setOnClickListener {
             validateData()
 
         }
         upload_img.setOnClickListener {
             editImage()
+
         }
 
     }
@@ -233,9 +241,11 @@ class EditProfileFragment : Fragment() {
                 pickImageCamera()
             } else if (id==1){
                 pickImageGallery()
+
             }
             true
         }
+
     }
 
     private fun pickImageCamera() {
@@ -258,6 +268,7 @@ class EditProfileFragment : Fragment() {
         intent.type = "image/*"
         galleryActivityResultLauncher.launch(intent)
     }
+
 
     //camera
     private val cameraActivityResultLauncher = registerForActivityResult(
