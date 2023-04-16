@@ -1,6 +1,7 @@
 package com.example.mediscan.Fragments
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +9,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bumptech.glide.Glide
 import com.example.mediscan.Adapter.ProfileRemindAdapter
 import com.example.mediscan.Adapter.RecentsAdapter
 import com.example.mediscan.Data.ProfileRemind
@@ -54,6 +56,9 @@ class ProfileFragment : Fragment() {
             fragmentTransaction.addToBackStack(null)
             fragmentTransaction.commit()
         }
+        profile_sign_out.setOnClickListener {
+
+        }
     }
 
     private fun loaduserinfo() {
@@ -62,16 +67,25 @@ class ProfileFragment : Fragment() {
             .addValueEventListener(object: ValueEventListener{
                 override fun onDataChange(snapshot: DataSnapshot){
                     //user info
-                    val firstName =" ${snapshot.child("firstName").value}"
-                    val email =" ${snapshot.child("email").value}"
-                    val phone =" ${snapshot.child("phone").value}"
-                    val dob =" ${snapshot.child("dob").value}"
+                    val firstName ="${snapshot.child("firstName").value}"
+                    val email ="${snapshot.child("email").value}"
+                    val phone ="${snapshot.child("phone").value}"
+                    val dob ="${snapshot.child("dob").value}"
+                    val uid ="${snapshot.child("uid").value}"
+                    val pimg ="${snapshot.child("profileImage").value}"
 
+                    Log.i("pimgname",pimg)
                     //val formatDate = MyApplication.formatTimeStamp(timestamp.toLong())
                     profile_name_input.text = firstName
                     profile_email_input.text = email
                     profile_dob_input.text = dob
                     profile_phone_input.text = phone
+
+                    try {
+                        Glide.with(this@ProfileFragment).load(pimg).placeholder(R.drawable.prof).into(profile_img)
+                    }catch (e: Exception){
+
+                    }
 
                 }
 

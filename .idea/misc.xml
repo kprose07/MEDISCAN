@@ -72,6 +72,7 @@
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/drawable/narrow_popup_top.xml" value="0.207" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/drawable/narrow_text.xml" value="0.1815" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/drawable/narrowrect.xml" value="0.2" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/drawable/nullp.xml" value="0.1" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/drawable/profile_top_rect.xml" value="0.2" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/drawable/profilecircle.xml" value="0.2" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/drawable/reccentcard.xml" value="0.1835" />
@@ -102,12 +103,12 @@
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/activity_splash_screen.xml" value="0.25" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/allergy_style.xml" value="0.536" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/dialog_forgot_password.xml" value="0.264" />
-        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/fragment_edit_profile.xml" value="0.176" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/fragment_edit_profile.xml" value="0.185" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/fragment_home.xml" value="0.176" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/fragment_homegrid.xml" value="0.2210144927536232" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/fragment_login.xml" value="0.264" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/fragment_pillsd.xml" value="0.2" />
-        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/fragment_profile.xml" value="0.176" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/fragment_profile.xml" value="0.305458768873403" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/fragment_results.xml" value="0.2" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/fragment_saved.xml" value="0.264" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/medicine_layout.xml" value="0.2210144927536232" />

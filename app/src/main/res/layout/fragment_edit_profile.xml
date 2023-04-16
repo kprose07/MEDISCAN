@@ -36,7 +36,7 @@
             android:textAppearance="@style/profiletext" />
 
         <ImageView
-            android:id="@+id/profile_img_edit"
+            android:id="@+id/edit_profile_img"
             android:layout_width="142dp"
             android:layout_height="142dp"
             android:layout_alignParentTop="true"
@@ -61,8 +61,8 @@
 <!--            android:src="@drawable/ic_overlay" />-->
 
         <Button
-            android:id="@+id/edit_p_editpage"
-            android:layout_width="105dp"
+            android:id="@+id/upload_img"
+            android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
@@ -71,9 +71,10 @@
             android:layout_marginTop="247dp"
             android:background="@drawable/profile_editbutton"
             android:padding="2dp"
-            android:text="@string/edit"
+            android:text="@string/editImg"
             android:textColor="#FFFFFF"
             android:textSize="12sp"
+
             tools:ignore="TouchTargetSizeCheck" />
 
         <com.google.android.material.textfield.TextInputLayout
@@ -81,7 +82,7 @@
             android:id="@+id/user_first_name_edit"
             android:layout_width="282dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/edit_p_editpage"
+            android:layout_below="@+id/upload_img"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="29dp"
             android:background="@drawable/user_input_line"

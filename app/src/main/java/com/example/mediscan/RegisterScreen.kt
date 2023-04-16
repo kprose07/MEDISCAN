@@ -13,6 +13,9 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_register_screen.*
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.HashMap
 
 
 @Suppress("DEPRECATION")
@@ -98,11 +101,12 @@ class RegisterScreen : AppCompatActivity() {
     private fun updateUserInfo() {
         //save user info
         progressDialog.setMessage("Saving User Info...")
-        val timeStamp = System.currentTimeMillis()
+        val timeStamp = SimpleDateFormat("yyyy_MM_dd_HH_mm_ss", Locale.getDefault())
 
         //get current user id
         val uid = firebaseAuth.uid
         val firstName = binding.regFirstNameInput.text.toString()
+        val email = binding.regEmailInput.text.toString()
         val lastName = binding.regLastNameInput.text.toString()
         val dob = binding.regDobInput.text.toString()
         val phone = binding.regPhoneInput.text.toString()
