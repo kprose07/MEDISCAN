@@ -1,5 +1,6 @@
 package com.example.mediscan.Fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -14,6 +15,7 @@ import com.example.mediscan.Adapter.ProfileRemindAdapter
 import com.example.mediscan.Adapter.RecentsAdapter
 import com.example.mediscan.Data.ProfileRemind
 import com.example.mediscan.Data.Recents
+import com.example.mediscan.LoginScreen
 import com.example.mediscan.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -57,7 +59,9 @@ class ProfileFragment : Fragment() {
             fragmentTransaction.commit()
         }
         profile_sign_out.setOnClickListener {
-
+            FirebaseAuth.getInstance().signOut();
+            val intent = Intent(context, LoginScreen::class.java)
+            startActivity(intent)
         }
     }
 
@@ -71,7 +75,7 @@ class ProfileFragment : Fragment() {
                     val email ="${snapshot.child("email").value}"
                     val phone ="${snapshot.child("phone").value}"
                     val dob ="${snapshot.child("dob").value}"
-                    val uid ="${snapshot.child("uid").value}"
+                    //val uid ="${snapshot.child("uid").value}"
                     val pimg ="${snapshot.child("profileImage").value}"
 
                     Log.i("pimgname",pimg)

@@ -23,7 +23,7 @@ class RegisterScreen : AppCompatActivity() {
 
     private lateinit var binding: ActivityRegisterScreenBinding
     private lateinit var firebaseAuth: FirebaseAuth
-    private lateinit var database : DatabaseReference
+    //private lateinit var database : DatabaseReference
     private lateinit var progressDialog: ProgressDialog
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,22 +41,29 @@ class RegisterScreen : AppCompatActivity() {
         binding.loginPrompt.setOnClickListener {
             val intent = Intent(this, LoginScreen::class.java)
             startActivity(intent)
+            finish()
         }
 
         binding.registerButton.setOnClickListener{
-           //loaddata()
            validateData()
         }
     }
 
     private var email = ""
     private var password = ""
-
+    private var firstName = ""
+    private var lastName = ""
+    private var phone = ""
+    private var dob = ""
 
     private fun validateData() {
         //Input Data
         email = binding.regEmailInput.text.toString().trim()
         password = binding.regPwInput.text.toString().trim()
+        firstName = binding.regFirstNameInput.text.toString().trim()
+        lastName = binding.regLastNameInput.text.toString().trim()
+        dob = binding.regDobInput.text.toString().trim()
+        phone = binding.regPhoneInput.text.toString().trim()
 
         //Validate Data
         if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
@@ -77,7 +84,7 @@ class RegisterScreen : AppCompatActivity() {
 
     private fun createUserAccount() {
         //Create User Account
-       //progressBar2.setText()
+
         //create user in firebase auth
         progressDialog.setMessage("Creating Acount")
         progressDialog.show()
@@ -101,15 +108,11 @@ class RegisterScreen : AppCompatActivity() {
     private fun updateUserInfo() {
         //save user info
         progressDialog.setMessage("Saving User Info...")
-        val timeStamp = SimpleDateFormat("yyyy_MM_dd_HH_mm_ss", Locale.getDefault())
+        val timeStamp = System.currentTimeMillis()
 
         //get current user id
         val uid = firebaseAuth.uid
-        val firstName = binding.regFirstNameInput.text.toString()
-        val email = binding.regEmailInput.text.toString()
-        val lastName = binding.regLastNameInput.text.toString()
-        val dob = binding.regDobInput.text.toString()
-        val phone = binding.regPhoneInput.text.toString()
+
 
 
         //setup data to add in db
@@ -134,9 +137,9 @@ class RegisterScreen : AppCompatActivity() {
                     this,
                     "Acount Created...",
                     Toast.LENGTH_SHORT).show()
-                val intent = Intent(this, LoginScreen::class.java)
-                startActivity(intent)
 
+                startActivity(Intent(this@RegisterScreen,LoginScreen::class.java))
+                finish()
 
             }
             .addOnFailureListener{ e->

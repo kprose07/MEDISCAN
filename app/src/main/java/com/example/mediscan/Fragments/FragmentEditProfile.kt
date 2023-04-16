@@ -1,12 +1,11 @@
 package com.example.mediscan.Fragments
 
 import android.app.Activity
+import android.app.ProgressDialog
 import android.content.ContentValues
 import android.content.Context
 import android.content.Intent
-import android.graphics.*
 import android.net.Uri
-import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Patterns
@@ -19,7 +18,6 @@ import android.widget.Toast
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.ActivityResultCallback
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.example.mediscan.R
@@ -31,8 +29,9 @@ import kotlinx.android.synthetic.main.fragment_edit_profile.*
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_profile.*
 import kotlinx.android.synthetic.main.fragment_saved.*
+import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.math.min
+
 
 
 class EditProfileFragment : Fragment() {
@@ -41,13 +40,12 @@ class EditProfileFragment : Fragment() {
     private lateinit var database: DatabaseReference
     private lateinit var firebaseAuth: FirebaseAuth
     //private lateinit var firebaseStorage: FirebaseStorage
-    // Declaring the Bitmap
-    private lateinit var bitmap: Bitmap
+
     //Image uri
     private var imageUri: Uri? = null
 
     val profileFragment = ProfileFragment()
-    //private lateinit var progressDialog: ProgressDialog
+    private lateinit var progressDialog: ProgressDialog
 
 
     override fun onCreateView(
@@ -60,19 +58,19 @@ class EditProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
-
         firebaseAuth = FirebaseAuth.getInstance()
+        //init progress bar
+        progressDialog = ProgressDialog(context)
+        progressDialog.setTitle("Please Wiat")
+        progressDialog.setCanceledOnTouchOutside(false)
+
         loaduserinfo()
-
-
         edit_button.setOnClickListener {
             validateData()
 
         }
         upload_img.setOnClickListener {
             editImage()
-
         }
 
     }
@@ -113,6 +111,8 @@ class EditProfileFragment : Fragment() {
     }
 
     private fun uploadImg() {
+        progressDialog.setMessage("Uploading Image")
+        progressDialog.show()
         //image path
         val filePathName = "images/"+firebaseAuth.uid
 
@@ -129,6 +129,7 @@ class EditProfileFragment : Fragment() {
 
 
             }.addOnFailureListener{e->
+                progressDialog.dismiss()
                 Toast.makeText(context,"Failed To Upload Image",Toast.LENGTH_SHORT).show()
 
             }
@@ -138,7 +139,8 @@ class EditProfileFragment : Fragment() {
 
     private fun updateUserInfo(uploadImageUrl: String) {
         //save user info
-
+        progressDialog.setMessage("Updating Profile")
+        progressDialog.show()
         //setup data to add in db
         val hashmap: HashMap<String, Any?> = HashMap()
         hashmap["email"] = email
@@ -169,7 +171,7 @@ class EditProfileFragment : Fragment() {
 
             }
             .addOnFailureListener { e ->
-
+                progressDialog.dismiss()
                 Toast.makeText(
                     context,
                     "Failed saving User Info due to ${e.message}",
@@ -241,11 +243,9 @@ class EditProfileFragment : Fragment() {
                 pickImageCamera()
             } else if (id==1){
                 pickImageGallery()
-
             }
             true
         }
-
     }
 
     private fun pickImageCamera() {
@@ -268,7 +268,6 @@ class EditProfileFragment : Fragment() {
         intent.type = "image/*"
         galleryActivityResultLauncher.launch(intent)
     }
-
 
     //camera
     private val cameraActivityResultLauncher = registerForActivityResult(
@@ -296,7 +295,7 @@ class EditProfileFragment : Fragment() {
                 imageUri = data!!.data
 
                 edit_profile_img.setImageURI(imageUri)
-                Toast.makeText(context," Upload",Toast.LENGTH_SHORT).show()
+                //Toast.makeText(context," Uploaded Image",Toast.LENGTH_SHORT).show()
 
             } else{
                 Toast.makeText(context,"Failed Upload",Toast.LENGTH_SHORT).show()
@@ -306,6 +305,5 @@ class EditProfileFragment : Fragment() {
     )
 
 }
-
 
 
