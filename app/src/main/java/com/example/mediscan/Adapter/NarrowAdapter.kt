@@ -75,14 +75,7 @@ class NarrowAdapter(private var narrow: List<NarrowDownSearch>,
                 popupCard?.visibility = View.VISIBLE
                 popupTitle.setText(itemTitle.text)
                 popupDetail.setText(narrow[position].data)
-//                pillsbg.setBackgroundResource(R.drawable.narrow_popup_background)
-                //serachbg.setBackgroundResource(R.drawable.narrow_popup_backgroundsearch)
 
-            Toast.makeText(
-                itemView.context,
-                "You clicked on item # ${position + 1}",
-                Toast.LENGTH_SHORT
-            ).show()
         }
     }
 

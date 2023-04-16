@@ -159,5 +159,7 @@
 
     </string-array>
 
-
+        <!--Edit Profile-->
+    <string name="editprofbutton">Done</string>
+    <string name="editImg">Upload Image</string>
 </resources>
