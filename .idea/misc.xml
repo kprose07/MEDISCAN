@@ -123,8 +123,12 @@
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/suggestion_item_layout.xml" value="0.25" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/menu/bottom_navbar.xml" value="0.2140625" />
         <entry key="..\:/Users/khayl/AppData/Local/Android/Sdk/platforms/android-32/data/res/layout/simple_list_item_multiple_choice.xml" value="0.72" />
-        <entry key="..\:/Users/nzund/Desktop/Projects/MEDISCAN/app/src/main/res/layout/fragment_pillsd.xml" value="0.12436676798378926" />
+        <entry key="..\:/Users/nzund/Desktop/Projects/MEDISCAN/app/src/main/res/layout/fragment_pillsd.xml" value="0.22214484679665739" />
+        <entry key="..\:/Users/nzund/Desktop/Projects/MEDISCAN/app/src/main/res/layout/fragment_profile.xml" value="0.5" />
         <entry key="..\:/Users/nzund/Desktop/Projects/MEDISCAN/app/src/main/res/layout/fragment_results.xml" value="0.29635416666666664" />
+        <entry key="..\:/Users/nzund/Desktop/Projects/MEDISCAN/app/src/main/res/layout/fragment_saved.xml" value="0.1" />
+        <entry key="..\:/Users/nzund/Desktop/Projects/MEDISCAN/app/src/main/res/layout/row.xml" value="0.33" />
+        <entry key="..\:/Users/nzund/Desktop/Projects/MEDISCAN/app/src/main/res/layout/saved_card.xml" value="0.25" />
       </map>
     </option>
   </component>

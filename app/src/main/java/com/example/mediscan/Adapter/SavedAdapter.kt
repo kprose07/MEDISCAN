@@ -9,13 +9,18 @@ import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.mediscan.Data.Communicator
 import com.example.mediscan.Data.Recents
 import com.example.mediscan.Data.Saved
+import com.example.mediscan.Data.SavedMedicine
 import com.example.mediscan.R
+import com.google.firebase.database.DatabaseReference
 
-class SavedAdapter(private var savedList: ArrayList<Saved>) :
+class SavedAdapter(private var savedList: List<SavedMedicine>, communicator: Communicator, savedMedicineDB: DatabaseReference) :
     RecyclerView.Adapter<SavedAdapter.ViewHolder>() {
 
+    private val comm:Communicator = communicator
+    private val db: DatabaseReference = savedMedicineDB
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
@@ -34,20 +39,28 @@ class SavedAdapter(private var savedList: ArrayList<Saved>) :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-        var isEmptyCard: Boolean = savedList[position].issEmpty
+        var isEmptyCard: Boolean = false
 
-        fun changeToEmptyCard(){
-            holder.saveemptycard.visibility = View.VISIBLE
-            holder.savefilledcard.visibility = View.GONE
-        }
+//        fun changeToEmptyCard(){
+//            holder.saveemptycard.visibility = View.VISIBLE
+//            holder.savefilledcard.visibility = View.GONE
+//        }
         fun changeToFilled(){
-            holder.savemedtext.text = savedList[position].savedMedicine
+            holder.savemedtext.text = savedList[position].name
             holder.savefilledcard.visibility = View.VISIBLE
+            holder.savefilledcard.setOnClickListener { v: View ->
+                comm.passDataCom(savedList[position].name, savedList[position].id, savedList[position].brandName)
+            }
+
+    // TODO: Add delete functions for saved items
+//            holder.savefilledcard.setOnLongClickListener (
+//                comm.deleteFromDB(db, savedList[position].id)
+//            )
             holder.saveemptycard.visibility = View.GONE
         }
         fun checktog(){
            if (isEmptyCard) {
-               changeToEmptyCard()
+//               changeToEmptyCard()
            } else {
                changeToFilled()
            }

@@ -1,5 +1,7 @@
 package com.example.mediscan.Data
 
+import com.google.firebase.database.DatabaseReference
+
 interface Communicator {
     fun passDataCom(
         medicineSelected: String,
@@ -13,4 +15,11 @@ interface Communicator {
         medicineName: String,
         brandName: String
     )
+
+    fun deleteFromDB(
+        db: DatabaseReference,
+        id: String
+    )
+
+    fun openEmailClient()
 }
