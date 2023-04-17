@@ -27,7 +27,7 @@ import kotlinx.android.synthetic.main.fragment_profile.*
 import kotlinx.android.synthetic.main.fragment_saved.*
 
 class ProfileFragment : Fragment() {
-    val remindList = ArrayList<ProfileRemind>()
+
 
     private lateinit var database : DatabaseReference
     private lateinit var firebaseAuth: FirebaseAuth
@@ -41,9 +41,7 @@ class ProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        profile_reminder.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        profile_reminder.adapter = ProfileRemindAdapter(remindList)
-        reminddata()
+
       //  val profTitle: String = profile_name_input.text.toString()
             //val user = Firebase.auth.currentUser.toString()
            // readData("kprose07")
@@ -114,30 +112,5 @@ class ProfileFragment : Fragment() {
 ////        }
 //    }
 
-    private fun reminddata(){
-        remindList.add(
-            ProfileRemind(
-                "Rose",
-                1,
-                false
 
-            )
-        )
-        remindList.add(
-            ProfileRemind(
-                "Humilin",
-                1,
-                true
-
-            )
-        )
-        remindList.add(
-            ProfileRemind(
-                "Humilin",
-                1,
-                true
-
-            )
-        )
-    }
 }

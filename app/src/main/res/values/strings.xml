@@ -79,7 +79,7 @@
     <string name="expand_al"><u>Expand All</u></string>
 
     <!-- Saved Page -->
-    <string name="recent"><i>Recents</i></string>
+    <string name="remind"><i>Set Reminders</i></string>
     <string name="recmedname">MOUNJARO</string>
     <string name="rec_medi">Search\nMedication</string>
     <string name="saved">Saved Medicines</string>
@@ -89,6 +89,23 @@
     <string name="special">Special Notes</string>
     <string name="specialnote">Add Note</string>
     <string name="scroll">scroll</string>
+
+    <!-- Saved Remind PopUp Page -->
+    <string name="remindtitle">Set Reminder</string>
+    <string name="remindsearch">Select A Medicine</string>
+    <string name="detailremind">Enter Details</string>
+    <string name="selctTime">Select Time</string>
+    <string name="add">Add</string>
+    <string name="cancle">Cancle Reminder</string>
+
+    <string-array name="allergies">
+        <item>Select Medicine</item>
+        <item>Jelly</item>
+        <item>Swift</item>
+        <item>Python</item>
+        <item>Scala</item>
+        <item>Perl</item>
+    </string-array>
 
     <!--    Profiles Page -->
     <string name="profiletext">Profile</string>
@@ -147,14 +164,6 @@
         <item>Allergies</item>
     </string-array>
 
-        <string-array name="allergies">
-            <item>Soy</item>
-            <item>Jelly</item>
-            <item>Swift</item>
-            <item>Python</item>
-            <item>Scala</item>
-            <item>Perl</item>
-        </string-array>
     <string-array name="allergies_list">
 
     </string-array>
