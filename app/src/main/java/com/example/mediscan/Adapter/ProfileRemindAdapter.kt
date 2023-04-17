@@ -54,6 +54,7 @@ class ProfileRemindAdapter(private var remindList: List<ProfileRemind>) :
         for(rec in remindList) {
             checktog()
         }
+
     }
 
     override fun getItemCount(): Int {

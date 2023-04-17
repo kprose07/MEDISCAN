@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
@@ -21,7 +22,7 @@
             android:fontFamily="@font/poppins_mediumbb"
             android:gravity="top"
             android:lineSpacingExtra="10sp"
-            android:text="@string/recent"
+            android:text="@string/remind"
             android:textAppearance="@style/recent"
             android:translationY="-5sp" />
 
@@ -36,12 +37,12 @@
             android:layout_marginEnd="16dp">
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recent_medication"
+                android:id="@+id/profile_reminder"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
                 tools:itemCount="17"
-                tools:listitem="@layout/reccent_card" />
+                tools:listitem="@layout/remind_card" />
         </HorizontalScrollView>
 
         <View
@@ -155,6 +156,196 @@
                 tools:itemCount="17"
                 tools:listitem="@layout/notes_card" />
         </HorizontalScrollView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/popup_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="7dp"
+            android:background="@null"
+            android:outlineProvider="none"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true">
 
+
+            <RelativeLayout
+                android:layout_width="316dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/narrow_popup_bot"
+                android:paddingBottom="15dp"
+
+                >
+
+                <LinearLayout
+                    android:id="@+id/linpop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/popup_top"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/narrow_popup_top" />
+
+                <TextView
+                    android:id="@+id/popup_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="23dp"
+                    android:layout_marginTop="0dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:gravity="center_vertical"
+                    android:padding="10dp"
+                    android:text="@string/remindtitle"
+                    android:textAppearance="@style/pop_up_title" />
+
+                <View
+                    android:id="@+id/remind_close"
+                    android:layout_width="15dp"
+                    android:layout_height="16dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="false"
+                    android:layout_marginStart="120dp"
+                    android:layout_marginTop="17dp"
+                    android:layout_toEndOf="@+id/popup_title"
+                    android:background="@drawable/ic_close"
+                    android:clickable="true"
+                    android:focusable="true"
+                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+                <RelativeLayout
+                    android:id="@+id/select_medicine_remind"
+                    android:layout_width="228dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/popup_top"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="23dp"
+                    android:background="@drawable/remindline">
+
+                    <TextView
+                        android:id="@+id/remind_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="22dp"
+                        android:layout_marginTop="0dp"
+                        android:fontFamily="@font/inter_semibold"
+                        android:hint="@string/remindsearch"
+                        android:paddingBottom="0dp"
+                        android:singleLine="true"
+                        android:textAlignment="gravity"
+                        android:textColorHint="#000000"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:visibility="gone"
+                        tools:visibility="gone" />
+
+                    <Spinner
+                        android:id="@+id/spinner_remind_meds"
+                        android:layout_width="228dp"
+                        android:layout_height="wrap_content"
+
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="0dp"
+                        android:paddingBottom="0dp"
+
+                        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+                </RelativeLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+
+                    android:id="@+id/description_remind"
+                    android:layout_width="228dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/select_medicine_remind"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/remindline"
+                    android:maxLines="2"
+                    android:paddingStart="0dp"
+                    android:paddingEnd="0dp"
+                    android:textAlignment="textStart"
+                    android:textColorHint="#000000"
+                    app:boxStrokeColor="#FF0000"
+                    app:boxStrokeErrorColor="#00FFFFFF">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/description_remind_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="-15.5dp"
+                        android:background="#00FFFFFF"
+                        android:backgroundTint="#00000000"
+                        android:fontFamily="@font/inter_semibold"
+                        android:gravity="start"
+                        android:hint="@string/detailremind"
+                        android:inputType="textMultiLine"
+                        android:maxLines="2"
+                        android:paddingBottom="0dp"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+
+                        android:textStyle="bold"
+                        tools:ignore="TouchTargetSizeCheck,DuplicateClickableBoundsCheck" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/ser_remind_button"
+                    android:layout_width="146dp"
+                    android:layout_height="32dp"
+                    android:layout_below="@+id/description_remind"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="25dp"
+                    android:background="@drawable/login_button"
+                    android:clickable="true"
+                    android:contextClickable="true"
+                    android:fontFamily="@font/inter_semibold"
+                    android:padding="0dp"
+                    android:text="@string/selctTime"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
+
+                <Button
+                    android:id="@+id/add_remind_button"
+                    android:layout_width="83dp"
+                    android:layout_height="32dp"
+                    android:layout_below="@+id/ser_remind_button"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/login_button"
+                    android:fontFamily="@font/inter_semibold"
+                    android:padding="0dp"
+                    android:text="@string/add"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
+
+                <TextView
+                    android:id="@+id/cancle_remind"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/add_remind_button"
+                    android:layout_marginStart="-20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toEndOf="@+id/add_remind_button"
+                    android:fontFamily="@font/poppins_light"
+                    android:gravity="center_vertical"
+                    android:lineSpacingExtra="1sp"
+                    android:paddingBottom="0dp"
+                    android:singleLine="true"
+                    android:text="@string/cancle"
+                    android:textAppearance="@style/see_more_" />
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
     </RelativeLayout>
 </ScrollView>

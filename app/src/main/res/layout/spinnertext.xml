@@ -1,14 +1,16 @@
-<TextView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/regss_allergies_input"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="23dp"
     android:fontFamily="@font/inter_semibold"
-    android:hint="@string/user_allergies_reg"
+    android:hint="@string/remindsearch"
+
     android:paddingBottom="8dp"
     android:singleLine="true"
+    android:textColor="@color/black"
     android:textAlignment="gravity"
     android:textColorHint="#000000"
-    android:textSize="24sp"
-    android:textStyle="bold" />
+    android:textSize="16sp"
+    android:textStyle="bold"
+    />
