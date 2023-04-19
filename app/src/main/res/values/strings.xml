@@ -99,6 +99,7 @@
     <string name="cancle">Cancle Reminder</string>
 
     <string-array name="allergies">
+
         <item>Select Medicine</item>
         <item>Jelly</item>
         <item>Swift</item>

@@ -13,4 +13,6 @@ interface Communicator {
         medicineName: String,
         brandName: String
     )
+
+
 }

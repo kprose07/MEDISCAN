@@ -1,7 +1,6 @@
 package com.example.mediscan.Fragments
 
 
-import android.annotation.SuppressLint
 import android.app.AlarmManager
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -10,9 +9,7 @@ import android.content.Context
 import android.content.Context.NOTIFICATION_SERVICE
 import android.content.Intent
 import android.icu.util.Calendar
-import android.os.Build
 import android.os.Bundle
-import android.text.format.DateFormat.getLongDateFormat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,11 +18,7 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat.getSystemService
-import androidx.core.content.getSystemService
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mediscan.*
 import com.example.mediscan.Adapter.NotesAdapter
@@ -34,20 +27,19 @@ import com.example.mediscan.Adapter.SavedAdapter
 import com.example.mediscan.Data.Notes
 import com.example.mediscan.Data.ProfileRemind
 import com.example.mediscan.Data.Saved
-import com.example.mediscan.databinding.ActivityRegisterScreenBinding
 import com.google.android.material.timepicker.MaterialTimePicker
 import com.google.android.material.timepicker.TimeFormat
+import kotlinx.android.synthetic.main.fragment_results.*
 import kotlinx.android.synthetic.main.fragment_saved.*
-import java.text.DateFormat
+import kotlinx.android.synthetic.main.remind_card.*
 import java.util.*
-import kotlin.collections.ArrayList
 
 
 class SavedFragment : Fragment() {
     val remindList = ArrayList<ProfileRemind>()
     val savedList = ArrayList<Saved>()
     val notesList = ArrayList<Notes>()
-    var item = ""
+    var item:String = ""
     private lateinit var spinner: Spinner
     private lateinit var picker: MaterialTimePicker
     private lateinit var calendar: Calendar
@@ -64,11 +56,35 @@ class SavedFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         //createNotificationChannel()
+
+        // access the items of the list
+        val meds = resources.getStringArray(R.array.allergies)
+
+        // access the spinner
+        spinner = view.findViewById(R.id.spinner_remind_meds)
+        val arrayAdapter: ArrayAdapter<Any?> =
+            ArrayAdapter<Any?>(requireActivity().applicationContext, R.layout.spinnertext, meds)
+        arrayAdapter.setDropDownViewResource(R.layout.spinnertext)
+        spinner.adapter = arrayAdapter
+        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
+
+                item = parent.getItemAtPosition(position).toString()
+                remind_text.text = item
+                Toast.makeText(context, "Selected: $item", Toast.LENGTH_SHORT).show()
+
+            }
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                Toast.makeText(context, "Noting Selcted", Toast.LENGTH_SHORT).show()
+
+            }
+        }
+
+
         //remind adapter
         profile_reminder.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        profile_reminder.adapter = ProfileRemindAdapter(remindList)
-        reminddata()
+        profile_reminder.adapter = ProfileRemindAdapter(remindList,remind_popupcard, spinner, remind_close)
 
         //Saved Medicine
         saved_medication.layoutManager =
@@ -84,30 +100,7 @@ class SavedFragment : Fragment() {
         if (savedList.isEmpty()) saveddata()
         if (notesList.isEmpty()) notesddata()
 
-        // access the items of the list
-        val meds = resources.getStringArray(R.array.allergies)
 
-        // access the spinner
-
-
-
-        spinner = view.findViewById(R.id.spinner_remind_meds)
-        val arrayAdapter: ArrayAdapter<Any?> =
-            ArrayAdapter<Any?>(requireActivity().applicationContext, R.layout.spinnertext, meds)
-        arrayAdapter.setDropDownViewResource(R.layout.spinnertext)
-        spinner.adapter = arrayAdapter
-        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
-
-                    item = parent.getItemAtPosition(position).toString()
-                    Toast.makeText(context, "Selected: $item", Toast.LENGTH_SHORT).show()
-
-            }
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-                Toast.makeText(context, "Noting Selcted", Toast.LENGTH_SHORT).show()
-
-            }
-        }
 
         //createNotificationChannel()
         createchannelnotify()
@@ -124,6 +117,10 @@ class SavedFragment : Fragment() {
             //cancle alarm
             //cancleAlarm()
 
+        }
+        remind_close.setOnClickListener{
+            //remind_popupcard.visibility = View.GONE
+            //remind_card_title.setText(item)
         }
     }
 
@@ -148,7 +145,7 @@ class SavedFragment : Fragment() {
             time,
             pendingIntent
         )
-        //showAlert(time,title,detail)
+        showAlert(time,title,detail)
 
     }
 
@@ -264,7 +261,7 @@ class SavedFragment : Fragment() {
             ProfileRemind(
                 "Rose",
                 1,
-                false
+                true
 
             )
         )
