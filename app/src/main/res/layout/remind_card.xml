@@ -18,7 +18,7 @@
         android:visibility="invisible">
 
         <ImageView
-            android:id="@+id/profile_card_image"
+            android:id="@+id/remind_card_image"
             android:layout_width="match_parent"
             android:layout_height="75dp"
             android:adjustViewBounds="true"
@@ -29,7 +29,7 @@
             tools:ignore="ImageContrastCheck" />
 
         <TextView
-            android:id="@+id/profile_card_title"
+            android:id="@+id/remind_card_title"
             android:layout_width="match_parent"
             android:layout_height="26dp"
             android:background="@drawable/reccentcardbot"
@@ -54,7 +54,7 @@
         android:orientation="vertical">
 
         <ImageView
-            android:id="@+id/profile_empty_card_image_image"
+            android:id="@+id/remin_empty_card_image_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

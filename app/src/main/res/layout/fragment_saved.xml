@@ -10,7 +10,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-
+        <TextView
+            android:id="@+id/remind_text"
+            android:layout_width="match_parent"
+            android:layout_height="22dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/inter_semibold"
+            android:hint="@string/remindsearch"
+            android:paddingBottom="0dp"
+            android:singleLine="true"
+            android:textAlignment="gravity"
+            android:textColorHint="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold" />
         <TextView
             android:id="@+id/recent"
             android:layout_width="311dp"
@@ -156,15 +168,19 @@
                 tools:itemCount="17"
                 tools:listitem="@layout/notes_card" />
         </HorizontalScrollView>
+
         <androidx.cardview.widget.CardView
-            android:id="@+id/popup_card"
+            android:id="@+id/remind_popupcard"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="7dp"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="7dp"
+            android:layout_marginBottom="7dp"
             android:background="@null"
             android:outlineProvider="none"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true">
+            android:visibility="invisible">
 
 
             <RelativeLayout
@@ -174,6 +190,8 @@
                 android:paddingBottom="15dp"
 
                 >
+
+
 
                 <LinearLayout
                     android:id="@+id/linpop"
@@ -228,22 +246,6 @@
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="23dp"
                     android:background="@drawable/remindline">
-
-                    <TextView
-                        android:id="@+id/remind_text"
-                        android:layout_width="match_parent"
-                        android:layout_height="22dp"
-                        android:layout_marginTop="0dp"
-                        android:fontFamily="@font/inter_semibold"
-                        android:hint="@string/remindsearch"
-                        android:paddingBottom="0dp"
-                        android:singleLine="true"
-                        android:textAlignment="gravity"
-                        android:textColorHint="#000000"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:visibility="gone"
-                        tools:visibility="gone" />
 
                     <Spinner
                         android:id="@+id/spinner_remind_meds"
