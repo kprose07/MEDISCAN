@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#FFFFFF"
     android:contentDescription="@string/scroll">
 
@@ -34,7 +35,7 @@
             android:text="@string/profiletext"
             android:textAppearance="@style/profiletext" />
 
-        <ImageView
+        <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/profile_img"
             android:layout_width="142dp"
             android:layout_height="142dp"
@@ -44,8 +45,10 @@
             android:background="@drawable/profilecircle"
             android:contentDescription="@string/todo"
             android:padding="5dp"
-            android:scaleType="centerInside"
-            android:src="@drawable/bri" />
+            app:shapeAppearanceOverlay="@style/Rounded"
+            android:scaleType="centerCrop"
+            android:src="@drawable/prof"
+            />
 
         <Button
             android:id="@+id/edit_p"

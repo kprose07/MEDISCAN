@@ -72,6 +72,7 @@
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/drawable/narrow_popup_top.xml" value="0.207" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/drawable/narrow_text.xml" value="0.1815" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/drawable/narrowrect.xml" value="0.2" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/drawable/nullp.xml" value="0.1" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/drawable/profile_top_rect.xml" value="0.2" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/drawable/profilecircle.xml" value="0.2" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/drawable/reccentcard.xml" value="0.1835" />
@@ -102,11 +103,12 @@
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/activity_splash_screen.xml" value="0.25" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/allergy_style.xml" value="0.536" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/dialog_forgot_password.xml" value="0.264" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/fragment_edit_profile.xml" value="0.2" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/fragment_home.xml" value="0.176" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/fragment_homegrid.xml" value="0.2210144927536232" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/fragment_login.xml" value="0.264" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/fragment_pillsd.xml" value="0.2" />
-        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/fragment_profile.xml" value="0.176" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/fragment_profile.xml" value="0.305458768873403" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/fragment_results.xml" value="0.2" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/fragment_saved.xml" value="0.264" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/medicine_layout.xml" value="0.2210144927536232" />
@@ -123,12 +125,16 @@
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/suggestion_item_layout.xml" value="0.25" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/menu/bottom_navbar.xml" value="0.2140625" />
         <entry key="..\:/Users/khayl/AppData/Local/Android/Sdk/platforms/android-32/data/res/layout/simple_list_item_multiple_choice.xml" value="0.72" />
-        <entry key="..\:/Users/nzund/Desktop/Projects/MEDISCAN/app/src/main/res/layout/fragment_pillsd.xml" value="0.22214484679665739" />
+        <entry key="..\:/Users/nzund/Desktop/Projects/MEDISCAN/app/src/main/res/layout/activity_register_screen.xml" value="0.19021739130434784" />
+        <entry key="..\:/Users/nzund/Desktop/Projects/MEDISCAN/app/src/main/res/layout/fragment_pillsd.xml" value="0.1" />
         <entry key="..\:/Users/nzund/Desktop/Projects/MEDISCAN/app/src/main/res/layout/fragment_profile.xml" value="0.5" />
         <entry key="..\:/Users/nzund/Desktop/Projects/MEDISCAN/app/src/main/res/layout/fragment_results.xml" value="0.29635416666666664" />
-        <entry key="..\:/Users/nzund/Desktop/Projects/MEDISCAN/app/src/main/res/layout/fragment_saved.xml" value="0.1" />
+        <entry key="..\:/Users/nzund/Desktop/Projects/MEDISCAN/app/src/main/res/layout/fragment_saved.xml" value="0.25" />
+        <entry key="..\:/Users/nzund/Desktop/Projects/MEDISCAN/app/src/main/res/layout/narrow_popup_card.xml" value="0.15" />
+        <entry key="..\:/Users/nzund/Desktop/Projects/MEDISCAN/app/src/main/res/layout/notes_card.xml" value="0.1347517730496454" />
         <entry key="..\:/Users/nzund/Desktop/Projects/MEDISCAN/app/src/main/res/layout/row.xml" value="0.33" />
         <entry key="..\:/Users/nzund/Desktop/Projects/MEDISCAN/app/src/main/res/layout/saved_card.xml" value="0.25" />
+        <entry key="..\:/Users/nzund/Desktop/Projects/MEDISCAN/app/src/main/res/layout/special_notes.xml" value="0.25" />
       </map>
     </option>
   </component>

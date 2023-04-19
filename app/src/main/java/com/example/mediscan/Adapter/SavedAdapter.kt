@@ -41,10 +41,6 @@ class SavedAdapter(private var savedList: List<SavedMedicine>, communicator: Com
 
         var isEmptyCard: Boolean = false
 
-//        fun changeToEmptyCard(){
-//            holder.saveemptycard.visibility = View.VISIBLE
-//            holder.savefilledcard.visibility = View.GONE
-//        }
         fun changeToFilled(){
             holder.savemedtext.text = savedList[position].name
             holder.savefilledcard.visibility = View.VISIBLE

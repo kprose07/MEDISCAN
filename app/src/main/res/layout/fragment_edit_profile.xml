@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:contentDescription="@string/scroll">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       >
+
+        <View
+            android:id="@+id/editprofilerect"
+            android:layout_width="wrap_content"
+            android:layout_height="184dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="-1dp"
+            android:layout_marginTop="-24dp"
+            android:background="@drawable/profile_top_rect" />
+
+        <TextView
+            android:id="@+id/profiletext_edit"
+            android:layout_width="77dp"
+            android:layout_height="36dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="36dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:gravity="center_horizontal"
+            android:scaleType="centerInside"
+            android:text="@string/profiletext"
+            android:textAppearance="@style/profiletext" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/edit_profile_img"
+            android:layout_width="142dp"
+            android:layout_height="142dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="96dp"
+            android:background="@drawable/profilecircle"
+            android:contentDescription="@string/todo"
+            android:padding="5dp"
+            android:scaleType="centerCrop"
+            app:shapeAppearanceOverlay="@style/Rounded"
+            android:src="@drawable/prof" />
+<!--        <ImageView-->
+<!--            android:id="@+id/profile_img_editoverlay"-->
+<!--            android:layout_width="142dp"-->
+<!--            android:layout_height="142dp"-->
+<!--            android:layout_alignParentTop="true"-->
+<!--            android:layout_centerInParent="true"-->
+<!--            android:layout_marginTop="96dp"-->
+<!--            android:background="@drawable/profilecircle"-->
+<!--            android:contentDescription="@string/todo"-->
+<!--            android:padding="5dp"-->
+<!--            android:scaleType="centerInside"-->
+<!--            android:src="@drawable/ic_overlay" />-->
+
+        <Button
+            android:id="@+id/upload_img"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="69dp"
+            android:layout_marginTop="247dp"
+            android:background="@drawable/profile_editbutton"
+            android:padding="2dp"
+            android:text="@string/editImg"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <com.google.android.material.textfield.TextInputLayout
+
+            android:id="@+id/user_first_name_edit"
+            android:layout_width="282dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/upload_img"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="29dp"
+            android:background="@drawable/user_input_line"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:textAlignment="textStart"
+            android:textColorHint="#000000"
+            app:boxStrokeColor="#0B0B0B"
+            app:boxStrokeErrorColor="#00FFFFFF">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_first_name_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-15.5dp"
+                android:background="#00FFFFFF"
+                android:backgroundTint="#000000"
+                android:fontFamily="@font/inter_semibold"
+                android:gravity="start"
+                android:hint="@string/user_first_name_reg"
+                android:inputType="textPersonName"
+                android:paddingBottom="0dp"
+                android:singleLine="true"
+                android:textColor="#000000"
+                android:textSize="24sp"
+
+                android:textStyle="bold"
+                tools:ignore="TouchTargetSizeCheck,DuplicateClickableBoundsCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+
+            android:id="@+id/user_last_name_edit"
+            android:layout_width="282dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/user_first_name_edit"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="23dp"
+            android:background="@drawable/user_input_line"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:textAlignment="textStart"
+            android:textColorHint="#000000"
+            app:boxStrokeColor="#0B0B0B"
+            app:boxStrokeErrorColor="#00FFFFFF">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_last_name_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-15.5dp"
+                android:background="#00FFFFFF"
+                android:backgroundTint="#000000"
+                android:fontFamily="@font/inter_semibold"
+                android:gravity="start"
+                android:hint="@string/user_last_name_reg"
+                android:inputType="textPersonName"
+                android:paddingBottom="0dp"
+                android:singleLine="true"
+                android:textColor="#000000"
+                android:textSize="24sp"
+
+                android:textStyle="bold"
+                tools:ignore="TouchTargetSizeCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+
+            android:id="@+id/user_email_edit"
+            android:layout_width="282dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/user_last_name_edit"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="23dp"
+            android:background="@drawable/user_input_line"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:textAlignment="textStart"
+            android:textColorHint="#000000"
+            android:windowSoftInputMode="stateHidden"
+            app:boxStrokeColor="#00FFFFFF"
+            tools:ignore="NotSibling">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_email_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-15.5dp"
+                android:background="#00FFFFFF"
+                android:backgroundTint="#000000"
+                android:fontFamily="@font/inter_semibold"
+                android:gravity="start"
+                android:hint="@string/user_email_reg"
+                android:inputType="textEmailAddress"
+                android:paddingBottom="0dp"
+                android:singleLine="true"
+                android:textColor="#000000"
+                android:textSize="24sp"
+
+                android:textStyle="bold"
+                tools:ignore="TouchTargetSizeCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+
+            android:id="@+id/user_dob_edit"
+            android:layout_width="282dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/user_email_edit"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="23dp"
+            android:background="@drawable/user_input_line"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:textAlignment="textStart"
+            android:textColorHint="#000000"
+            android:windowSoftInputMode="stateHidden"
+            app:boxStrokeColor="#00FFFFFF"
+            tools:ignore="NotSibling">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_dob_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-15.5dp"
+                android:background="#00FFFFFF"
+                android:backgroundTint="#000000"
+                android:fontFamily="@font/inter_semibold"
+                android:gravity="start"
+                android:hint="@string/user_dob_reg"
+                android:inputType="date"
+                android:paddingBottom="0dp"
+                android:singleLine="true"
+                android:textColor="#000000"
+                android:textSize="24sp"
+
+                android:textStyle="bold"
+                tools:ignore="TouchTargetSizeCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+
+            android:id="@+id/user_phone_edit"
+            android:layout_width="282dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/user_dob_edit"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="23dp"
+            android:background="@drawable/user_input_line"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:textAlignment="textStart"
+            android:textColorHint="#000000"
+            android:windowSoftInputMode="stateHidden"
+
+            app:boxStrokeColor="#00FFFFFF"
+            tools:ignore="NotSibling">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_phone_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-15.5dp"
+                android:background="#00FFFFFF"
+                android:backgroundTint="#000000"
+                android:fontFamily="@font/inter_semibold"
+                android:gravity="start"
+                android:hint="@string/user_phone_reg"
+                android:inputType="phone"
+                android:paddingBottom="0dp"
+                android:singleLine="true"
+                android:textColor="#000000"
+                android:textSize="24sp"
+
+                android:textStyle="bold"
+                tools:ignore="TouchTargetSizeCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/edit_button"
+            android:layout_width="239dp"
+            android:layout_height="51dp"
+            android:layout_below="@+id/user_phone_edit"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="31dp"
+            android:background="@drawable/login_button"
+            android:fontFamily="@font/inter_semibold"
+            android:padding="2dp"
+            android:text="@string/editprofbutton"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
+
+        <View
+            android:id="@+id/spacer"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:layout_below="@+id/edit_button"
+            android:layout_marginTop="0dp"
+            android:background="#FFFFFF" />
+    </RelativeLayout>
+
+
+</ScrollView>
