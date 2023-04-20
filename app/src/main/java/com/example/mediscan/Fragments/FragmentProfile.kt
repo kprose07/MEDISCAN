@@ -31,7 +31,6 @@ import kotlinx.android.synthetic.main.fragment_saved.*
 import java.util.*
 
 class ProfileFragment : Fragment() {
-    val remindList = ArrayList<ProfileRemind>()
 
     private lateinit var database : DatabaseReference
     private lateinit var firebaseAuth: FirebaseAuth
@@ -50,8 +49,9 @@ class ProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-
+      //  val profTitle: String = profile_name_input.text.toString()
+            //val user = Firebase.auth.currentUser.toString()
+           // readData("kprose07")
             firebaseAuth = FirebaseAuth.getInstance()
             loaduserinfo()
         profile_emailLink.setOnClickListener{
@@ -73,19 +73,6 @@ class ProfileFragment : Fragment() {
             startActivity(intent)
         }
 
-        edit_p.setOnClickListener{
-            val fragment = EditProfileFragment()
-            val fragmentManager = fragmentManager
-            val fragmentTransaction = fragmentManager!!.beginTransaction()
-            fragmentTransaction.replace(R.id.fl_wrapper, fragment)
-            fragmentTransaction.addToBackStack(null)
-            fragmentTransaction.commit()
-        }
-        profile_sign_out.setOnClickListener {
-            FirebaseAuth.getInstance().signOut();
-            val intent = Intent(context, LoginScreen::class.java)
-            startActivity(intent)
-        }
     }
 
     private fun loaduserinfo() {
@@ -137,30 +124,4 @@ class ProfileFragment : Fragment() {
 ////        }
 //    }
 
-    private fun reminddata(){
-        remindList.add(
-            ProfileRemind(
-                "Rose",
-                1,
-                false
-
-            )
-        )
-        remindList.add(
-            ProfileRemind(
-                "Humilin",
-                1,
-                true
-
-            )
-        )
-        remindList.add(
-            ProfileRemind(
-                "Humilin",
-                1,
-                true
-
-            )
-        )
-    }
 }
