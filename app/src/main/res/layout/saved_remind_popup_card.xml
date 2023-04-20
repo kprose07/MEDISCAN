@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/popup_card"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="7dp"
+    android:background="@null"
+    android:outlineProvider="none">
+
+
+<!--    <RelativeLayout-->
+<!--        android:layout_width="316dp"-->
+<!--        android:layout_height="211dp"-->
+<!--        android:background="@drawable/narrow_popup_bot"-->
+
+<!--        >-->
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/linpop"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical">-->
+
+
+<!--        </LinearLayout>-->
+
+<!--        <View-->
+<!--            android:id="@+id/popup_close"-->
+<!--            android:layout_width="15dp"-->
+<!--            android:layout_height="16dp"-->
+<!--            android:layout_alignParentTop="true"-->
+<!--            android:layout_alignParentRight="false"-->
+<!--            android:layout_marginStart="142dp"-->
+<!--            android:layout_marginTop="17dp"-->
+<!--            android:layout_toEndOf="@+id/popup_title"-->
+<!--            android:background="@drawable/ic_close"-->
+<!--            android:clickable="true"-->
+<!--            android:focusable="true"-->
+<!--            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />-->
+
+<!--        <View-->
+<!--            android:id="@+id/popup_top"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="45dp"-->
+<!--            android:layout_marginStart="0dp"-->
+<!--            android:layout_marginTop="0dp"-->
+<!--            android:background="@drawable/narrow_popup_top" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/popup_title"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="45dp"-->
+<!--            android:layout_alignParentStart="true"-->
+<!--            android:layout_alignParentTop="true"-->
+<!--            android:layout_marginStart="23dp"-->
+<!--            android:layout_marginTop="0dp"-->
+<!--            android:fontFamily="@font/poppins_bold"-->
+<!--            android:gravity="center_vertical"-->
+<!--            android:padding="10dp"-->
+<!--            android:text="@string/remindtitle"-->
+<!--            android:textAppearance="@style/pop_up_title" />-->
+
+<!--        <SearchView-->
+<!--            android:id="@+id/narrowsearch"-->
+<!--            android:layout_width="228dp"-->
+<!--            android:layout_height="30dp"-->
+<!--            android:layout_below="@+id/popup_top"-->
+<!--            android:layout_alignParentStart="true"-->
+<!--            android:layout_marginStart="23dp"-->
+<!--            android:layout_marginTop="26dp"-->
+<!--            android:layout_marginBottom="0dp"-->
+<!--            android:background="@drawable/searchroundbox"-->
+<!--            android:fontFamily="@font/poppins_mediumbb"-->
+<!--            android:iconifiedByDefault="false"-->
+<!--            android:inputType="textNoSuggestions"-->
+<!--            android:padding="6dp"-->
+<!--            android:queryBackground="@null"-->
+<!--            android:queryHint="@string/remindsearch"-->
+<!--            android:searchIcon="@drawable/ic_search"-->
+<!--            android:textColorHint="#A6080C2F"-->
+<!--            android:textSize="12sp"-->
+<!--            tools:visibility="gone" />-->
+
+<!--        <RelativeLayout-->
+<!--            android:layout_width="228dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_below="@+id/popup_top"-->
+<!--            android:layout_alignParentStart="true"-->
+<!--            android:layout_marginStart="26dp"-->
+<!--            android:layout_marginTop="25dp">-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/regs_allergies_input"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="22dp"-->
+<!--                android:layout_marginTop="0dp"-->
+<!--                android:fontFamily="@font/inter_semibold"-->
+<!--                android:hint="@string/user_allergies_reg"-->
+<!--                android:paddingBottom="0dp"-->
+<!--                android:singleLine="true"-->
+<!--                android:textAlignment="gravity"-->
+<!--                android:textColorHint="#000000"-->
+<!--                android:textSize="16sp"-->
+<!--                android:textStyle="bold" />-->
+
+<!--            <Spinner-->
+<!--                android:id="@+id/spinner_allergies"-->
+<!--                android:layout_width="228dp"-->
+<!--                android:layout_height="2dp"-->
+<!--                android:layout_below="@+id/regs_allergies_input"-->
+<!--                android:layout_marginTop="4dp"-->
+<!--                android:background="@drawable/user_input_line"-->
+<!--                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />-->
+<!--        </RelativeLayout>-->
+
+<!--    </RelativeLayout>-->
+
+</androidx.cardview.widget.CardView>

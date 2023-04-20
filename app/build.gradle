@@ -11,8 +11,8 @@ android {
 
     defaultConfig {
         applicationId "com.example.mediscan"
-        minSdk 21
-        targetSdk 21
+        minSdk 30
+        targetSdk 30
         versionCode 1
         versionName "1.0"
 
@@ -35,6 +35,7 @@ android {
     buildFeatures{
         viewBinding = true
     }
+
 }
 
 dependencies {

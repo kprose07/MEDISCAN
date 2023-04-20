@@ -50,18 +50,28 @@ class ProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        profile_reminder.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        profile_reminder.adapter = ProfileRemindAdapter(remindList)
-        reminddata()
-      //  val profTitle: String = profile_name_input.text.toString()
-            //val user = Firebase.auth.currentUser.toString()
-           // readData("kprose07")
+
+
             firebaseAuth = FirebaseAuth.getInstance()
             loaduserinfo()
         profile_emailLink.setOnClickListener{
             v:View -> comm.openEmailClient()
         }
 
+
+        edit_p.setOnClickListener{
+            val fragment = EditProfileFragment()
+            val fragmentManager = fragmentManager
+            val fragmentTransaction = fragmentManager!!.beginTransaction()
+            fragmentTransaction.replace(R.id.fl_wrapper, fragment)
+            fragmentTransaction.addToBackStack(null)
+            fragmentTransaction.commit()
+        }
+        profile_sign_out.setOnClickListener {
+            FirebaseAuth.getInstance().signOut();
+            val intent = Intent(context, LoginScreen::class.java)
+            startActivity(intent)
+        }
 
         edit_p.setOnClickListener{
             val fragment = EditProfileFragment()
@@ -86,8 +96,6 @@ class ProfileFragment : Fragment() {
                     //user info
                     val firstName ="${snapshot.child("firstName").value}"
                     val email ="${snapshot.child("email").value}"
-
-
                     val phone ="${snapshot.child("phone").value}"
                     val dob ="${snapshot.child("dob").value}"
                     //val uid ="${snapshot.child("uid").value}"
@@ -113,6 +121,21 @@ class ProfileFragment : Fragment() {
                 }
             })
     }
+//
+//    private fun readData(userName: String) {
+////        database = FirebaseDatabase.getInstance().getReference("users")
+////        database.child(userName).get().addOnSuccessListener {
+////            if(it.exists()){
+////                val firstName = it.child("firstName").value
+////                val phone = it.child("phone").value
+////                val email = it.child("email" +
+////                        "").value
+////                profile_name_input.text = firstName.toString()
+////                profile_phone_input.text = phone.toString()
+////                profile_email_input.text = email.toString()
+////            }
+////        }
+//    }
 
     private fun reminddata(){
         remindList.add(

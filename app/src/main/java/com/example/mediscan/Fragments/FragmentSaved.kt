@@ -58,8 +58,8 @@ class SavedFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        recent_medication.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        recent_medication.adapter = RecentsAdapter(recentList)
+        profile_reminder.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        profile_reminder.adapter = RecentsAdapter(recentList)
         saved_medication.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         saved_medication.adapter = SavedAdapter(savedMedicineList,comm, savedMedicineDB)
         notes_medication.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)

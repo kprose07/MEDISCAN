@@ -66,41 +66,6 @@
             android:textSize="12sp"
             tools:ignore="TouchTargetSizeCheck" />
 
-        <TextView
-            android:id="@+id/set_reminde"
-            android:layout_width="wrap_content"
-            android:layout_height="35dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginStart="17dp"
-            android:layout_marginTop="295dp"
-            android:gravity="center_horizontal|top"
-            android:lineSpacingExtra="10sp"
-            android:text="@string/profile_remind"
-            android:textAppearance="@style/set_remind"
-            android:translationY="-5sp" />
-
-        <HorizontalScrollView
-            android:layout_width="wrap_content"
-            android:layout_height="115dp"
-
-            android:layout_alignParentTop="true"
-
-            android:layout_centerHorizontal="true"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="330dp"
-            android:layout_marginEnd="16dp">
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/profile_reminder"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                tools:itemCount="17"
-                tools:listitem="@layout/remind_card" />
-        </HorizontalScrollView>
-
         <View
             android:id="@+id/icons"
             android:layout_width="51dp"
@@ -108,7 +73,7 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_marginStart="41dp"
-            android:layout_marginTop="462dp"
+            android:layout_marginTop="312dp"
             android:background="@drawable/profile" />
 
         <TextView
@@ -118,7 +83,7 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_marginStart="117dp"
-            android:layout_marginTop="460dp"
+            android:layout_marginTop="310dp"
             android:fontFamily="@font/poppins_medium"
             android:gravity="top"
             android:text="@string/profile_name"
@@ -128,25 +93,25 @@
             android:id="@+id/profile_name_input"
             android:layout_width="wrap_content"
             android:layout_height="25dp"
+            android:layout_below="@+id/profile_name"
             android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
             android:layout_marginStart="117dp"
-            android:layout_marginTop="474dp"
+            android:layout_marginTop="-4dp"
+            android:ellipsize="end"
             android:fontFamily="@font/poppins_medium"
             android:gravity="top"
+            android:maxLines="1"
             android:text="@string/profile_name_input"
-            android:textAppearance="@style/profile_name_input"
-            android:ellipsize="end"
-            android:maxLines="1"/>
+            android:textAppearance="@style/profile_name_input" />
 
         <TextView
             android:id="@+id/profile_phone"
             android:layout_width="59dp"
             android:layout_height="18dp"
+            android:layout_below="@+id/profile_name_input"
             android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
             android:layout_marginStart="117dp"
-            android:layout_marginTop="530dp"
+            android:layout_marginTop="31dp"
             android:fontFamily="@font/poppins_medium"
             android:gravity="top"
             android:text="@string/profile_phone"
@@ -156,25 +121,25 @@
             android:id="@+id/profile_phone_input"
             android:layout_width="wrap_content"
             android:layout_height="25dp"
+            android:layout_below="@+id/profile_phone"
             android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
             android:layout_marginStart="117dp"
-            android:layout_marginTop="544dp"
+            android:layout_marginTop="-4dp"
+            android:ellipsize="end"
             android:fontFamily="@font/poppins_medium"
             android:gravity="top"
+            android:maxLines="1"
             android:text="@string/profile_phone_input"
-            android:textAppearance="@style/profile_name_input"
-            android:ellipsize="end"
-            android:maxLines="1"/>
+            android:textAppearance="@style/profile_name_input" />
 
         <TextView
             android:id="@+id/profile_email"
             android:layout_width="59dp"
             android:layout_height="18dp"
+            android:layout_below="@+id/profile_phone_input"
             android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
             android:layout_marginStart="117dp"
-            android:layout_marginTop="609dp"
+            android:layout_marginTop="39dp"
             android:fontFamily="@font/poppins_medium"
             android:gravity="top"
             android:text="@string/profile_email"
@@ -184,25 +149,25 @@
             android:id="@+id/profile_email_input"
             android:layout_width="228dp"
             android:layout_height="25dp"
+            android:layout_below="@+id/profile_email"
             android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
             android:layout_marginStart="117dp"
-            android:layout_marginTop="623dp"
+            android:layout_marginTop="-4dp"
+            android:ellipsize="end"
             android:fontFamily="@font/poppins_medium"
             android:gravity="top"
+            android:maxLines="1"
             android:text="@string/profile_email_input"
-            android:textAppearance="@style/profile_name_input"
-            android:ellipsize="end"
-            android:maxLines="1"/>
+            android:textAppearance="@style/profile_name_input" />
 
         <TextView
             android:id="@+id/profile_dob"
             android:layout_width="59dp"
             android:layout_height="18dp"
+            android:layout_below="@+id/profile_email_input"
             android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
             android:layout_marginStart="117dp"
-            android:layout_marginTop="677dp"
+            android:layout_marginTop="29dp"
             android:fontFamily="@font/poppins_medium"
             android:gravity="top"
             android:text="@string/profile_dob"
@@ -212,10 +177,10 @@
             android:id="@+id/profile_dob_input"
             android:layout_width="wrap_content"
             android:layout_height="25dp"
+            android:layout_below="@+id/profile_dob"
             android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
             android:layout_marginStart="117dp"
-            android:layout_marginTop="691dp"
+            android:layout_marginTop="-4dp"
             android:ellipsize="end"
             android:fontFamily="@font/poppins_medium"
             android:gravity="top"
