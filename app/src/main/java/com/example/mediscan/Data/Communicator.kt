@@ -22,4 +22,6 @@ interface Communicator {
     )
 
     fun openEmailClient()
+
+
 }

@@ -50,8 +50,12 @@ class ProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-
+        profile_reminder.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        profile_reminder.adapter = ProfileRemindAdapter(remindList, remind_popupcard, spinner_remind_meds, remind_close)
+        reminddata()
+      //  val profTitle: String = profile_name_input.text.toString()
+            //val user = Firebase.auth.currentUser.toString()
+           // readData("kprose07")
             firebaseAuth = FirebaseAuth.getInstance()
             loaduserinfo()
         profile_emailLink.setOnClickListener{
@@ -73,19 +77,6 @@ class ProfileFragment : Fragment() {
             startActivity(intent)
         }
 
-        edit_p.setOnClickListener{
-            val fragment = EditProfileFragment()
-            val fragmentManager = fragmentManager
-            val fragmentTransaction = fragmentManager!!.beginTransaction()
-            fragmentTransaction.replace(R.id.fl_wrapper, fragment)
-            fragmentTransaction.addToBackStack(null)
-            fragmentTransaction.commit()
-        }
-        profile_sign_out.setOnClickListener {
-            FirebaseAuth.getInstance().signOut();
-            val intent = Intent(context, LoginScreen::class.java)
-            startActivity(intent)
-        }
     }
 
     private fun loaduserinfo() {
