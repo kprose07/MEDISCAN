@@ -18,7 +18,9 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example.mediscan.Adapter.NarrowAdapter
 import com.example.mediscan.Data.Communicator
 import com.example.mediscan.Data.NarrowDownSearch
+import com.example.mediscan.Data.SavedMedicine
 import com.example.mediscan.R
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.fragment_pillsd.*
 import kotlinx.android.synthetic.main.fragment_pillsd.popup_title
@@ -36,6 +38,7 @@ class PillsFragment : Fragment()  {
     private var brandName: String? = ""
     private var popupCard: CardView? = null
     private lateinit var comm: Communicator
+    private lateinit var firebaseAuth: FirebaseAuth
 
 
     override fun onCreateView(
@@ -48,6 +51,7 @@ class PillsFragment : Fragment()  {
         medicineId = arguments?.getString("mdId")
         brandName = arguments?.getString("brandName")
         if (narrowList.isEmpty()) loadDataBase()
+        firebaseAuth = FirebaseAuth.getInstance()
         comm = requireActivity() as Communicator
         return view
     }
@@ -60,7 +64,7 @@ class PillsFragment : Fragment()  {
 
         //popup card
         popupCard = view.findViewById(R.id.popup_card)
-
+        saveMedicine(medicineName.toString(), medicineId.toString(), brandName.toString())
 
 
         narrow_down_recycler.layoutManager = GridLayoutManager(activity, 3)
@@ -158,6 +162,15 @@ class PillsFragment : Fragment()  {
                 Log.w(TAG, "Failed to read value.", error.toException())
             }
         })
+    }
+
+    // TODO: call this function using onclick listener on saved medicine button
+
+    fun saveMedicine(name: String, id: String, brandName: String) {
+        val medicineDB = FirebaseDatabase.getInstance().getReference("users").child(firebaseAuth.uid!!).child("saved_medicines")
+        val savedMedicine = SavedMedicine(name, id, brandName)
+
+        medicineDB.child(savedMedicine.id).setValue(savedMedicine)
     }
 
 }

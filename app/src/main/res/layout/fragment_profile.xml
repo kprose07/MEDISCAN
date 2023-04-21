@@ -212,6 +212,7 @@
             android:fontFamily="@font/poppins_extrabold"
             android:gravity="top"
             android:text="@string/profile_emailLink"
+            android:clickable="true"
             android:textAppearance="@style/profile_emailLink" />
 
         <TextView

@@ -14,19 +14,18 @@ import com.example.mediscan.Data.Recents
 import com.example.mediscan.Data.Saved
 import com.example.mediscan.R
 
-class NotesAdapter(private var notesList: ArrayList<Notes>) :
+class NotesAdapter(private var notesList: ArrayList<Notes>, private var specialNotes: LinearLayout) :
     RecyclerView.Adapter<NotesAdapter.ViewHolder>() {
 
 
+    private var nList: ArrayList<Notes> = notesList
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         var notesmedtext : TextView = itemView.findViewById(R.id.noteid)
         var notesfilledcard : RelativeLayout = itemView.findViewById(R.id.notesfill)
         var notesmptycard :  LinearLayout = itemView.findViewById(R.id.emptynotes)
-
-
-
     }
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.notes_card, parent, false)
@@ -45,17 +44,16 @@ class NotesAdapter(private var notesList: ArrayList<Notes>) :
             holder.notesmedtext.text = notesList[position].notestitle
             holder.notesfilledcard.visibility = View.VISIBLE
             holder.notesmptycard.visibility = View.GONE
+            holder.notesfilledcard.setOnClickListener{v:View ->
+                specialNotes.visibility = View.VISIBLE
+            }
         }
-        fun checktog(){
+
            if (isEmptyCard) {
                changeToEmptyCard()
            } else {
                changeToFilled()
            }
-        }
-        for(rec in notesList) {
-            checktog()
-        }
     }
 
     override fun getItemCount(): Int {

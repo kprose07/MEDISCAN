@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp">
+
+    <com.google.android.material.textfield.TextInputLayout
+
+        android:id="@+id/notesTitle"
+        android:layout_width="282dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/user_input_line"
+        android:paddingStart="0dp"
+        android:paddingEnd="0dp"
+        android:textAlignment="textStart"
+        android:textColorHint="#000000"
+        app:boxStrokeColor="#0B0B0B"
+        app:boxStrokeErrorColor="#00FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/noteTitleInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-15.5dp"
+            android:background="#00FFFFFF"
+            android:backgroundTint="#000000"
+            android:fontFamily="@font/inter_semibold"
+            android:gravity="start"
+            android:hint="Title"
+            android:inputType="text"
+            android:paddingBottom="0dp"
+            android:singleLine="true"
+            android:textColor="#000000"
+            android:textSize="20sp"
+
+            android:textStyle="normal" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+
+        android:id="@+id/notesBody"
+        android:layout_width="282dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/user_input_line"
+        android:paddingStart="0dp"
+        android:paddingEnd="0dp"
+        android:textAlignment="textStart"
+        android:textColorHint="#000000"
+        app:boxStrokeColor="#0B0B0B"
+        app:boxStrokeErrorColor="#00FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/notesTitle">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/notesBodyInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-15.5dp"
+            android:background="#00FFFFFF"
+            android:backgroundTint="#000000"
+            android:fontFamily="@font/inter_semibold"
+            android:gravity="start"
+            android:hint="Body"
+            android:inputType="textMultiLine"
+            android:paddingBottom="0dp"
+            android:singleLine="true"
+            android:textColor="#000000"
+            android:textSize="20sp"
+
+            android:textStyle="normal" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <Button
+        android:id="@+id/notesSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Save Note"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/notesBody" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

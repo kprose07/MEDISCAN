@@ -8,11 +8,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.core.content.ContextCompat.startActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.example.mediscan.Adapter.ProfileRemindAdapter
 import com.example.mediscan.Adapter.RecentsAdapter
+import com.example.mediscan.Data.Communicator
 import com.example.mediscan.Data.ProfileRemind
 import com.example.mediscan.Data.Recents
 import com.example.mediscan.LoginScreen
@@ -25,18 +28,24 @@ import kotlinx.android.synthetic.main.fragment_home.*
 
 import kotlinx.android.synthetic.main.fragment_profile.*
 import kotlinx.android.synthetic.main.fragment_saved.*
+import java.util.*
 
 class ProfileFragment : Fragment() {
 
 
     private lateinit var database : DatabaseReference
     private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var comm: Communicator
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? = inflater.inflate(R.layout.fragment_profile, container,false)
+    ): View{
+        val view = inflater.inflate(R.layout.fragment_profile, container,false)
+        comm = requireActivity() as Communicator
+        return view
+    }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -45,8 +54,27 @@ class ProfileFragment : Fragment() {
       //  val profTitle: String = profile_name_input.text.toString()
             //val user = Firebase.auth.currentUser.toString()
            // readData("kprose07")
+
             firebaseAuth = FirebaseAuth.getInstance()
             loaduserinfo()
+        profile_emailLink.setOnClickListener{
+            v:View -> comm.openEmailClient()
+        }
+
+
+        edit_p.setOnClickListener{
+            val fragment = EditProfileFragment()
+            val fragmentManager = fragmentManager
+            val fragmentTransaction = fragmentManager!!.beginTransaction()
+            fragmentTransaction.replace(R.id.fl_wrapper, fragment)
+            fragmentTransaction.addToBackStack(null)
+            fragmentTransaction.commit()
+        }
+        profile_sign_out.setOnClickListener {
+            FirebaseAuth.getInstance().signOut();
+            val intent = Intent(context, LoginScreen::class.java)
+            startActivity(intent)
+        }
 
         edit_p.setOnClickListener{
             val fragment = EditProfileFragment()

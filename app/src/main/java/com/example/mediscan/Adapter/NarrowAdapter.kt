@@ -60,8 +60,6 @@ class NarrowAdapter(private var narrow: List<NarrowDownSearch>,
                     loadpopup()
                 }
                 close.setOnClickListener{
-//                    pillsbg.setBackgroundResource(R.drawable.white)
-//                    serachbg.setBackgroundResource(R.drawable.searchroundbox)
                     popupCard?.visibility = View.GONE
 
                 }

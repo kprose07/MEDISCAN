@@ -1,11 +1,12 @@
 package com.example.mediscan
 
+import android.content.Intent
+import android.net.Uri
 import android.annotation.SuppressLint
 import android.app.AlarmManager
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
-import android.content.Intent
 import android.icu.util.Calendar
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
@@ -20,6 +21,7 @@ import androidx.fragment.app.FragmentTransaction
 import com.example.mediscan.Data.Communicator
 import com.example.mediscan.Data.NarrowDownSearch
 import com.example.mediscan.Fragments.*
+import com.google.firebase.database.DatabaseReference
 import com.example.mediscan.databinding.ActivityRegisterScreenBinding
 import com.google.android.material.timepicker.MaterialTimePicker
 import com.google.android.material.timepicker.TimeFormat
@@ -75,87 +77,14 @@ class MainActivity : AppCompatActivity(), Communicator {
             }
             true
         }
-        //createNotificationChannel()
-        /* setTime.setOnClickListener{
-             //select time
-             showTimePicker()
-         }
-         alarm.setOnClickListener {
-             //add alarm
-             setAlarm()
-         }
-         canclealrm.setOnClickListener {
-             //cancle alarm
-             cancleAlarm()
-         }*/
+
 
     }
-    /*
-        private fun createNotificationChannel() {
-            // the NotificationChannel class is new and not in the support library
-            // the NotificationChannel class is new and not in the support library
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                val name: CharSequence = "Test"
-                val description = "Test"
-                val importance = NotificationManager.IMPORTANCE_HIGH
-                val channel = NotificationChannel("LillyMedicines", name, importance)
-                channel.description = description
-                // Register the channel with the system; you can't change the importance
-                // or other notification behaviors after this
-                val notificationManager =
-                    getSystemService(DestinationActivity::class.java) as NotificationManager
-                notificationManager.createNotificationChannel(channel)
-            }
-
-        }
-        private fun cancleAlarm() {
-            alarmManager = getSystemService(ALARM_SERVICE) as AlarmManager
-            val intent = Intent(this,AlarmRecivever::class.java)
-            pendingIntent = PendingIntent.getBroadcast(this,0,intent,0)
-
-            alarmManager.cancel(pendingIntent)
-            Toast.makeText(this,"Alarm Cancelled",Toast.LENGTH_SHORT).show()
 
 
-        }
-        private fun setAlarm() {
-            alarmManager = getSystemService(ALARM_SERVICE) as AlarmManager
-            val intent = Intent(this,AlarmRecivever::class.java)
-            pendingIntent = PendingIntent.getBroadcast(this,0,intent,0)
-
-            alarmManager.setRepeating(
-                AlarmManager.RTC_WAKEUP,calendar.timeInMillis,
-                AlarmManager.INTERVAL_DAY,pendingIntent
-            )
-            Toast.makeText(this,"Alarm Set Sucessfuly",Toast.LENGTH_SHORT).show()
-
-
-        }
-
-        //@SuppressLint("NewApi")
-        // @RequiresApi(Build.VERSION_CODES.N)
-        private fun showTimePicker() {
-            picker = MaterialTimePicker.Builder()
-                .setTimeFormat(TimeFormat.CLOCK_12H)
-                .setHour(12)
-                .setMinute(0)
-                .setTitleText("Selct Time")
-                .build()
-
-            picker.show(supportFragmentManager ,"LillyMedicines")
-            picker.addOnPositiveButtonClickListener{
-                calendar = Calendar.getInstance()
-                calendar[Calendar.HOUR_OF_DAY] = picker.hour
-                calendar[Calendar.MINUTE] = picker.minute
-                calendar[Calendar.SECOND] = 0
-                calendar[Calendar.MILLISECOND] = 0
-            }
-
-        }
-        */
     private fun setCurrentFragment(fragment: Fragment) =
-        supportFragmentManager.beginTransaction().apply {
-            replace(R.id.fl_wrapper, fragment)
+        supportFragmentManager.beginTransaction().apply{
+            replace(R.id.fl_wrapper,fragment)
             commit()
         }
 
@@ -197,6 +126,22 @@ class MainActivity : AppCompatActivity(), Communicator {
         transaction.commit()
     }
 
+    override fun deleteFromDB(db: DatabaseReference, id: String) {
+        db.child(id).removeValue()
+    }
+
+    override fun openEmailClient() {
+        val i = Intent(Intent.ACTION_SEND)
+        i.data = Uri.parse("email")
+        val s = arrayOf("inquiries@mediscan.com")
+        i.putExtra(Intent.EXTRA_EMAIL, s)
+        i.putExtra(Intent.EXTRA_SUBJECT, "Medical Inquiry")
+        i.putExtra(Intent.EXTRA_TEXT, "Hi, Enter your inquiry here")
+        i.type = "message/rfc822"
+        val chooser = Intent.createChooser(i, "Launch Email")
+        startActivity(chooser)
+
+    }
 
 
 }
