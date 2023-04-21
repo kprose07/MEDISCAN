@@ -3,15 +3,11 @@ package com.example.mediscan.Adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import android.widget.TextView
-import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mediscan.Data.Notes
-import com.example.mediscan.Data.Recents
-import com.example.mediscan.Data.Saved
 import com.example.mediscan.R
 
 class NotesAdapter(private var notesList: ArrayList<Notes>, private var specialNotes: LinearLayout) :

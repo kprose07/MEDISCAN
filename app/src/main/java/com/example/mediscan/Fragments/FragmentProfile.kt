@@ -6,29 +6,15 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import android.widget.Toast
-import androidx.core.content.ContentProviderCompat.requireContext
-import androidx.core.content.ContextCompat.startActivity
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
-import com.example.mediscan.Adapter.ProfileRemindAdapter
-import com.example.mediscan.Adapter.RecentsAdapter
 import com.example.mediscan.Data.Communicator
-import com.example.mediscan.Data.ProfileRemind
-import com.example.mediscan.Data.Recents
 import com.example.mediscan.LoginScreen
 import com.example.mediscan.R
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.*
-import com.google.firebase.ktx.Firebase
-import kotlinx.android.synthetic.main.fragment_home.*
 
 import kotlinx.android.synthetic.main.fragment_profile.*
-import kotlinx.android.synthetic.main.fragment_saved.*
-import java.util.*
 
 class ProfileFragment : Fragment() {
 

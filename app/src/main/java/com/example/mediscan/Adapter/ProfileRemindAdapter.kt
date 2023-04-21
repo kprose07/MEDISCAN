@@ -1,5 +1,6 @@
 package com.example.mediscan.Adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -77,7 +78,6 @@ class ProfileRemindAdapter(private var remindList: List<ProfileRemind>, private 
             }
             notifyItemChanged(position)
         }
-
     }
 
 

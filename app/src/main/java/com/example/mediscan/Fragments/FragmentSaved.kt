@@ -10,13 +10,12 @@ import android.content.Context.NOTIFICATION_SERVICE
 import android.content.Intent
 import android.icu.util.Calendar
 import android.os.Bundle
-import android.provider.ContactsContract
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import android.widget.Button
-import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.Toast
 import android.widget.AdapterView
@@ -36,12 +35,9 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.example.mediscan.Data.Notes
 import com.example.mediscan.Data.ProfileRemind
-import com.example.mediscan.Data.Saved
 import com.google.android.material.timepicker.MaterialTimePicker
 import com.google.android.material.timepicker.TimeFormat
-import kotlinx.android.synthetic.main.fragment_results.*
 import kotlinx.android.synthetic.main.fragment_saved.*
-import kotlinx.android.synthetic.main.remind_card.*
 import java.util.*
 
 
@@ -54,14 +50,13 @@ class SavedFragment : Fragment() {
     private lateinit var saveNote: Button
     private lateinit var notesTitle: TextInputEditText
     private lateinit var notesBody: TextInputEditText
-    private lateinit var dbRef: DatabaseReference
+    private lateinit var saveNotesDB: DatabaseReference
 
 
     private val savedMedicineList = mutableListOf<SavedMedicine>()
-    val recentList = ArrayList<Recents>()
     val remindList = ArrayList<ProfileRemind>()
-    val savedList = ArrayList<Saved>()
     val notesList = ArrayList<Notes>()
+    val savedNotesList = ArrayList<Note>()
     var item:String = ""
     private lateinit var spinner: Spinner
     private lateinit var picker: MaterialTimePicker
@@ -81,7 +76,6 @@ class SavedFragment : Fragment() {
         saveNote = view.findViewById(R.id.notesSave)
         notesTitle = view.findViewById(R.id.noteTitleInput)
         notesBody = view.findViewById(R.id.notesBodyInput)
-        dbRef = FirebaseDatabase.getInstance().getReference("notes")
         loadSavedMedicines()
         notesddata()
         return view
@@ -131,9 +125,8 @@ class SavedFragment : Fragment() {
 
         //static data
         if (remindList.isEmpty()) reminddata()
-        if (savedList.isEmpty()) saveddata()
         if (notesList.isEmpty()) notesddata()
-
+        if (savedNotesList.isEmpty()) loadNotes()
 
 
         //createNotificationChannel()
@@ -156,8 +149,6 @@ class SavedFragment : Fragment() {
             //remind_popupcard.visibility = View.GONE
             //remind_card_title.setText(item)
         }
-
-        recentdata()
 
         saveNote.setOnClickListener{v: View ->
             saveNote()
@@ -324,24 +315,57 @@ class SavedFragment : Fragment() {
         )
     }
 
+    private fun loadNotes() {
+
+        val loadNotesDB = FirebaseDatabase.getInstance().getReference("users").child(firebaseAuth.uid!!).child("notes")
+
+        loadNotesDB.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                for (mdsnapshot in snapshot.children) {
+                    savedNotesList.add(
+                        Note(
+                            mdsnapshot.key.toString(),
+                            mdsnapshot.child("title").value.toString(),
+                            mdsnapshot.child("body").value.toString())
+                    )
+
+                }
+                // TODO: edit adapter to read savedNotes data
+//                saved_medication.adapter = SavedAdapter(savedMedicineList,comm, savedMedicineDB)
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                // Failed to read value
+                Log.w(TAG, "Failed to read value.", error.toException())
+            }
+        })
+
+
+    }
     private fun saveNote() {
+
+        saveNotesDB = FirebaseDatabase.getInstance().getReference("users").child(firebaseAuth.uid!!).child("notes")
 
         //getting values
         val nTitle = notesTitle.text.toString()
         val nBody = notesBody.text.toString()
 
-        if (nTitle.isEmpty()) {
+        if (notesTitle.text?.isEmpty() == true) {
             notesTitle.error = "Please enter name"
         }
-        if (nBody.isEmpty()) {
+        if (notesBody.text?.isEmpty() == true) {
             notesBody.error = "Please enter age"
         }
 
-        val noteId = dbRef.push().key!!
+
+        val hashmap: HashMap<String, Any?> = HashMap()
+        hashmap["title"] = nTitle
+        hashmap["body"] = nBody
+        val noteId = saveNotesDB.push().key!!
 
         val note = Note(noteId, nTitle, nBody)
 
-        dbRef.child(noteId).setValue(note)
+        saveNotesDB.child(noteId).setValue(hashmap)
             .addOnCompleteListener {
                 Toast.makeText(context, "Data inserted successfully", Toast.LENGTH_LONG).show()
 
@@ -353,70 +377,12 @@ class SavedFragment : Fragment() {
                 Toast.makeText(context, "Error ${err.message}", Toast.LENGTH_LONG).show()
             }
 
-    }
-    private fun recentdata(){
-        recentList.add(
-            Recents(
-                "Rose",
-                1,
-                false
-
-            )
-        )
-        recentList.add(
-            Recents(
-                "Humilin",
-                1,
-                true
-
-            )
-        )
-        recentList.add(
-            Recents(
-                "Humilin",
-                1,
-                true
-
-            )
-        )
-        recentList.add(
-            Recents(
-                "Humilin",
-                1,
-                false
-
-            )
-        )
-        recentList.add(
-            Recents(
-                "Monjoro",
-                1,
-                true
-
-            )
-        )
-
+        saveNote.visibility = View.GONE
+        val imm = context?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(requireView().windowToken, 0)
     }
 
 
-    private fun saveddata(){
-        savedList.add(
-            Saved(
-                "Monjoro",
-                1,
-                false
-
-            )
-        )
-        savedList.add(
-            Saved(
-                "Humilin",
-                1,
-                true
-
-            )
-        )
-    }
     private fun notesddata(){
         notesList.add(
             Notes(
@@ -436,8 +402,9 @@ class SavedFragment : Fragment() {
         )
     }
 
+
+
     private fun loadSavedMedicines() {
-        savedMedicineList.clear()
         savedMedicineDB = FirebaseDatabase.getInstance().getReference("users").child(firebaseAuth.uid!!).child("saved_medicines")
         //val myRef = database.getReference("narrow_search")
         //Toast.makeText(context,"Data from firebase: $myRef",Toast.LENGTH_LONG).show()
