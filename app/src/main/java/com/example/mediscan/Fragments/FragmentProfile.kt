@@ -51,21 +51,16 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-<<<<<<<<< Temporary merge branch 1
       //  val profTitle: String = profile_name_input.text.toString()
             //val user = Firebase.auth.currentUser.toString()
            // readData("kprose07")
-=========
 
->>>>>>>>> Temporary merge branch 2
             firebaseAuth = FirebaseAuth.getInstance()
             loaduserinfo()
         profile_emailLink.setOnClickListener{
             v:View -> comm.openEmailClient()
         }
 
-<<<<<<<<< Temporary merge branch 1
-=========
 
         edit_p.setOnClickListener{
             val fragment = EditProfileFragment()
@@ -81,7 +76,6 @@ class ProfileFragment : Fragment() {
             startActivity(intent)
         }
 
->>>>>>>>> Temporary merge branch 2
         edit_p.setOnClickListener{
             val fragment = EditProfileFragment()
             val fragmentManager = fragmentManager
