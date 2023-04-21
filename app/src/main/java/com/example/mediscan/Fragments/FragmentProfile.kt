@@ -32,6 +32,7 @@ import java.util.*
 
 class ProfileFragment : Fragment() {
 
+
     private lateinit var database : DatabaseReference
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var comm: Communicator
@@ -49,15 +50,22 @@ class ProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+<<<<<<<<< Temporary merge branch 1
       //  val profTitle: String = profile_name_input.text.toString()
             //val user = Firebase.auth.currentUser.toString()
            // readData("kprose07")
+=========
+
+>>>>>>>>> Temporary merge branch 2
             firebaseAuth = FirebaseAuth.getInstance()
             loaduserinfo()
         profile_emailLink.setOnClickListener{
             v:View -> comm.openEmailClient()
         }
 
+<<<<<<<<< Temporary merge branch 1
+=========
 
         edit_p.setOnClickListener{
             val fragment = EditProfileFragment()
@@ -73,6 +81,20 @@ class ProfileFragment : Fragment() {
             startActivity(intent)
         }
 
+>>>>>>>>> Temporary merge branch 2
+        edit_p.setOnClickListener{
+            val fragment = EditProfileFragment()
+            val fragmentManager = fragmentManager
+            val fragmentTransaction = fragmentManager!!.beginTransaction()
+            fragmentTransaction.replace(R.id.fl_wrapper, fragment)
+            fragmentTransaction.addToBackStack(null)
+            fragmentTransaction.commit()
+        }
+        profile_sign_out.setOnClickListener {
+            FirebaseAuth.getInstance().signOut();
+            val intent = Intent(context, LoginScreen::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun loaduserinfo() {
@@ -123,5 +145,6 @@ class ProfileFragment : Fragment() {
 ////            }
 ////        }
 //    }
+
 
 }
