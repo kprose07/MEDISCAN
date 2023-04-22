@@ -22,6 +22,7 @@ import android.widget.Toast
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -45,20 +46,7 @@ import kotlinx.android.synthetic.main.remind_card.*
 import java.util.*
 
 
-class SavedFragment : Fragment() {
-    private var TAG = "Saved Fragment"
-    private lateinit var savedMedicineDB: DatabaseReference
-    private lateinit var firebaseAuth: FirebaseAuth
-    private lateinit var comm:Communicator
-    private lateinit var specialNotes: LinearLayout
-    private lateinit var saveNote: Button
-    private lateinit var notesTitle: TextInputEditText
-    private lateinit var notesBody: TextInputEditText
-    private lateinit var dbRef: DatabaseReference
-
-
-    private val savedMedicineList = mutableListOf<SavedMedicine>()
-    val recentList = ArrayList<Recents>()
+class SavedFragment : Fragment(), ProfileRemindAdapter.OnItemClickedListener {
     val remindList = ArrayList<ProfileRemind>()
     val savedList = ArrayList<Saved>()
     val notesList = ArrayList<Notes>()
@@ -68,6 +56,20 @@ class SavedFragment : Fragment() {
     private lateinit var calendar: Calendar
     private lateinit var alarmManager: AlarmManager
     private lateinit var pendingIntent: PendingIntent
+
+
+    private var TAG = "Saved Fragment"
+    private lateinit var savedMedicineDB: DatabaseReference
+    private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var comm:Communicator
+    private lateinit var specialNotes: LinearLayout
+    private lateinit var saveNote: Button
+    private lateinit var notesTitle: TextInputEditText
+    private lateinit var notesBody: TextInputEditText
+    private lateinit var dbRef: DatabaseReference
+    val recentList = ArrayList<Recents>()
+
+    private val savedMedicineList = mutableListOf<SavedMedicine>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -118,7 +120,7 @@ class SavedFragment : Fragment() {
         //remind adapter
         profile_reminder.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        profile_reminder.adapter = ProfileRemindAdapter(remindList,remind_popupcard, spinner, remind_close)
+        profile_reminder.adapter = ProfileRemindAdapter(remindList,remind_popupcard,cancle_remind, spinner, remind_close,this)
 
         //Saved Medicine
         saved_medication.layoutManager =
@@ -142,11 +144,7 @@ class SavedFragment : Fragment() {
             //select time
             showTimePicker()
         }
-        add_remind_button.setOnClickListener {
-            //add alarm
-            //setAlarm()
-            scheduleNotify()
-        }
+
         cancle_remind.setOnClickListener {
             //cancle alarm
             //cancleAlarm()
@@ -186,24 +184,24 @@ class SavedFragment : Fragment() {
             time,
             pendingIntent
         )
-        showAlert(time,title,detail)
+
+        showAlert()
 
     }
 
-    private fun showAlert(time: Long, title: String, detail: String) {
-        val date = Date(time)
-        val timeFormat = android.text.format.DateFormat.getTimeFormat(requireActivity().applicationContext)
-        AlertDialog.Builder(requireActivity().applicationContext)
-            .setTitle("Reminder Set")
+    private fun showAlert() {
+
+        AlertDialog.Builder(requireActivity())
+            .setTitle("Reminder Creted for: ${item}")
             .setMessage(
-                "Title: "+title+
-                        "\nMessgae: " + detail+
-                        "\nAt: "+ timeFormat.format(date)
+                "This will remind you evryday at the selected time."
             )
             .setPositiveButton("Okay"){_,_ ->}
             .show()
-        Toast.makeText(context,"Reminder Created",Toast.LENGTH_SHORT).show()
+        //Toast.makeText(context,"Reminder Created",Toast.LENGTH_SHORT).show()
     }
+
+
     private fun showTimePicker() {
         picker = MaterialTimePicker.Builder()
             .setTimeFormat(TimeFormat.CLOCK_12H)
@@ -238,64 +236,7 @@ class SavedFragment : Fragment() {
         notificationManager.createNotificationChannel(channel)
 
     }
-    /*
-    private fun cancleAlarm() {
-        alarmManager = requireActivity().getSystemService(AppCompatActivity.ALARM_SERVICE) as AlarmManager
-        val intent = Intent(requireActivity().applicationContext, AlarmRecivever::class.java)
-        pendingIntent = PendingIntent.getBroadcast(requireActivity().applicationContext,0,intent,0)
 
-        alarmManager.cancel(pendingIntent)
-        Toast.makeText(context,"Alarm Cancelled", Toast.LENGTH_SHORT).show()
-
-
-    }
-    private fun setAlarm() {
-        alarmManager = requireActivity().getSystemService(AppCompatActivity.ALARM_SERVICE) as AlarmManager
-        val intent = Intent(requireActivity().applicationContext, AlarmRecivever::class.java)
-        pendingIntent = PendingIntent.getBroadcast(requireActivity().applicationContext,0,intent,0)
-
-        alarmManager.setRepeating(
-            AlarmManager.RTC_WAKEUP,calendar.timeInMillis,
-            AlarmManager.INTERVAL_DAY,pendingIntent
-        )
-        Toast.makeText(context,"Alarm Set Sucessfuly", Toast.LENGTH_SHORT).show()
-
-
-    }
-    private fun showTimePicker() {
-        picker = MaterialTimePicker.Builder()
-            .setTimeFormat(TimeFormat.CLOCK_12H)
-            .setHour(12)
-            .setMinute(0)
-            .setTitleText("Selct Time")
-            .build()
-
-        picker.show(parentFragmentManager ,"LillyMedicines")
-        picker.addOnPositiveButtonClickListener{
-            calendar = Calendar.getInstance()
-            calendar[Calendar.HOUR_OF_DAY] = picker.hour
-            calendar[Calendar.MINUTE] = picker.minute
-            calendar[Calendar.SECOND] = 0
-            calendar[Calendar.MILLISECOND] = 0
-        }
-
-    }
-
-    private fun createNotificationChannel() {
-        // the NotificationChannel class is new and not in the support library
-        // the NotificationChannel class is new and not in the support library
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val name: CharSequence ="Test"
-            val description = "Test"
-            val importance = NotificationManager.IMPORTANCE_HIGH
-            val channel = NotificationChannel("LillyMedicines", name, importance)
-            channel.description = description
-            // Register the channel with the system; you can't change the importance
-            // or other notification behaviors after this
-            val notificationManager = getSystemService(requireActivity().applicationContext,DestinationActivity::class.java) as NotificationManager
-            notificationManager.createNotificationChannel(channel)
-        }
-    }*/
 
     private fun reminddata(){
         remindList.add(
@@ -463,4 +404,35 @@ class SavedFragment : Fragment() {
             }
         })
     }
+    override fun onCLick(position: Int) {
+        //Toast.makeText(context,"Reminder Created${position}",Toast.LENGTH_SHORT).show()
+        remind_popupcard?.visibility = View.VISIBLE
+
+        remind_close.setOnClickListener {
+                remind_popupcard?.visibility = View.GONE
+            }
+        add_remind_button.setOnClickListener {
+
+            if(item != "Select Medicine") {
+                remindList[position].isprEmpty = false
+                remindList[position].title = item
+                scheduleNotify()
+                profile_reminder.adapter?.notifyItemChanged(position)
+
+
+            }else {
+                remindList[position].isprEmpty = true
+                remindList[position].title = "Empty"
+                Toast.makeText(context,"Alarm not set${position}",Toast.LENGTH_SHORT).show()
+                profile_reminder.adapter?.notifyItemChanged(position)
+            }
+            remind_popupcard?.visibility = View.GONE
+        }
+
+    }
+
+
+
+
+
 }

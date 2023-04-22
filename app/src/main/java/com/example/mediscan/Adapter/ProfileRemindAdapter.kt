@@ -10,9 +10,11 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mediscan.Data.ProfileRemind
+import com.example.mediscan.Fragments.SavedFragment
 import com.example.mediscan.R
 
-class ProfileRemindAdapter(private var remindList: List<ProfileRemind>, private var remindPopupCard: CardView?, private var itemtx: Spinner,  private var close: View) :
+class ProfileRemindAdapter(private var remindList: List<ProfileRemind>, private var remindPopupCard: CardView?,
+                           private var cancle:TextView, private var itemtx: Spinner,  private var close: View, private val onItemClickedListener: OnItemClickedListener) :
     RecyclerView.Adapter<ProfileRemindAdapter.ViewHolder>() {
 
 
@@ -48,39 +50,31 @@ class ProfileRemindAdapter(private var remindList: List<ProfileRemind>, private 
             holder.emptycard.visibility = View.VISIBLE
             holder.filledcard.visibility = View.GONE
 
+
         } else {
             //holder.profileremind.text = remindList[position].title
             holder.filledcard.visibility = View.VISIBLE
             holder.emptycard.visibility = View.GONE
 
         }
+        //notifyItemChanged(position)
         holder.itemView.setOnClickListener { v: View ->
             // TODO: Launch next screen for the medicines
-            // val position: Int = adapterPosition
+           // val position: Int = holder.adapterPosition
 
-            remindPopupCard?.visibility = View.VISIBLE
-
-
-            close.setOnClickListener {
-
-                if(itemtx.selectedItem.toString() != "Select Medicine") {
-                    remindList[position].isprEmpty = false
-                    remindList[position].title = itemtx.selectedItem.toString()
-                    holder.profileremind.text = remindList[position].title
-                }else {
-                    remindList[position].isprEmpty = true
-                    remindList[position].title = "Empty"
-                    holder.profileremind.text = remindList[position].title
-                }
-                remindPopupCard?.visibility = View.GONE
-                notifyItemChanged(position)
-            }
-            notifyItemChanged(position)
+            // remindPopupCard?.visibility = View.VISIBLE
+            onItemClickedListener.onCLick(position)
+            return@setOnClickListener
+            //notifyItemChanged(position)
         }
+        holder.profileremind.text = remindList[position].title
+
 
     }
 
-
+    interface OnItemClickedListener{
+        fun onCLick(position: Int)
+    }
 
     override fun getItemCount(): Int {
         return remindList.size
