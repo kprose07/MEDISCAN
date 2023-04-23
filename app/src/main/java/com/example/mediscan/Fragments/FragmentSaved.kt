@@ -45,7 +45,7 @@ import java.util.*
 
 class SavedFragment : Fragment(), ProfileRemindAdapter.OnItemClickedListener {
     val remindList = ArrayList<ProfileRemind>()
-    val savedList = ArrayList<Saved>()
+    val savedList = ArrayList<SavedMedicine>()
     val notesList = ArrayList<Notes>()
     var item:String = ""
 
@@ -85,8 +85,10 @@ class SavedFragment : Fragment(), ProfileRemindAdapter.OnItemClickedListener {
         notesTitle = view.findViewById(R.id.noteTitleInput)
         notesBody = view.findViewById(R.id.notesBodyInput)
         addNote = view.findViewById(R.id.addNote)
-        loadSavedMedicines()
-        notesddata()
+        if (savedNotesList.isEmpty()) loadNotes()
+        if (savedMedicineList.isEmpty())  loadSavedMedicines()
+
+
         return view
     }
 
@@ -134,8 +136,8 @@ class SavedFragment : Fragment(), ProfileRemindAdapter.OnItemClickedListener {
 
         //static data
         if (remindList.isEmpty()) reminddata()
-        if (notesList.isEmpty()) notesddata()
-        if (savedNotesList.isEmpty()) loadNotes()
+//        if (notesList.isEmpty()) notesddata()
+//        if (savedNotesList.isEmpty()) loadNotes()
 
 
         //createNotificationChannel()
@@ -149,10 +151,6 @@ class SavedFragment : Fragment(), ProfileRemindAdapter.OnItemClickedListener {
             //cancle alarm
             //cancleAlarm()
 
-        }
-        remind_close.setOnClickListener{
-            //remind_popupcard.visibility = View.GONE
-            //remind_card_title.setText(item)
         }
 
         saveNote.setOnClickListener{v: View ->
@@ -333,24 +331,7 @@ class SavedFragment : Fragment(), ProfileRemindAdapter.OnItemClickedListener {
     }
 
 
-    private fun saveddata(){
-        savedList.add(
-            Saved(
-                "Monjoro",
-                1,
-                false
 
-            )
-        )
-        savedList.add(
-            Saved(
-                "Humilin",
-                1,
-                true
-
-            )
-        )
-    }
     private fun notesddata(){
         notesList.add(
             Notes(

@@ -25,6 +25,7 @@ import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.fragment_pillsd.*
 import kotlinx.android.synthetic.main.fragment_pillsd.popup_title
 import kotlinx.android.synthetic.main.fragment_pillsd.popup_close
+import kotlinx.android.synthetic.main.fragment_results.*
 
 
 class PillsFragment : Fragment()  {
@@ -60,11 +61,23 @@ class PillsFragment : Fragment()  {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val mdName:TextView = view.findViewById(R.id.medicine)
+        var saveToggle = false
+
         mdName.text = medicineName
 
         //popup card
         popupCard = view.findViewById(R.id.popup_card)
-        saveMedicine(medicineName.toString(), medicineId.toString(), brandName.toString())
+
+        medicine.setOnClickListener{
+            saveToggle =! saveToggle
+            if(saveToggle){
+                savemed_button.setBackgroundResource(R.drawable.ic_savefilled)
+                saveMedicine(medicineName.toString(), medicineId.toString(), brandName.toString())
+            }else{
+                savemed_button.setBackgroundResource(R.drawable.ic_saveempty)
+            }
+
+        }
 
 
         narrow_down_recycler.layoutManager = GridLayoutManager(activity, 3)

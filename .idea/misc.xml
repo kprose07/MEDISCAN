@@ -98,6 +98,7 @@
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/font/poppins_mediumbb.xml" value="0.24427083333333333" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/font/poppins_reg.xml" value="0.28020833333333334" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/font/poppins_semibold.xml" value="0.28020833333333334" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout-v31/fragment_results.xml" value="0.25" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/activity_allergy_listview.xml" value="0.25" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/activity_login_screen.xml" value="0.176" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/activity_main.xml" value="0.2140625" />
@@ -109,9 +110,9 @@
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/fragment_home.xml" value="0.176" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/fragment_homegrid.xml" value="0.2210144927536232" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/fragment_login.xml" value="0.264" />
-        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/fragment_pillsd.xml" value="0.2" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/fragment_pillsd.xml" value="0.536" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/fragment_profile.xml" value="0.176" />
-        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/fragment_results.xml" value="0.2" />
+        <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/fragment_results.xml" value="0.4" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/fragment_saved.xml" value="0.2" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/medicine_layout.xml" value="0.2210144927536232" />
         <entry key="..\:/Users/khayl/AndroidStudioProjects/medi/app/src/main/res/layout/narrow_card_layout.xml" value="0.10400000000000001" />
@@ -130,14 +131,8 @@
         <entry key="..\:/Users/khayl/AppData/Local/Android/Sdk/platforms/android-32/data/res/layout/simple_list_item_multiple_choice.xml" value="0.72" />
         <entry key="..\:/Users/khayl/AppData/Local/Android/Sdk/platforms/android-32/data/res/layout/simple_spinner_dropdown_item.xml" value="0.24954710144927536" />
         <entry key="..\:/Users/khayl/AppData/Local/Android/Sdk/platforms/android-32/data/res/layout/simple_spinner_item.xml" value="0.24954710144927536" />
-        <entry key="..\:/Users/nzund/Desktop/Projects/MEDISCAN/app/src/main/res/drawable/drope.xml" value="0.1975" />
-        <entry key="..\:/Users/nzund/Desktop/Projects/MEDISCAN/app/src/main/res/drawable/ic_add.xml" value="0.1975" />
-        <entry key="..\:/Users/nzund/Desktop/Projects/MEDISCAN/app/src/main/res/drawable/ic_save.xml" value="0.1975" />
-        <entry key="..\:/Users/nzund/Desktop/Projects/MEDISCAN/app/src/main/res/layout/fragment_edit_profile.xml" value="0.13677536231884058" />
         <entry key="..\:/Users/nzund/Desktop/Projects/MEDISCAN/app/src/main/res/layout/fragment_pillsd.xml" value="0.12436676798378926" />
         <entry key="..\:/Users/nzund/Desktop/Projects/MEDISCAN/app/src/main/res/layout/fragment_results.xml" value="0.29635416666666664" />
-        <entry key="..\:/Users/nzund/Desktop/Projects/MEDISCAN/app/src/main/res/layout/fragment_saved.xml" value="0.22" />
-        <entry key="..\:/Users/nzund/Desktop/Projects/MEDISCAN/app/src/main/res/layout/special_notes.xml" value="0.13677536231884058" />
       </map>
     </option>
   </component>

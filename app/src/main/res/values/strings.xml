@@ -77,6 +77,7 @@
     <string name="medtitr">MOUNJARO</string>
     <string name="collapse_al"><u>Collapse All</u></string>
     <string name="expand_al"><u>Expand All</u></string>
+    <string name="see_pdf">See PDF</string>
 
     <!-- Saved Page -->
     <string name="remind"><i>Set Reminders</i></string>

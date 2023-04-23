@@ -63,6 +63,18 @@
             android:textColorHint="#A6080C2F"
             android:textSize="14sp" />
 
+        <View
+            android:id="@+id/savemed_button"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_below="@+id/narrowsearch"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="17dp"
+            android:layout_toEndOf="@+id/medicine"
+            android:background="@drawable/ic_saveempty"
+            android:clipToOutline="true"
+            tools:targetApi="s" />
+
         <TextView
             android:id="@+id/medicine"
             android:layout_width="wrap_content"
