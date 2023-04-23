@@ -53,7 +53,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
-                tools:itemCount="3"
+                tools:itemCount="4"
                 tools:listitem="@layout/remind_card" />
         </HorizontalScrollView>
 
@@ -94,7 +94,7 @@
             android:layout_marginTop="0dp"
             android:background="@drawable/savedbg" />
 
-        <HorizontalScrollView
+        <androidx.core.widget.NestedScrollView
             android:layout_width="wrap_content"
             android:layout_height="120dp"
             android:layout_below="@+id/savedrect"
@@ -111,7 +111,7 @@
                 android:orientation="horizontal"
                 tools:itemCount="17"
                 tools:listitem="@layout/saved_card" />
-        </HorizontalScrollView>
+        </androidx.core.widget.NestedScrollView>
 
         <View
             android:id="@+id/specialrect"
@@ -161,7 +161,7 @@
             android:layout_marginTop="0dp"
             android:background="@drawable/savedbg" />
 
-        <HorizontalScrollView
+        <androidx.core.widget.NestedScrollView
             android:layout_width="wrap_content"
             android:layout_height="120dp"
             android:layout_below="@+id/specialrect"
@@ -176,9 +176,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
-                tools:itemCount="17"
                 tools:listitem="@layout/notes_card" />
-        </HorizontalScrollView>
+        </androidx.core.widget.NestedScrollView>
 
         <LinearLayout
             android:id="@+id/specialNotes"

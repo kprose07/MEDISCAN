@@ -59,7 +59,6 @@ class SavedFragment : Fragment(), ProfileRemindAdapter.OnItemClickedListener {
     private lateinit var notesTitle: TextInputEditText
     private lateinit var notesBody: TextInputEditText
     private lateinit var dbRef: DatabaseReference
-    val recentList = ArrayList<Recents>()
 
     private val savedMedicineList = mutableListOf<SavedMedicine>()
     private lateinit var addNote: ImageView
@@ -272,6 +271,7 @@ class SavedFragment : Fragment(), ProfileRemindAdapter.OnItemClickedListener {
 
         loadNotesDB.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
+                savedNotesList.clear()
                 for (mdsnapshot in snapshot.children) {
                     savedNotesList.add(
                         Note(
@@ -282,7 +282,8 @@ class SavedFragment : Fragment(), ProfileRemindAdapter.OnItemClickedListener {
 
                 }
                 // TODO: edit adapter to read savedNotes data
-                notes_medication.adapter = NotesAdapter(savedNotesList)            }
+                notes_medication.adapter = NotesAdapter(savedNotesList)
+            }
 
             override fun onCancelled(error: DatabaseError) {
                 // Failed to read value
@@ -384,8 +385,9 @@ class SavedFragment : Fragment(), ProfileRemindAdapter.OnItemClickedListener {
                         SavedMedicine(
                             mdsnapshot.child("name").value.toString(),
                             mdsnapshot.child("id").value.toString(),
-                            mdsnapshot.child("brandName").value.toString())
+                            mdsnapshot.child("brandName").value.toString()
                         )
+                    )
 
                 }
                 saved_medication.adapter = SavedAdapter(savedMedicineList,comm, savedMedicineDB)

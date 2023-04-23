@@ -22,10 +22,6 @@ class NotesAdapter(private var notesList: ArrayList<Note>) :
         var notesmedtext : TextView = itemView.findViewById(R.id.noteid)
         var notesfilledcard : RelativeLayout = itemView.findViewById(R.id.notesfill)
         var notesmptycard :  LinearLayout = itemView.findViewById(R.id.emptynotes)
-//        var notesTitle: TextInputEditText = itemView.findViewById(R.id.noteTitleInput)
-//        var notesBody: TextInputEditText = itemView.findViewById(R.id.notesBodyInput)
-//        var savedCard: LinearLayout = itemView.findViewById(R.id.specialNotes)
-//        var saveNote: Button = itemView.findViewById(R.id.notesSave)
     }
 
 
