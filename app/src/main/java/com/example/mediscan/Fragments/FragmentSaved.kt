@@ -15,12 +15,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
-import android.widget.Button
-import android.widget.LinearLayout
-import android.widget.Toast
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Spinner
+import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -50,6 +45,7 @@ class SavedFragment : Fragment() {
     private lateinit var saveNote: Button
     private lateinit var notesTitle: TextInputEditText
     private lateinit var notesBody: TextInputEditText
+    private lateinit var addNote: ImageView
     private lateinit var saveNotesDB: DatabaseReference
 
 
@@ -76,6 +72,7 @@ class SavedFragment : Fragment() {
         saveNote = view.findViewById(R.id.notesSave)
         notesTitle = view.findViewById(R.id.noteTitleInput)
         notesBody = view.findViewById(R.id.notesBodyInput)
+        addNote = view.findViewById(R.id.addNote)
         loadSavedMedicines()
         notesddata()
         return view
@@ -121,7 +118,7 @@ class SavedFragment : Fragment() {
         //Notes
         notes_medication.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        notes_medication.adapter = NotesAdapter(notesList, specialNotes)
+        notes_medication.adapter = NotesAdapter(savedNotesList)
 
         //static data
         if (remindList.isEmpty()) reminddata()
@@ -153,6 +150,9 @@ class SavedFragment : Fragment() {
         saveNote.setOnClickListener{v: View ->
             saveNote()
             specialNotes.visibility = View.GONE
+        }
+        addNote.setOnClickListener{v: View ->
+            specialNotes.visibility = View.VISIBLE
         }
     }
 
@@ -331,8 +331,7 @@ class SavedFragment : Fragment() {
 
                 }
                 // TODO: edit adapter to read savedNotes data
-//                saved_medication.adapter = SavedAdapter(savedMedicineList,comm, savedMedicineDB)
-            }
+                notes_medication.adapter = NotesAdapter(savedNotesList)            }
 
             override fun onCancelled(error: DatabaseError) {
                 // Failed to read value
@@ -352,34 +351,33 @@ class SavedFragment : Fragment() {
 
         if (notesTitle.text?.isEmpty() == true) {
             notesTitle.error = "Please enter name"
+
         }
         if (notesBody.text?.isEmpty() == true) {
             notesBody.error = "Please enter age"
         }
+        else {
+            val noteId = saveNotesDB.push().key!!
+
+            val note = Note(noteId, nTitle, nBody)
+
+            saveNotesDB.child(noteId).setValue(note)
+                .addOnCompleteListener {
+                    Toast.makeText(context, "Data inserted successfully", Toast.LENGTH_LONG).show()
+
+                    notesTitle.text?.clear()
+                    notesBody.text?.clear()
 
 
-        val hashmap: HashMap<String, Any?> = HashMap()
-        hashmap["title"] = nTitle
-        hashmap["body"] = nBody
-        val noteId = saveNotesDB.push().key!!
+                }.addOnFailureListener { err ->
+                    Toast.makeText(context, "Error ${err.message}", Toast.LENGTH_LONG).show()
+                }
 
-        val note = Note(noteId, nTitle, nBody)
-
-        saveNotesDB.child(noteId).setValue(hashmap)
-            .addOnCompleteListener {
-                Toast.makeText(context, "Data inserted successfully", Toast.LENGTH_LONG).show()
-
-                notesTitle.text?.clear()
-                notesBody.text?.clear()
-
-
-            }.addOnFailureListener { err ->
-                Toast.makeText(context, "Error ${err.message}", Toast.LENGTH_LONG).show()
-            }
-
+            saveNote.visibility = View.GONE
+            val imm = context?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.hideSoftInputFromWindow(requireView().windowToken, 0)
+        }
         saveNote.visibility = View.GONE
-        val imm = context?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-        imm.hideSoftInputFromWindow(requireView().windowToken, 0)
     }
 
 
