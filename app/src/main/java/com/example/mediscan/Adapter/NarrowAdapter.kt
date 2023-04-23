@@ -28,19 +28,21 @@ class NarrowAdapter(private var narrow: List<NarrowDownSearch>,
     // TODO: add the rest of the medicines
     // TODO: what to look at for hash map
     private val NarrowImageMap: HashMap<String, Int> = hashMapOf(
-        "Summary" to R.drawable.ic_reports,
-        "Instructions" to R.drawable.ic_task,
-        "Pediatrics" to R.drawable.ic_pediatrics,
-        "Geriatrics" to R.drawable.ic_geriatrics,
-        "Contradictions" to R.drawable.ic_doctortool,
-        "Limitations of Use" to R.drawable.ic_limits,
+        "Description" to R.drawable.ic_reports,
+        "Indications and Usage" to R.drawable.ic_task,
+        "Dosage and Administration" to R.drawable.ic_doctor,
+        "Dosage Forms and Strengths" to R.drawable.ic_dosafe,
+        "Contraindications" to R.drawable.ic_contradiction,
         "Warnings and Precautions" to R.drawable.ic_warning,
-        "Dosage" to R.drawable.ic_dosafe,
-        "Administration" to R.drawable.ic_doctor,
-        "Overdosage" to R.drawable.ic_overdosage,
-        "Ortho" to R.drawable.ic_kneebone,
-        "Pediatrics" to R.drawable.ic_pediatrics,
-
+        "Adverse Reactions" to R.drawable.ic_reaction,
+        "Drug Interactions" to R.drawable.ic_iteract,
+        "Use in Specific Populations" to R.drawable.ic_doctor,
+        "Overdosage" to R.drawable.ic_popu,
+        "Clinical Pharmacology" to R.drawable.ic_pharma,
+        "Nonclinical Toxicology" to R.drawable.ic_toxic,
+        "Clinical Studies" to R.drawable.ic_doctortool,
+        "How Supplied/Storage and Handling" to R.drawable.ic_limits,
+        "Patient Counseling Information" to R.drawable.ic_counsel
 
     )
 
