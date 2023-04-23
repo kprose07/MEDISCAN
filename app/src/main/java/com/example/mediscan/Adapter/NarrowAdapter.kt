@@ -41,7 +41,7 @@ class NarrowAdapter(private var narrow: List<NarrowDownSearch>,
         "Clinical Pharmacology" to R.drawable.ic_pharma,
         "Nonclinical Toxicology" to R.drawable.ic_toxic,
         "Clinical Studies" to R.drawable.ic_doctortool,
-        "How Supplied/Storage and Handling" to R.drawable.ic_limits,
+        "How Supplied Storage and Handling" to R.drawable.ic_limits,
         "Patient Counseling Information" to R.drawable.ic_counsel
 
     )

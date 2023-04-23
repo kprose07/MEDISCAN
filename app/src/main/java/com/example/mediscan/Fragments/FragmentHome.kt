@@ -129,8 +129,7 @@ class HomeFragment : androidx.fragment.app.Fragment() {
                     medicineList.add(
                         Medicine(
                             medsnapshot.child("name").value.toString(),
-                            // Todo: Change common_presc to brand_name
-                            medsnapshot.child("common_presc").value.toString(),
+                            medsnapshot.child("generic_name").value.toString(),
                             medsnapshot.child("id").value.toString()
                         )
                     )
