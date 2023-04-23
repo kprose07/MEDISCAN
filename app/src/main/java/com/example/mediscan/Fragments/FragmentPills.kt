@@ -40,7 +40,7 @@ class PillsFragment : Fragment()  {
     private var popupCard: CardView? = null
     private lateinit var comm: Communicator
     private lateinit var firebaseAuth: FirebaseAuth
-
+    var saveToggle: Boolean = false
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -61,23 +61,57 @@ class PillsFragment : Fragment()  {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val mdName:TextView = view.findViewById(R.id.medicine)
-        var saveToggle = false
+
 
         mdName.text = medicineName
 
         //popup card
         popupCard = view.findViewById(R.id.popup_card)
 
+        popupCard = view.findViewById(R.id.popup_card)
+
+
+        //Toggle for Saved Button
+        val ssavedMedicine = SavedMedicine(medicineName.toString(), medicineId.toString(), brandName.toString())
+        val medicineDB = FirebaseDatabase.getInstance().getReference("users").child(firebaseAuth.uid!!).child("saved_medicines").orderByChild("id").equalTo(ssavedMedicine.id)
+
+        medicineDB.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if( snapshot!=null && snapshot.getChildren()!=null &&
+                    snapshot.getChildren().iterator().hasNext()){
+                    savemed_button.setBackgroundResource(R.drawable.ic_savefilled)
+                    saveToggle = true
+                }else{
+                    savemed_button.setBackgroundResource(R.drawable.ic_saveempty)
+                    saveToggle = false
+                }
+
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                // Failed to read value
+                Log.w(TAG, "Failed to read value.", error.toException())
+            }
+        })
         medicine.setOnClickListener{
-            saveToggle =! saveToggle
+            saveToggle=!saveToggle
             if(saveToggle){
-                savemed_button.setBackgroundResource(R.drawable.ic_savefilled)
                 saveMedicine(medicineName.toString(), medicineId.toString(), brandName.toString())
+                savemed_button.setBackgroundResource(R.drawable.ic_savefilled)
+
             }else{
+                deleteMedicine(medicineName.toString(), medicineId.toString(), brandName.toString())
                 savemed_button.setBackgroundResource(R.drawable.ic_saveempty)
+
             }
 
         }
+
+
+
+
+
+
 
 
         narrow_down_recycler.layoutManager = GridLayoutManager(activity, 3)
@@ -145,6 +179,7 @@ class PillsFragment : Fragment()  {
                 return false
             }
         })
+
     }
 
 
@@ -182,8 +217,28 @@ class PillsFragment : Fragment()  {
     fun saveMedicine(name: String, id: String, brandName: String) {
         val medicineDB = FirebaseDatabase.getInstance().getReference("users").child(firebaseAuth.uid!!).child("saved_medicines")
         val savedMedicine = SavedMedicine(name, id, brandName)
+       // savemed_button.setBackgroundResource(R.drawable.ic_savefilled)
 
-        medicineDB.child(savedMedicine.id).setValue(savedMedicine)
+        medicineDB.child(savedMedicine.id).setValue(savedMedicine).addOnSuccessListener {
+            Toast.makeText(context,"Saved Medicince", Toast.LENGTH_SHORT).show()
+
+        }.addOnFailureListener {
+            Toast.makeText(context, "NOT SAVED", Toast.LENGTH_SHORT).show()
+
+        }
+    }
+    fun deleteMedicine(name: String, id: String, brandName: String) {
+        val medicineDB = FirebaseDatabase.getInstance().getReference("users").child(firebaseAuth.uid!!).child("saved_medicines")
+        val savedMedicine = SavedMedicine(name, id, brandName)
+       //savemed_button.setBackgroundResource(R.drawable.ic_saveempty)
+        medicineDB.child(savedMedicine.id).removeValue().addOnSuccessListener {
+            Toast.makeText(context,"Deleted Medicince", Toast.LENGTH_SHORT).show()
+
+        }.addOnFailureListener {
+            Toast.makeText(context, "NOT DELETED", Toast.LENGTH_SHORT).show()
+
+        }
+
     }
 
 }

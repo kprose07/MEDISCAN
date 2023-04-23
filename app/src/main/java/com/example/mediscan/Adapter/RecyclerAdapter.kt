@@ -70,13 +70,6 @@ class RecyclerAdapter(private var medicines: List<Medicine>, communicator: Commu
         val itemImage: ImageView = itemView.findViewById(R.id.md_image)
         var medicineId = String()
 
-        init {
-            itemView.setOnClickListener { v: View ->
-                // TODO: Launch next screen for the medicines
-                val position: Int = adapterPosition
-                comm.passDataCom(itemTitle.text.toString(), medicineId, medicines[position].brand_name)
-            }
-        }
 
     }
 
@@ -90,6 +83,11 @@ class RecyclerAdapter(private var medicines: List<Medicine>, communicator: Commu
         // TODO: what to look at for hash map
         imageMap[medicines[position].name]?.let { holder.itemImage.setImageResource(it) }
         holder.medicineId = medicines[position].id
+        holder.itemView.setOnClickListener { v: View ->
+            // TODO: Launch next screen for the medicines
+            val position: Int = holder.adapterPosition
+            comm.passDataCom(holder.itemTitle.text.toString(), holder.medicineId, medicines[position].brand_name)
+        }
     }
 
     override fun getItemCount(): Int {
