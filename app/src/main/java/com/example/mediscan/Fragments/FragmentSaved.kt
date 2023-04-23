@@ -18,7 +18,6 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.LinearLayout
-import android.widget.Toast
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
@@ -120,7 +119,7 @@ class SavedFragment : Fragment(), ProfileRemindAdapter.OnItemClickedListener {
         //remind adapter
         profile_reminder.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        profile_reminder.adapter = ProfileRemindAdapter(remindList,remind_popupcard,cancle_remind, spinner, remind_close,this)
+        profile_reminder.adapter = ProfileRemindAdapter(remindList,this)
 
         //Saved Medicine
         saved_medication.layoutManager =
@@ -409,9 +408,11 @@ class SavedFragment : Fragment(), ProfileRemindAdapter.OnItemClickedListener {
         remind_popupcard?.visibility = View.VISIBLE
 
         remind_close.setOnClickListener {
-                remind_popupcard?.visibility = View.GONE
-            }
+            remind_popupcard?.visibility = View.GONE
+            Toast.makeText(context,"Reminder Cancled",Toast.LENGTH_SHORT).show()
+        }
         add_remind_button.setOnClickListener {
+
 
             if(item != "Select Medicine") {
                 remindList[position].isprEmpty = false
@@ -427,6 +428,8 @@ class SavedFragment : Fragment(), ProfileRemindAdapter.OnItemClickedListener {
                 profile_reminder.adapter?.notifyItemChanged(position)
             }
             remind_popupcard?.visibility = View.GONE
+            spinner.setSelection(0)
+            description_remind_input.getText()?.clear()
         }
 
     }

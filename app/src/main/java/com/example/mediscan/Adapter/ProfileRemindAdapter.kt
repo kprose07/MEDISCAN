@@ -13,8 +13,7 @@ import com.example.mediscan.Data.ProfileRemind
 import com.example.mediscan.Fragments.SavedFragment
 import com.example.mediscan.R
 
-class ProfileRemindAdapter(private var remindList: List<ProfileRemind>, private var remindPopupCard: CardView?,
-                           private var cancle:TextView, private var itemtx: Spinner,  private var close: View, private val onItemClickedListener: OnItemClickedListener) :
+class ProfileRemindAdapter(private var remindList: List<ProfileRemind>,private val onItemClickedListener: OnItemClickedListener) :
     RecyclerView.Adapter<ProfileRemindAdapter.ViewHolder>() {
 
 
@@ -44,7 +43,6 @@ class ProfileRemindAdapter(private var remindList: List<ProfileRemind>, private 
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-        var dataClassProf: ProfileRemind = remindList[position]
 
         if (remindList[position].isprEmpty) {
             holder.emptycard.visibility = View.VISIBLE
