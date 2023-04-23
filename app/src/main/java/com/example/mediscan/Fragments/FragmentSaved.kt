@@ -10,7 +10,6 @@ import android.content.Context.NOTIFICATION_SERVICE
 import android.content.Intent
 import android.icu.util.Calendar
 import android.os.Bundle
-import android.provider.ContactsContract
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -22,6 +21,8 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
+import android.view.inputmethod.InputMethodManager
+import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -36,12 +37,9 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.example.mediscan.Data.Notes
 import com.example.mediscan.Data.ProfileRemind
-import com.example.mediscan.Data.Saved
 import com.google.android.material.timepicker.MaterialTimePicker
 import com.google.android.material.timepicker.TimeFormat
-import kotlinx.android.synthetic.main.fragment_results.*
 import kotlinx.android.synthetic.main.fragment_saved.*
-import kotlinx.android.synthetic.main.remind_card.*
 import java.util.*
 
 
@@ -50,11 +48,6 @@ class SavedFragment : Fragment(), ProfileRemindAdapter.OnItemClickedListener {
     val savedList = ArrayList<Saved>()
     val notesList = ArrayList<Notes>()
     var item:String = ""
-    private lateinit var spinner: Spinner
-    private lateinit var picker: MaterialTimePicker
-    private lateinit var calendar: Calendar
-    private lateinit var alarmManager: AlarmManager
-    private lateinit var pendingIntent: PendingIntent
 
 
     private var TAG = "Saved Fragment"
@@ -66,9 +59,18 @@ class SavedFragment : Fragment(), ProfileRemindAdapter.OnItemClickedListener {
     private lateinit var notesTitle: TextInputEditText
     private lateinit var notesBody: TextInputEditText
     private lateinit var dbRef: DatabaseReference
-    val recentList = ArrayList<Recents>()
 
     private val savedMedicineList = mutableListOf<SavedMedicine>()
+    private lateinit var addNote: ImageView
+    private lateinit var saveNotesDB: DatabaseReference
+
+
+    val savedNotesList = ArrayList<Note>()
+    private lateinit var spinner: Spinner
+    private lateinit var picker: MaterialTimePicker
+    private lateinit var calendar: Calendar
+    private lateinit var alarmManager: AlarmManager
+    private lateinit var pendingIntent: PendingIntent
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -82,7 +84,7 @@ class SavedFragment : Fragment(), ProfileRemindAdapter.OnItemClickedListener {
         saveNote = view.findViewById(R.id.notesSave)
         notesTitle = view.findViewById(R.id.noteTitleInput)
         notesBody = view.findViewById(R.id.notesBodyInput)
-        dbRef = FirebaseDatabase.getInstance().getReference("notes")
+        addNote = view.findViewById(R.id.addNote)
         loadSavedMedicines()
         notesddata()
         return view
@@ -128,13 +130,12 @@ class SavedFragment : Fragment(), ProfileRemindAdapter.OnItemClickedListener {
         //Notes
         notes_medication.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        notes_medication.adapter = NotesAdapter(notesList, specialNotes)
+        notes_medication.adapter = NotesAdapter(savedNotesList)
 
         //static data
         if (remindList.isEmpty()) reminddata()
-        if (savedList.isEmpty()) saveddata()
         if (notesList.isEmpty()) notesddata()
-
+        if (savedNotesList.isEmpty()) loadNotes()
 
 
         //createNotificationChannel()
@@ -154,11 +155,12 @@ class SavedFragment : Fragment(), ProfileRemindAdapter.OnItemClickedListener {
             //remind_card_title.setText(item)
         }
 
-        recentdata()
-
         saveNote.setOnClickListener{v: View ->
             saveNote()
             specialNotes.visibility = View.GONE
+        }
+        addNote.setOnClickListener{v: View ->
+            specialNotes.visibility = View.VISIBLE
         }
     }
 
@@ -236,7 +238,6 @@ class SavedFragment : Fragment(), ProfileRemindAdapter.OnItemClickedListener {
 
     }
 
-
     private fun reminddata(){
         remindList.add(
             ProfileRemind(
@@ -264,78 +265,71 @@ class SavedFragment : Fragment(), ProfileRemindAdapter.OnItemClickedListener {
         )
     }
 
+    private fun loadNotes() {
+
+        val loadNotesDB = FirebaseDatabase.getInstance().getReference("users").child(firebaseAuth.uid!!).child("notes")
+
+        loadNotesDB.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                savedNotesList.clear()
+                for (mdsnapshot in snapshot.children) {
+                    savedNotesList.add(
+                        Note(
+                            mdsnapshot.key.toString(),
+                            mdsnapshot.child("title").value.toString(),
+                            mdsnapshot.child("body").value.toString())
+                    )
+
+                }
+                // TODO: edit adapter to read savedNotes data
+                notes_medication.adapter = NotesAdapter(savedNotesList)
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                // Failed to read value
+                Log.w(TAG, "Failed to read value.", error.toException())
+            }
+        })
+
+
+    }
     private fun saveNote() {
+
+        saveNotesDB = FirebaseDatabase.getInstance().getReference("users").child(firebaseAuth.uid!!).child("notes")
 
         //getting values
         val nTitle = notesTitle.text.toString()
         val nBody = notesBody.text.toString()
 
-        if (nTitle.isEmpty()) {
+        if (notesTitle.text?.isEmpty() == true) {
             notesTitle.error = "Please enter name"
+
         }
-        if (nBody.isEmpty()) {
+        if (notesBody.text?.isEmpty() == true) {
             notesBody.error = "Please enter age"
         }
+        else {
+            val noteId = saveNotesDB.push().key!!
 
-        val noteId = dbRef.push().key!!
+            val note = Note(noteId, nTitle, nBody)
 
-        val note = Note(noteId, nTitle, nBody)
+            saveNotesDB.child(noteId).setValue(note)
+                .addOnCompleteListener {
+                    Toast.makeText(context, "Data inserted successfully", Toast.LENGTH_LONG).show()
 
-        dbRef.child(noteId).setValue(note)
-            .addOnCompleteListener {
-                Toast.makeText(context, "Data inserted successfully", Toast.LENGTH_LONG).show()
-
-                notesTitle.text?.clear()
-                notesBody.text?.clear()
+                    notesTitle.text?.clear()
+                    notesBody.text?.clear()
 
 
-            }.addOnFailureListener { err ->
-                Toast.makeText(context, "Error ${err.message}", Toast.LENGTH_LONG).show()
-            }
+                }.addOnFailureListener { err ->
+                    Toast.makeText(context, "Error ${err.message}", Toast.LENGTH_LONG).show()
+                }
 
-    }
-    private fun recentdata(){
-        recentList.add(
-            Recents(
-                "Rose",
-                1,
-                false
-
-            )
-        )
-        recentList.add(
-            Recents(
-                "Humilin",
-                1,
-                true
-
-            )
-        )
-        recentList.add(
-            Recents(
-                "Humilin",
-                1,
-                true
-
-            )
-        )
-        recentList.add(
-            Recents(
-                "Humilin",
-                1,
-                false
-
-            )
-        )
-        recentList.add(
-            Recents(
-                "Monjoro",
-                1,
-                true
-
-            )
-        )
-
+            saveNote.visibility = View.GONE
+            val imm = context?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.hideSoftInputFromWindow(requireView().windowToken, 0)
+        }
+        saveNote.visibility = View.GONE
     }
 
 
@@ -376,8 +370,9 @@ class SavedFragment : Fragment(), ProfileRemindAdapter.OnItemClickedListener {
         )
     }
 
+
+
     private fun loadSavedMedicines() {
-        savedMedicineList.clear()
         savedMedicineDB = FirebaseDatabase.getInstance().getReference("users").child(firebaseAuth.uid!!).child("saved_medicines")
         //val myRef = database.getReference("narrow_search")
         //Toast.makeText(context,"Data from firebase: $myRef",Toast.LENGTH_LONG).show()
@@ -390,8 +385,9 @@ class SavedFragment : Fragment(), ProfileRemindAdapter.OnItemClickedListener {
                         SavedMedicine(
                             mdsnapshot.child("name").value.toString(),
                             mdsnapshot.child("id").value.toString(),
-                            mdsnapshot.child("brandName").value.toString())
+                            mdsnapshot.child("brandName").value.toString()
                         )
+                    )
 
                 }
                 saved_medication.adapter = SavedAdapter(savedMedicineList,comm, savedMedicineDB)

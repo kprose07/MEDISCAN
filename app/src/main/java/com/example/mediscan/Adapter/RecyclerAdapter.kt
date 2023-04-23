@@ -16,8 +16,6 @@ class RecyclerAdapter(private var medicines: List<Medicine>, communicator: Commu
 
     private val comm:Communicator = communicator
 
-    // TODO: add the rest of the medicines
-    // TODO: what to look at for hash map
     private val imageMap: HashMap<String, Int> = hashMapOf(
         "Adcirca" to R.drawable.adcirca,
         "Alimta" to R.drawable.alimta,

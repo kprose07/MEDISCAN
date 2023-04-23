@@ -98,7 +98,6 @@ class HomeFragment : androidx.fragment.app.Fragment() {
         searchView.setOnSuggestionListener(object : SearchView.OnSuggestionListener {
             @SuppressLint("Range")
             override fun onSuggestionClick(position: Int): Boolean {
-//                hideKeyboard()
 
                 val cursor = searchView.suggestionsAdapter.getItem(position) as Cursor
                 val selection =
@@ -106,7 +105,6 @@ class HomeFragment : androidx.fragment.app.Fragment() {
                 searchView.setQuery(selection, false)
 
                 Toast.makeText(context, "You have selected $selection", Toast.LENGTH_LONG).show()
-                //TODO: fix pass data for search query suggestion
                 comm.passDataCom(selection, medicineList[position].id, medicineList[position].brand_name)
                 return true
             }

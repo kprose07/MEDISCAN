@@ -3,22 +3,20 @@ package com.example.mediscan.Adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
+import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import android.widget.TextView
-import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.mediscan.Data.Note
 import com.example.mediscan.Data.Notes
-import com.example.mediscan.Data.Recents
-import com.example.mediscan.Data.Saved
 import com.example.mediscan.R
+import com.google.android.material.textfield.TextInputEditText
 
-class NotesAdapter(private var notesList: ArrayList<Notes>, private var specialNotes: LinearLayout) :
+class NotesAdapter(private var notesList: ArrayList<Note>) :
     RecyclerView.Adapter<NotesAdapter.ViewHolder>() {
 
 
-    private var nList: ArrayList<Notes> = notesList
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         var notesmedtext : TextView = itemView.findViewById(R.id.noteid)
@@ -34,26 +32,18 @@ class NotesAdapter(private var notesList: ArrayList<Notes>, private var specialN
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-        var isEmptyCard: Boolean = notesList[position].isnEmpty
 
-        fun changeToEmptyCard(){
-            holder.notesmptycard.visibility = View.VISIBLE
-            holder.notesfilledcard.visibility = View.GONE
-        }
-        fun changeToFilled(){
-            holder.notesmedtext.text = notesList[position].notestitle
+            holder.notesmedtext.text = notesList[position].title
             holder.notesfilledcard.visibility = View.VISIBLE
             holder.notesmptycard.visibility = View.GONE
-            holder.notesfilledcard.setOnClickListener{v:View ->
-                specialNotes.visibility = View.VISIBLE
-            }
-        }
+//            holder.notesfilledcard.setOnClickListener{v: View ->
+//                holder.notesTitle.setText(notesList[position].title)
+//                holder.notesBody.setText(notesList[position].body)
+//                holder.saveNote.text = "Delete"
+//                holder.savedCard.visibility = View.VISIBLE
+//
+//            }
 
-           if (isEmptyCard) {
-               changeToEmptyCard()
-           } else {
-               changeToFilled()
-           }
     }
 
     override fun getItemCount(): Int {

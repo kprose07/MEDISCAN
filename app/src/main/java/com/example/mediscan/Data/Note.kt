@@ -1,5 +1,3 @@
 package com.example.mediscan.Data
 
-class Note(notesId: String, nTitle: String, nBody: String) {
-
-}
+class Note(val id: String, val title: String, val body: String)
