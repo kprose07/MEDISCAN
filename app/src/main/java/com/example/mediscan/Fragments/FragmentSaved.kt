@@ -26,6 +26,7 @@ import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.mediscan.*
 import com.example.mediscan.Adapter.NotesAdapter
 import com.example.mediscan.Adapter.ProfileRemindAdapter
@@ -85,8 +86,8 @@ class SavedFragment : Fragment(), ProfileRemindAdapter.OnItemClickedListener {
         notesTitle = view.findViewById(R.id.noteTitleInput)
         notesBody = view.findViewById(R.id.notesBodyInput)
         addNote = view.findViewById(R.id.addNote)
-        if (savedNotesList.isEmpty()) loadNotes()
-        if (savedMedicineList.isEmpty())  loadSavedMedicines()
+
+
 
 
         return view
@@ -95,7 +96,9 @@ class SavedFragment : Fragment(), ProfileRemindAdapter.OnItemClickedListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         //createNotificationChannel()
-
+        val saverecycle: RecyclerView = view.findViewById(R.id.saved_medication)
+        if (savedMedicineList.isEmpty())  loadSavedMedicines(view)
+        if (savedNotesList.isEmpty()) loadNotes(view)
         // access the items of the list
         val meds = resources.getStringArray(R.array.allergies)
 
@@ -126,9 +129,10 @@ class SavedFragment : Fragment(), ProfileRemindAdapter.OnItemClickedListener {
         profile_reminder.adapter = ProfileRemindAdapter(remindList,this)
 
         //Saved Medicine
-        saved_medication.layoutManager =
+
+        saverecycle.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        saved_medication.adapter = SavedAdapter(savedMedicineList, comm, savedMedicineDB)
+        saverecycle.adapter = SavedAdapter(savedMedicineList, comm, savedMedicineDB)
         //Notes
         notes_medication.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
@@ -263,13 +267,20 @@ class SavedFragment : Fragment(), ProfileRemindAdapter.OnItemClickedListener {
         )
     }
 
-    private fun loadNotes() {
+    private fun loadNotes(view: View) {
 
         val loadNotesDB = FirebaseDatabase.getInstance().getReference("users").child(firebaseAuth.uid!!).child("notes")
+        val emptynote: TextView = view.findViewById(R.id.emptynotes)
 
         loadNotesDB.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 savedNotesList.clear()
+                if(snapshot.hasChild("id")){
+                    emptynote.visibility = View.GONE
+
+                }else{
+                    emptynote.visibility = View.VISIBLE
+                }
                 for (mdsnapshot in snapshot.children) {
                     savedNotesList.add(
                         Note(
@@ -353,7 +364,9 @@ class SavedFragment : Fragment(), ProfileRemindAdapter.OnItemClickedListener {
 
 
 
-    private fun loadSavedMedicines() {
+    private fun loadSavedMedicines(v: View) {
+        val saverecycle: RecyclerView = v.findViewById(R.id.saved_medication)
+        val emptysave: TextView = v.findViewById(R.id.saveMed_seal)
         savedMedicineDB = FirebaseDatabase.getInstance().getReference("users").child(firebaseAuth.uid!!).child("saved_medicines")
         //val myRef = database.getReference("narrow_search")
         //Toast.makeText(context,"Data from firebase: $myRef",Toast.LENGTH_LONG).show()
@@ -361,6 +374,13 @@ class SavedFragment : Fragment(), ProfileRemindAdapter.OnItemClickedListener {
 
         savedMedicineDB.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
+                savedMedicineList.clear()
+                if(snapshot.hasChild("id")){
+                    emptysave.visibility = View.GONE
+
+                }else{
+                    emptysave.visibility = View.VISIBLE
+                }
                 for (mdsnapshot in snapshot.children) {
                     savedMedicineList.add(
                         SavedMedicine(
@@ -371,7 +391,10 @@ class SavedFragment : Fragment(), ProfileRemindAdapter.OnItemClickedListener {
                     )
 
                 }
-                saved_medication.adapter = SavedAdapter(savedMedicineList,comm, savedMedicineDB)
+
+                saverecycle.adapter = SavedAdapter(savedMedicineList,comm, savedMedicineDB)
+                //saved_medication!!.setAdapter(SavedAdapter(savedMedicineList,comm, savedMedicineDB))
+
             }
 
             override fun onCancelled(error: DatabaseError) {
@@ -379,6 +402,7 @@ class SavedFragment : Fragment(), ProfileRemindAdapter.OnItemClickedListener {
                 Log.w(TAG, "Failed to read value.", error.toException())
             }
         })
+
     }
     override fun onCLick(position: Int) {
         //Toast.makeText(context,"Reminder Created${position}",Toast.LENGTH_SHORT).show()

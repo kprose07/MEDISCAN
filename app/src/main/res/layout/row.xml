@@ -46,7 +46,7 @@
 
             <TextView
                 android:id="@+id/accordtitle"
-                android:layout_width="189dp"
+                android:layout_width="320dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="24dp"
@@ -54,6 +54,8 @@
                 android:fontFamily="@font/poppins"
                 android:gravity="center_vertical"
                 android:text="@string/accordtitle"
+                android:ellipsize="end"
+                android:singleLine="true"
                 android:textAppearance="@style/summary"
                 android:textColor="#FFFFFF" />
         </RelativeLayout>
@@ -87,6 +89,8 @@
                 android:background="@drawable/drope"
                 android:gravity="top"
                 android:lineSpacingExtra="4sp"
+                android:ellipsize="end"
+                android:maxLines="40"
                 android:padding="15dp"
                 android:text="@string/describe"
                 android:textColor="#000000"

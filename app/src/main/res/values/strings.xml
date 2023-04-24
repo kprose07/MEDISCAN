@@ -108,6 +108,8 @@
         <item>Scala</item>
         <item>Perl</item>
     </string-array>
+    <string name="save_a_medi">Save A Medication from the narrow search page</string>
+    <string name="noteempty">Click Add Button to Add Note</string>
 
     <!--    Profiles Page -->
     <string name="profiletext">Profile</string>
@@ -173,4 +175,5 @@
         <!--Edit Profile-->
     <string name="editprofbutton">Done</string>
     <string name="editImg">Upload Image</string>
+    <string name="todot">TODO</string>
 </resources>
