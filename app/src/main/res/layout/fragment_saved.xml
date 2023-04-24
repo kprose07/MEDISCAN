@@ -188,6 +188,7 @@
             android:layout_marginBottom="60dp"
             android:gravity="center"
             android:lineSpacingExtra="0sp"
+            android:visibility="invisible"
             android:text="@string/noteempty"
             android:textAppearance="@style/save_a_medi"
             tools:ignore="TextContrastCheck" />
