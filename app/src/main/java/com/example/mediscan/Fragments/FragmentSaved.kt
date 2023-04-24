@@ -454,10 +454,12 @@ class SavedFragment : Fragment(), ProfileRemindAdapter.OnItemClickedListener,
 
     override fun onCLickNotes(position: Int) {
         Toast.makeText(context, "CLICK", Toast.LENGTH_LONG).show()
+        Toast.makeText(context, "CLICK", Toast.LENGTH_LONG).show()
         AlertDialog.Builder(requireActivity())
-            .setTitle("COMING SOON")
-            .setMessage("COMING SOON")
+            .setTitle(savedNotesList[position].title)
+            .setMessage(savedNotesList[position].body)
             .setPositiveButton("Okay") { _, _ -> }
+            //.setNegativeButton("Delete", negativeButtonClick)
             .show()
 
     }

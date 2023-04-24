@@ -117,6 +117,7 @@
             android:layout_marginBottom="7dp"
             android:background="#00FFFFFF"
             android:outlineProvider="none"
+            android:visibility="invisible"
             app:cardBackgroundColor="#00FFFFFF">
 
             <RelativeLayout
@@ -178,11 +179,11 @@
                     android:layout_alignParentStart="true"
                     android:layout_marginStart="23dp"
                     android:layout_marginTop="21dp"
+                    android:ellipsize="end"
                     android:fontFamily="@font/poppins_reg"
                     android:gravity="top"
-                    android:ellipsize="end"
-                    android:maxLines="20"
                     android:lineSpacingExtra="6sp"
+                    android:maxLines="20"
                     android:text="@string/pop_up_des"
                     android:textAppearance="@style/pop_up_des"
                     android:translationY="-2.75sp" />

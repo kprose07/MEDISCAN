@@ -12,19 +12,19 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.CursorAdapter
-import android.widget.SearchView
-import android.widget.SimpleCursorAdapter
-import android.widget.Toast
+import android.widget.*
 import androidx.recyclerview.widget.GridLayoutManager
+import com.bumptech.glide.Glide
 import com.example.mediscan.Adapter.RecyclerAdapter
 import com.example.mediscan.Data.Communicator
 import com.example.mediscan.Data.Medicine
 import com.example.mediscan.R
 import com.example.mediscan.hideKeyboard
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_pillsd.*
+import kotlinx.android.synthetic.main.fragment_profile.*
 import kotlinx.android.synthetic.main.fragment_results.*
 
 
@@ -32,7 +32,7 @@ class HomeFragment : androidx.fragment.app.Fragment() {
     private lateinit var database: DatabaseReference
     private val TAG = "Home Fragment"
     private val medicineSuggestions = mutableListOf<String>()
-
+    private lateinit var firebaseAuth: FirebaseAuth
     private var medicineList = mutableListOf<Medicine>()
 
     private lateinit var comm:Communicator
@@ -50,6 +50,9 @@ class HomeFragment : androidx.fragment.app.Fragment() {
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
+
+       loadFirstName(view)
         hideKeyboard()
         super.onViewCreated(view, savedInstanceState)
         val medicineListAdapter = RecyclerAdapter(medicineList, comm)
@@ -114,7 +117,18 @@ class HomeFragment : androidx.fragment.app.Fragment() {
             }
         })
     }
-
+    private fun loadFirstName(view:View) {
+        val nameText: TextView = view.findViewById(R.id.userName)
+        firebaseAuth = FirebaseAuth.getInstance()
+        val ref = FirebaseDatabase.getInstance().getReference("users")
+        ref.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+               val nameData =  dataSnapshot.child(firebaseAuth.uid!!).child("firstName").getValue(String::class.java)
+                nameText.text = "Hello, "+nameData?.replaceFirstChar { ch -> ch.uppercaseChar() }
+            }
+            override fun onCancelled(databaseError: DatabaseError) {}
+        })
+    }
 
     private fun loadDataFromDatabase()  {
         database = FirebaseDatabase.getInstance().getReference("medicines")
