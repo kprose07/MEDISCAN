@@ -327,7 +327,7 @@ class SavedFragment : Fragment(), ProfileRemindAdapter.OnItemClickedListener,
                     .setTitle("COMING SOON")
                     .setMessage("COMING SOON")
                     .setPositiveButton("Okay") { _, _ -> }
-                    .setNegativeButton("Delete", negativeButtonClick)
+                    //.setNegativeButton("Delete", negativeButtonClick)
                     .show()
             }
 
@@ -453,7 +453,12 @@ class SavedFragment : Fragment(), ProfileRemindAdapter.OnItemClickedListener,
     }
 
     override fun onCLickNotes(position: Int) {
-        //Toast.makeText(context, "CLICK", Toast.LENGTH_LONG).show()
+        Toast.makeText(context, "CLICK", Toast.LENGTH_LONG).show()
+        AlertDialog.Builder(requireActivity())
+            .setTitle("COMING SOON")
+            .setMessage("COMING SOON")
+            .setPositiveButton("Okay") { _, _ -> }
+            .show()
 
     }
 
