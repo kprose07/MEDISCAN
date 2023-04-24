@@ -19,7 +19,8 @@ class NarrowAdapter(private var narrow: List<NarrowDownSearch>,
                     private var seeMore: TextView,
                     communicator: Communicator,
                     private var medicineName: String,
-                    private var brandName: String
+                    private var brandName: String,
+                    private var pdfLink: String
 ) :
     RecyclerView.Adapter<NarrowAdapter.ViewHolder>() {
 
@@ -50,7 +51,6 @@ class NarrowAdapter(private var narrow: List<NarrowDownSearch>,
 
         val itemTitle: TextView = itemView.findViewById(R.id.nsce_title)
         val itemImage: ImageView = itemView.findViewById(R.id.nsc_image)
-        //var open = true
 
         init {
             popupCard?.visibility = View.GONE
@@ -66,7 +66,7 @@ class NarrowAdapter(private var narrow: List<NarrowDownSearch>,
 
                 }
                 seeMore.setOnClickListener {
-                    comm.openResultsPage(narrow, itemTitle.text.toString(), medicineName, brandName)
+                    comm.openResultsPage(narrow, itemTitle.text.toString(), medicineName, brandName, pdfLink)
                 }
 
             }

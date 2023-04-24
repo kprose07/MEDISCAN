@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.mediscan.Accordresults
 import com.example.mediscan.Adapter.DescriptionAdapter
+import com.example.mediscan.Data.Communicator
 import com.example.mediscan.Data.NarrowDownSearch
 import com.example.mediscan.R
 import kotlinx.android.synthetic.main.fragment_results.*
@@ -23,6 +24,8 @@ class ResultsFragment : Fragment() {
     private var narrowData = ArrayList<NarrowDownSearch>()
     private var medicineName: String? = null
     private var brandName: String?  = null
+    private var pdfLink: String? = null
+    private lateinit var comm: Communicator
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -36,6 +39,8 @@ class ResultsFragment : Fragment() {
         narrowData = arguments?.getParcelableArrayList("narrowData")!!
         medicineName = arguments?.getString("medicineName")
         brandName = arguments?.getString("brandName")
+        pdfLink = arguments?.getString("pdfLink")
+        comm = requireActivity() as Communicator
         return view
     }
 
@@ -48,13 +53,21 @@ class ResultsFragment : Fragment() {
              filticon = !filticon
          }
  */
-        setMedicineName(view, )
+        setMedicineName(view)
+
+        see_pdf.setOnClickListener{ v: View ->
+            if (pdfLink.toString().isNotEmpty()){
+                comm.openPdfLink(pdfLink.toString())
+            }
+        }
+
         //Accordian Data
         if (descriptionList.isEmpty()) initData(narrowData, itemClicked.toString())
         setRecyclerView()
 
 
     }
+
 
     private fun setMedicineName(view: View) {
         val medicineName1: TextView = view.findViewById(R.id.medName1)

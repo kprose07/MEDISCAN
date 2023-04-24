@@ -6,14 +6,16 @@ interface Communicator {
     fun passDataCom(
         medicineSelected: String,
         medicineId: String,
-        brandName: String
+        brandName: String,
+        pdf_link: String
     )
 
     fun openResultsPage(
         narrowDownSearch: List<NarrowDownSearch>,
         itemClicked: String,
         medicineName: String,
-        brandName: String
+        brandName: String,
+        pdfLink: String
     )
 
     fun deleteFromDB(
@@ -23,5 +25,6 @@ interface Communicator {
 
     fun openEmailClient()
 
+    fun openPdfLink(pdfLink: String)
 
 }
