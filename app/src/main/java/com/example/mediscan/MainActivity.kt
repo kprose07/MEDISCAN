@@ -88,11 +88,12 @@ class MainActivity : AppCompatActivity(), Communicator {
             commit()
         }
 
-    override fun passDataCom(medicineSelected: String, medicineId: String, brandName: String) {
+    override fun passDataCom(medicineSelected: String, medicineId: String, brandName: String, pdfLink: String) {
         val bundle = Bundle()
         bundle.putString("mdSelected", medicineSelected)
         bundle.putString("mdId", medicineId)
         bundle.putString("brandName", brandName)
+        bundle.putString("pdfLink", pdfLink)
         val transaction = this.supportFragmentManager.beginTransaction()
         val frag2 = PillsFragment()
         frag2.arguments = bundle
@@ -107,7 +108,8 @@ class MainActivity : AppCompatActivity(), Communicator {
         narrowDownSearch: List<NarrowDownSearch>,
         itemClicked: String,
         medicineName: String,
-        brandName: String
+        brandName: String,
+        pdfLink: String
     ) {
 
         val bundle = Bundle()
@@ -116,6 +118,7 @@ class MainActivity : AppCompatActivity(), Communicator {
         bundle.putString("medicineName", medicineName)
         bundle.putString("itemClicked", itemClicked)
         bundle.putString("brandName", brandName)
+        bundle.putString("pdfLink", pdfLink)
         val transaction = this.supportFragmentManager.beginTransaction()
         val resultsFragment = ResultsFragment()
         resultsFragment.arguments = bundle
@@ -141,6 +144,12 @@ class MainActivity : AppCompatActivity(), Communicator {
         val chooser = Intent.createChooser(i, "Launch Email")
         startActivity(chooser)
 
+    }
+
+    override fun openPdfLink(pdfLink: String) {
+        val openLink = Intent(Intent.ACTION_VIEW)
+        openLink.data = Uri.parse(pdfLink)
+        startActivity(openLink)
     }
 
 

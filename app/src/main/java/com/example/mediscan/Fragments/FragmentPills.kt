@@ -38,6 +38,7 @@ class PillsFragment : Fragment()  {
     private var medicineName: String? = ""
     private var medicineId: String? = ""
     private var brandName: String? = ""
+    private var pdfLink: String? = ""
     private var popupCard: CardView? = null
     private lateinit var comm: Communicator
     private lateinit var firebaseAuth: FirebaseAuth
@@ -52,6 +53,7 @@ class PillsFragment : Fragment()  {
         medicineName = arguments?.getString("mdSelected")
         medicineId = arguments?.getString("mdId")
         brandName = arguments?.getString("brandName")
+        pdfLink = arguments?.getString("pdfLink")
         if (narrowList.isEmpty()) loadDataBase()
         firebaseAuth = FirebaseAuth.getInstance()
         comm = requireActivity() as Communicator
@@ -75,7 +77,7 @@ class PillsFragment : Fragment()  {
 
 
         //Toggle for Saved Button
-        val ssavedMedicine = SavedMedicine(medicineName.toString(), medicineId.toString(), brandName.toString())
+        val ssavedMedicine = SavedMedicine(medicineName.toString(), medicineId.toString(), brandName.toString(), pdfLink.toString())
         val medicineDB = FirebaseDatabase.getInstance().getReference("users").child(firebaseAuth.uid!!).child("saved_medicines").orderByChild("id").equalTo(ssavedMedicine.id)
         val medpillname: TextView = view.findViewById(R.id.medicine)
         medicineDB.addValueEventListener(object : ValueEventListener {
@@ -91,8 +93,6 @@ class PillsFragment : Fragment()  {
                     saveToggle = false
                 }
 
-
-
             }
 
             override fun onCancelled(error: DatabaseError) {
@@ -103,11 +103,11 @@ class PillsFragment : Fragment()  {
         medpillname.setOnClickListener{
             saveToggle=!saveToggle
             if(saveToggle){
-                saveMedicine(medicineName.toString(), medicineId.toString(), brandName.toString())
+                saveMedicine(medicineName.toString(), medicineId.toString(), brandName.toString(),pdfLink.toString())
                 sbutton.setBackgroundResource(R.drawable.ic_savefilled)
 
             }else{
-                deleteMedicine(medicineName.toString(), medicineId.toString(), brandName.toString())
+                deleteMedicine(medicineName.toString(), medicineId.toString(), brandName.toString(),pdfLink.toString())
                 sbutton.setBackgroundResource(R.drawable.ic_saveempty)
 
             }
@@ -123,7 +123,7 @@ class PillsFragment : Fragment()  {
 
         narrow_down_recycler.layoutManager = GridLayoutManager(activity, 3)
         narrow_down_recycler.adapter = medicineName?.let {
-            NarrowAdapter(narrowList, popupCard,popup_title,popup_detail,popup_close, see_more, comm,medicineName.toString(), brandName.toString())
+            NarrowAdapter(narrowList, popupCard,popup_title,popup_detail,popup_close, see_more, comm,medicineName.toString(), brandName.toString(), pdfLink.toString())
         }
 
 
@@ -207,7 +207,7 @@ class PillsFragment : Fragment()  {
                         )
                     )
                 }
-                narrow_down_recycler.adapter = NarrowAdapter(narrowList,popupCard,popup_title,popup_detail,popup_close, see_more,comm, medicineName.toString(), brandName.toString())
+                narrow_down_recycler.adapter = NarrowAdapter(narrowList,popupCard,popup_title,popup_detail,popup_close, see_more,comm, medicineName.toString(), brandName.toString(), pdfLink.toString())
                 for (narrowsearch in narrowList)
                     narrowSuggestions.add(narrowsearch.title)
             }
@@ -221,9 +221,9 @@ class PillsFragment : Fragment()  {
 
     // TODO: call this function using onclick listener on saved medicine button
 
-    fun saveMedicine(name: String, id: String, brandName: String) {
+    fun saveMedicine(name: String, id: String, brandName: String, pdfLink: String) {
         val medicineDB = FirebaseDatabase.getInstance().getReference("users").child(firebaseAuth.uid!!).child("saved_medicines")
-        val savedMedicine = SavedMedicine(name, id, brandName)
+        val savedMedicine = SavedMedicine(name, id, brandName, pdfLink)
        // savemed_button.setBackgroundResource(R.drawable.ic_savefilled)
 
         medicineDB.child(savedMedicine.id).setValue(savedMedicine).addOnSuccessListener {
@@ -234,9 +234,9 @@ class PillsFragment : Fragment()  {
 
         }
     }
-    fun deleteMedicine(name: String, id: String, brandName: String) {
+    fun deleteMedicine(name: String, id: String, brandName: String, pdfLink: String) {
         val medicineDB = FirebaseDatabase.getInstance().getReference("users").child(firebaseAuth.uid!!).child("saved_medicines")
-        val savedMedicine = SavedMedicine(name, id, brandName)
+        val savedMedicine = SavedMedicine(name, id, brandName, pdfLink)
        //savemed_button.setBackgroundResource(R.drawable.ic_saveempty)
         medicineDB.child(savedMedicine.id).removeValue().addOnSuccessListener {
             Toast.makeText(context,"Deleted Medicince", Toast.LENGTH_SHORT).show()

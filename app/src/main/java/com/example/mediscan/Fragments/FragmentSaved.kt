@@ -402,7 +402,8 @@ class SavedFragment : Fragment(), ProfileRemindAdapter.OnItemClickedListener,
                         SavedMedicine(
                             mdsnapshot.child("name").value.toString(),
                             mdsnapshot.child("id").value.toString(),
-                            mdsnapshot.child("brandName").value.toString()
+                            mdsnapshot.child("brandName").value.toString(),
+                            mdsnapshot.child("pdfLink").value.toString()
                         )
                     )
 
