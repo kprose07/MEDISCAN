@@ -86,7 +86,7 @@ class RecyclerAdapter(private var medicines: List<Medicine>, communicator: Commu
         holder.itemView.setOnClickListener { v: View ->
             // TODO: Launch next screen for the medicines
             val position: Int = holder.adapterPosition
-            comm.passDataCom(holder.itemTitle.text.toString(), holder.medicineId, medicines[position].brand_name)
+            comm.passDataCom(holder.itemTitle.text.toString(), holder.medicineId, medicines[position].brand_name, medicines[position].pdf_link)
         }
     }
 

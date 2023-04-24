@@ -39,7 +39,7 @@ class SavedAdapter(private var savedList: List<SavedMedicine>, communicator: Com
             holder.savemedtext.text = savedList[position].name
             holder.savefilledcard.visibility = View.VISIBLE
             holder.savefilledcard.setOnClickListener { v: View ->
-                comm.passDataCom(savedList[position].name, savedList[position].id, savedList[position].brandName)
+                comm.passDataCom(savedList[position].name, savedList[position].id, savedList[position].brandName, savedList[position].pdfLink)
             }
 
     // TODO: Add delete functions for saved items
