@@ -102,11 +102,48 @@
     <string-array name="allergies">
 
         <item>Select Medicine</item>
-        <item>Jelly</item>
-        <item>Swift</item>
-        <item>Python</item>
-        <item>Scala</item>
-        <item>Perl</item>
+        <item>Adcirca</item>
+        <item>Alimta</item>
+        <item>Amyvid</item>
+        <item>Baqsimi</item>
+        <item>Baricitinib</item>
+        <item>Basaglar</item>
+        <item>Bebtelovimab</item>
+        <item>Cyramza</item>
+        <item>Emgality</item>
+        <item>Erbitux</item>
+        <item>Forteo</item>
+        <item>Glucagon</item>
+        <item>Glyxambi</item>
+        <item>Humalog</item>
+        <item>Humalog 50/50</item>
+        <item>Humalog Junior</item>
+        <item>Humalog 75/25</item>
+        <item>Humatrope</item>
+        <item>Humulin N</item>
+        <item>Humulin R</item>
+        <item>Humulin R U-500</item>
+        <item>Humulin 70/30</item>
+        <item>Insulin Lispro</item>
+        <item>Insulin Lispro Kiwi</item>
+        <item>insulinlli</item>
+        <item>Jardiance</item>
+        <item>Jaypirca</item>
+        <item>Jentadueto</item>
+        <item>Lyumjev</item>
+        <item>Mounjaro</item>
+        <item>Olumiantc</item>
+        <item>Retevmo</item>
+        <item>Reyvow</item>
+        <item>Synjardy</item>
+        <item>Synjardy XR</item>
+        <item>Taltz</item>
+        <item>Tauvid</item>
+        <item>Tradjenta</item>
+        <item>Trijardyxr</item>
+        <item>Trulicity</item>
+        <item>Verzenio</item>
+        <item>Zyprexa</item>
     </string-array>
     <string name="save_a_medi">Save A Medication from the narrow search page</string>
     <string name="noteempty">Click Add Button to Add Note</string>
