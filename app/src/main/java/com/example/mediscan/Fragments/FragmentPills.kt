@@ -26,6 +26,7 @@ import kotlinx.android.synthetic.main.fragment_pillsd.*
 import kotlinx.android.synthetic.main.fragment_pillsd.popup_title
 import kotlinx.android.synthetic.main.fragment_pillsd.popup_close
 import kotlinx.android.synthetic.main.fragment_results.*
+import kotlinx.android.synthetic.main.fragment_saved.*
 
 
 class PillsFragment : Fragment()  {
@@ -63,6 +64,8 @@ class PillsFragment : Fragment()  {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val mdName:TextView = view.findViewById(R.id.medicine)
+       // val saveTextEmpty:TextView = view.findViewById(R.id.saveMed_seal)
+        val sbutton: View =  view.findViewById(R.id.savemed_button)
 
 
         mdName.text = medicineName
@@ -76,15 +79,17 @@ class PillsFragment : Fragment()  {
         //Toggle for Saved Button
         val ssavedMedicine = SavedMedicine(medicineName.toString(), medicineId.toString(), brandName.toString(), pdfLink.toString())
         val medicineDB = FirebaseDatabase.getInstance().getReference("users").child(firebaseAuth.uid!!).child("saved_medicines").orderByChild("id").equalTo(ssavedMedicine.id)
-
+        val medpillname: TextView = view.findViewById(R.id.medicine)
         medicineDB.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 if( snapshot!=null && snapshot.getChildren()!=null &&
                     snapshot.getChildren().iterator().hasNext()){
-                    savemed_button.setBackgroundResource(R.drawable.ic_savefilled)
+                    sbutton.setBackgroundResource(R.drawable.ic_savefilled)
+                   // saveTextEmpty.visibility = View.GONE
                     saveToggle = true
                 }else{
-                    savemed_button.setBackgroundResource(R.drawable.ic_saveempty)
+                    sbutton.setBackgroundResource(R.drawable.ic_saveempty)
+                    //saveTextEmpty.visibility = View.VISIBLE
                     saveToggle = false
                 }
 
@@ -95,15 +100,15 @@ class PillsFragment : Fragment()  {
                 Log.w(TAG, "Failed to read value.", error.toException())
             }
         })
-        medicine.setOnClickListener{
+        medpillname.setOnClickListener{
             saveToggle=!saveToggle
             if(saveToggle){
-                saveMedicine(medicineName.toString(), medicineId.toString(), brandName.toString(), pdfLink.toString())
-                savemed_button.setBackgroundResource(R.drawable.ic_savefilled)
+                saveMedicine(medicineName.toString(), medicineId.toString(), brandName.toString(),pdfLink.toString())
+                sbutton.setBackgroundResource(R.drawable.ic_savefilled)
 
             }else{
-                deleteMedicine(medicineName.toString(), medicineId.toString(), brandName.toString(), pdfLink.toString())
-                savemed_button.setBackgroundResource(R.drawable.ic_saveempty)
+                deleteMedicine(medicineName.toString(), medicineId.toString(), brandName.toString(),pdfLink.toString())
+                sbutton.setBackgroundResource(R.drawable.ic_saveempty)
 
             }
 

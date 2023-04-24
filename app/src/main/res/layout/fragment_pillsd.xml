@@ -61,6 +61,8 @@
             android:queryHint="Narrow Down Your Search"
             android:searchIcon="@drawable/ic_search"
             android:textColorHint="#A6080C2F"
+            android:ellipsize="end"
+            android:singleLine="true"
             android:textSize="14sp" />
 
         <View
@@ -115,7 +117,6 @@
             android:layout_marginBottom="7dp"
             android:background="#00FFFFFF"
             android:outlineProvider="none"
-            android:visibility="invisible"
             app:cardBackgroundColor="#00FFFFFF">
 
             <RelativeLayout
@@ -149,7 +150,7 @@
                     android:layout_height="16dp"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentRight="false"
-                    android:layout_marginStart="142dp"
+                    android:layout_marginStart="52dp"
                     android:layout_marginTop="17dp"
                     android:layout_toEndOf="@+id/popup_title"
                     android:background="@drawable/ic_close"
@@ -159,7 +160,7 @@
 
                 <TextView
                     android:id="@+id/popup_title"
-                    android:layout_width="106dp"
+                    android:layout_width="196dp"
                     android:layout_height="45dp"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
@@ -179,6 +180,8 @@
                     android:layout_marginTop="21dp"
                     android:fontFamily="@font/poppins_reg"
                     android:gravity="top"
+                    android:ellipsize="end"
+                    android:maxLines="20"
                     android:lineSpacingExtra="6sp"
                     android:text="@string/pop_up_des"
                     android:textAppearance="@style/pop_up_des"

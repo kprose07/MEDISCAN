@@ -22,7 +22,8 @@
             android:textAlignment="gravity"
             android:textColorHint="#000000"
             android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:visibility="gone" />
         <TextView
             android:id="@+id/recent"
             android:layout_width="311dp"
@@ -94,6 +95,20 @@
             android:layout_marginTop="0dp"
             android:background="@drawable/savedbg" />
 
+        <TextView
+            android:id="@+id/saveMed_seal"
+            android:layout_width="242dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/savedrect"
+            android:layout_alignBottom="@+id/savedbg"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60dp"
+            android:layout_marginBottom="60dp"
+            android:gravity="center"
+            android:lineSpacingExtra="0sp"
+            android:text="@string/save_a_medi"
+            android:textAppearance="@style/save_a_medi"
+            android:visibility="invisible" />
         <androidx.core.widget.NestedScrollView
             android:layout_width="wrap_content"
             android:layout_height="120dp"
@@ -149,7 +164,8 @@
             android:layout_alignParentEnd="true"
             android:layout_marginStart="00dp"
             android:src="@drawable/ic_add"
-            app:tint="@color/white" />
+            app:tint="@color/white"
+            android:contentDescription="@string/todot" />
 
         <View
             android:id="@+id/special"
@@ -160,6 +176,22 @@
             android:layout_marginStart="0dp"
             android:layout_marginTop="0dp"
             android:background="@drawable/savedbg" />
+
+        <TextView
+            android:id="@+id/emptynotes"
+            android:layout_width="242dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/specialrect"
+            android:layout_alignBottom="@+id/special"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60dp"
+            android:layout_marginBottom="60dp"
+            android:gravity="center"
+            android:lineSpacingExtra="0sp"
+            android:visibility="invisible"
+            android:text="@string/noteempty"
+            android:textAppearance="@style/save_a_medi"
+            tools:ignore="TextContrastCheck" />
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="wrap_content"
@@ -264,7 +296,7 @@
                     android:layout_width="15dp"
                     android:layout_height="16dp"
                     android:layout_alignParentTop="true"
-                    android:layout_alignParentRight="false"
+                    android:layout_alignParentEnd="false"
                     android:layout_marginStart="120dp"
                     android:layout_marginTop="17dp"
                     android:layout_toEndOf="@+id/popup_title"
